@@ -147,7 +147,7 @@ extension HomeCollectionView: UICollectionViewDelegateFlowLayout {
 
 //MARK: - ProjectsCollectionViewDelegate
 
-extension HomeCollectionView: ProjectsCollectionViewDelegate {
+extension HomeCollectionView: HomeHeaderViewCellDelegate {
     func didSelectItemAt(project: Project) {
         self.collectionDelegate?.selectProject(project: project)
     }
