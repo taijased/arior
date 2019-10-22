@@ -3,27 +3,85 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13004922235F2D3B006DA2C9 /* ProjectsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13004921235F2D3B006DA2C9 /* ProjectsCollectionViewCell.swift */; };
+		13004924235F2D4E006DA2C9 /* ProjectsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13004923235F2D4E006DA2C9 /* ProjectsCollectionView.swift */; };
+		13004927235F2DD5006DA2C9 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13004926235F2DD5006DA2C9 /* Project.swift */; };
+		13004929235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13004928235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift */; };
+		1300492B235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300492A235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift */; };
 		13375BB8235F0A6700F6CC0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BB7235F0A6700F6CC0D /* AppDelegate.swift */; };
 		13375BBA235F0A6700F6CC0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */; };
-		13375BBC235F0A6700F6CC0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BBB235F0A6700F6CC0D /* ViewController.swift */; };
 		13375BBF235F0A6700F6CC0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13375BBD235F0A6700F6CC0D /* Main.storyboard */; };
 		13375BC1235F0A6900F6CC0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13375BC0235F0A6900F6CC0D /* Assets.xcassets */; };
 		13375BC4235F0A6900F6CC0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13375BC2235F0A6900F6CC0D /* LaunchScreen.storyboard */; };
+		13375BCD235F0A9B00F6CC0D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BCC235F0A9B00F6CC0D /* Constants.swift */; };
+		13375BCF235F0AAC00F6CC0D /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BCE235F0AAC00F6CC0D /* Constraints.swift */; };
+		13375BD1235F0ABC00F6CC0D /* UIButton + Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BD0235F0ABC00F6CC0D /* UIButton + Custom.swift */; };
+		13375BD3235F0AD000F6CC0D /* UIColor + random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BD2235F0AD000F6CC0D /* UIColor + random.swift */; };
+		13375BD5235F0AE500F6CC0D /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BD4235F0AE500F6CC0D /* WebImageView.swift */; };
+		13375BD7235F0AF600F6CC0D /* UITableView + ReloadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BD6235F0AF600F6CC0D /* UITableView + ReloadData.swift */; };
+		13375BDB235F0B2A00F6CC0D /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BDA235F0B2A00F6CC0D /* StoryboardInitializable.swift */; };
+		13375BDF235F0B6300F6CC0D /* DynamicNodeEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BDE235F0B6300F6CC0D /* DynamicNodeEncoding.swift */; };
+		13375BE2235F0B8A00F6CC0D /* DemmoksiCatalogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BE1235F0B8A00F6CC0D /* DemmoksiCatalogModel.swift */; };
+		13375BE4235F0B9F00F6CC0D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BE3235F0B9F00F6CC0D /* NetworkService.swift */; };
+		13375BE6235F0BB500F6CC0D /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BE5235F0BB500F6CC0D /* NetworkDataFetcher.swift */; };
+		13375BE8235F0BC700F6CC0D /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BE7235F0BC700F6CC0D /* DataFetcherService.swift */; };
+		13375BEC235F0C9B00F6CC0D /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BEB235F0C9B00F6CC0D /* StorageManager.swift */; };
+		13375BF0235F0CBF00F6CC0D /* BasketItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BEF235F0CBF00F6CC0D /* BasketItemModel.swift */; };
+		13375BF6235F0D4300F6CC0D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BF5235F0D4300F6CC0D /* HomeViewController.swift */; };
+		13375BFD235F0E8D00F6CC0D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BFC235F0E8D00F6CC0D /* HomeViewModel.swift */; };
+		13375BFF235F102900F6CC0D /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BFE235F102900F6CC0D /* HomeCollectionView.swift */; };
+		13375C01235F105700F6CC0D /* HomeHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375C00235F105700F6CC0D /* HomeHeaderViewCell.swift */; };
+		13375C03235F106100F6CC0D /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375C02235F106100F6CC0D /* HomeCollectionViewCell.swift */; };
+		13375C05235F115300F6CC0D /* HomeCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375C04235F115300F6CC0D /* HomeCollectionViewViewModel.swift */; };
+		13375C07235F117300F6CC0D /* HomeCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375C06235F117300F6CC0D /* HomeCollectionViewCellViewModel.swift */; };
+		13375C0B235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375C0A235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift */; };
+		13375C0E235F19CD00F6CC0D /* GoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375C0D235F19CD00F6CC0D /* GoodsModel.swift */; };
+		4C48CA5B31BEB450323462DC /* Pods_Arioir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13004921235F2D3B006DA2C9 /* ProjectsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewCell.swift; sourceTree = "<group>"; };
+		13004923235F2D4E006DA2C9 /* ProjectsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionView.swift; sourceTree = "<group>"; };
+		13004926235F2DD5006DA2C9 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		13004928235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		1300492A235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		13375BB4235F0A6700F6CC0D /* Arioir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arioir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13375BB7235F0A6700F6CC0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		13375BBB235F0A6700F6CC0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		13375BBE235F0A6700F6CC0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13375BC0235F0A6900F6CC0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13375BC3235F0A6900F6CC0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13375BC5235F0A6900F6CC0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13375BCC235F0A9B00F6CC0D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		13375BCE235F0AAC00F6CC0D /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		13375BD0235F0ABC00F6CC0D /* UIButton + Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Custom.swift"; sourceTree = "<group>"; };
+		13375BD2235F0AD000F6CC0D /* UIColor + random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + random.swift"; sourceTree = "<group>"; };
+		13375BD4235F0AE500F6CC0D /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		13375BD6235F0AF600F6CC0D /* UITableView + ReloadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + ReloadData.swift"; sourceTree = "<group>"; };
+		13375BDA235F0B2A00F6CC0D /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
+		13375BDE235F0B6300F6CC0D /* DynamicNodeEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicNodeEncoding.swift; sourceTree = "<group>"; };
+		13375BE1235F0B8A00F6CC0D /* DemmoksiCatalogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemmoksiCatalogModel.swift; sourceTree = "<group>"; };
+		13375BE3235F0B9F00F6CC0D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		13375BE5235F0BB500F6CC0D /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		13375BE7235F0BC700F6CC0D /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
+		13375BEB235F0C9B00F6CC0D /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		13375BEF235F0CBF00F6CC0D /* BasketItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketItemModel.swift; sourceTree = "<group>"; };
+		13375BF5235F0D4300F6CC0D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		13375BFC235F0E8D00F6CC0D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		13375BFE235F102900F6CC0D /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
+		13375C00235F105700F6CC0D /* HomeHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewCell.swift; sourceTree = "<group>"; };
+		13375C02235F106100F6CC0D /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		13375C04235F115300F6CC0D /* HomeCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		13375C06235F117300F6CC0D /* HomeCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		13375C0A235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewCellViewModel.swift; sourceTree = "<group>"; };
+		13375C0D235F19CD00F6CC0D /* GoodsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsModel.swift; sourceTree = "<group>"; };
+		24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.debug.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.debug.xcconfig"; sourceTree = "<group>"; };
+		586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arioir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.release.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C48CA5B31BEB450323462DC /* Pods_Arioir.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +101,8 @@
 			children = (
 				13375BB6235F0A6700F6CC0D /* Arioir */,
 				13375BB5235F0A6700F6CC0D /* Products */,
+				D4337FEDCE85B552DE298340 /* Pods */,
+				579C4987B9DF7B31F93676DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +119,145 @@
 			children = (
 				13375BB7235F0A6700F6CC0D /* AppDelegate.swift */,
 				13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */,
-				13375BBB235F0A6700F6CC0D /* ViewController.swift */,
+				13375BD9235F0B1A00F6CC0D /* Library */,
+				13375BDC235F0B3500F6CC0D /* Services */,
+				13375BD8235F0B0F00F6CC0D /* Screens */,
+				13375BCB235F0A8A00F6CC0D /* Helpers */,
 				13375BBD235F0A6700F6CC0D /* Main.storyboard */,
 				13375BC0235F0A6900F6CC0D /* Assets.xcassets */,
 				13375BC2235F0A6900F6CC0D /* LaunchScreen.storyboard */,
 				13375BC5235F0A6900F6CC0D /* Info.plist */,
 			);
 			path = Arioir;
+			sourceTree = "<group>";
+		};
+		13375BCB235F0A8A00F6CC0D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				13375BCC235F0A9B00F6CC0D /* Constants.swift */,
+				13375BCE235F0AAC00F6CC0D /* Constraints.swift */,
+				13375BD0235F0ABC00F6CC0D /* UIButton + Custom.swift */,
+				13375BD2235F0AD000F6CC0D /* UIColor + random.swift */,
+				13375BD4235F0AE500F6CC0D /* WebImageView.swift */,
+				13375BD6235F0AF600F6CC0D /* UITableView + ReloadData.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		13375BD8235F0B0F00F6CC0D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				13375BF1235F0CE400F6CC0D /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		13375BD9235F0B1A00F6CC0D /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				13375BDA235F0B2A00F6CC0D /* StoryboardInitializable.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		13375BDC235F0B3500F6CC0D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				13375BE9235F0C6800F6CC0D /* Realm */,
+				13375BDD235F0B5200F6CC0D /* Encoding */,
+				13375BEA235F0C6F00F6CC0D /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		13375BDD235F0B5200F6CC0D /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				13375BDE235F0B6300F6CC0D /* DynamicNodeEncoding.swift */,
+				13375BE1235F0B8A00F6CC0D /* DemmoksiCatalogModel.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		13375BE9235F0C6800F6CC0D /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				13375BEB235F0C9B00F6CC0D /* StorageManager.swift */,
+				13375BEF235F0CBF00F6CC0D /* BasketItemModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		13375BEA235F0C6F00F6CC0D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				13375BE3235F0B9F00F6CC0D /* NetworkService.swift */,
+				13375BE5235F0BB500F6CC0D /* NetworkDataFetcher.swift */,
+				13375BE7235F0BC700F6CC0D /* DataFetcherService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		13375BF1235F0CE400F6CC0D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				13375BF3235F0CF200F6CC0D /* Model */,
+				13375BF2235F0CEA00F6CC0D /* View */,
+				13375BF4235F0CF800F6CC0D /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		13375BF2235F0CEA00F6CC0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13375BF5235F0D4300F6CC0D /* HomeViewController.swift */,
+				13375BFE235F102900F6CC0D /* HomeCollectionView.swift */,
+				13375C02235F106100F6CC0D /* HomeCollectionViewCell.swift */,
+				13375C00235F105700F6CC0D /* HomeHeaderViewCell.swift */,
+				13004923235F2D4E006DA2C9 /* ProjectsCollectionView.swift */,
+				13004921235F2D3B006DA2C9 /* ProjectsCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13375BF3235F0CF200F6CC0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13375C0D235F19CD00F6CC0D /* GoodsModel.swift */,
+				13004926235F2DD5006DA2C9 /* Project.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13375BF4235F0CF800F6CC0D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				13375BFC235F0E8D00F6CC0D /* HomeViewModel.swift */,
+				13375C04235F115300F6CC0D /* HomeCollectionViewViewModel.swift */,
+				13375C06235F117300F6CC0D /* HomeCollectionViewCellViewModel.swift */,
+				13375C0A235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift */,
+				13004928235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift */,
+				1300492A235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		579C4987B9DF7B31F93676DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4337FEDCE85B552DE298340 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */,
+				AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +267,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13375BC8235F0A6900F6CC0D /* Build configuration list for PBXNativeTarget "Arioir" */;
 			buildPhases = (
+				A32E72F5FE67B3097E6E2BED /* [CP] Check Pods Manifest.lock */,
 				13375BB0235F0A6700F6CC0D /* Sources */,
 				13375BB1235F0A6700F6CC0D /* Frameworks */,
 				13375BB2235F0A6700F6CC0D /* Resources */,
+				66243FF60DAE832099DE5310 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +328,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		66243FF60DAE832099DE5310 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Arioir/Pods-Arioir-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Arioir/Pods-Arioir-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Arioir/Pods-Arioir-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A32E72F5FE67B3097E6E2BED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Arioir-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		13375BB0235F0A6700F6CC0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13375BBC235F0A6700F6CC0D /* ViewController.swift in Sources */,
+				13375BE6235F0BB500F6CC0D /* NetworkDataFetcher.swift in Sources */,
+				13375BF6235F0D4300F6CC0D /* HomeViewController.swift in Sources */,
+				13004922235F2D3B006DA2C9 /* ProjectsCollectionViewCell.swift in Sources */,
+				13375BFD235F0E8D00F6CC0D /* HomeViewModel.swift in Sources */,
+				13375BD5235F0AE500F6CC0D /* WebImageView.swift in Sources */,
+				13375C0E235F19CD00F6CC0D /* GoodsModel.swift in Sources */,
+				13375C07235F117300F6CC0D /* HomeCollectionViewCellViewModel.swift in Sources */,
 				13375BB8235F0A6700F6CC0D /* AppDelegate.swift in Sources */,
+				13375BD3235F0AD000F6CC0D /* UIColor + random.swift in Sources */,
+				13375BE8235F0BC700F6CC0D /* DataFetcherService.swift in Sources */,
+				13375BDF235F0B6300F6CC0D /* DynamicNodeEncoding.swift in Sources */,
+				13375BD1235F0ABC00F6CC0D /* UIButton + Custom.swift in Sources */,
+				13375BE2235F0B8A00F6CC0D /* DemmoksiCatalogModel.swift in Sources */,
+				13375BCF235F0AAC00F6CC0D /* Constraints.swift in Sources */,
+				13375BDB235F0B2A00F6CC0D /* StoryboardInitializable.swift in Sources */,
+				1300492B235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift in Sources */,
+				13375BF0235F0CBF00F6CC0D /* BasketItemModel.swift in Sources */,
 				13375BBA235F0A6700F6CC0D /* SceneDelegate.swift in Sources */,
+				13375BD7235F0AF600F6CC0D /* UITableView + ReloadData.swift in Sources */,
+				13375BE4235F0B9F00F6CC0D /* NetworkService.swift in Sources */,
+				13004927235F2DD5006DA2C9 /* Project.swift in Sources */,
+				13004924235F2D4E006DA2C9 /* ProjectsCollectionView.swift in Sources */,
+				13375C03235F106100F6CC0D /* HomeCollectionViewCell.swift in Sources */,
+				13375BCD235F0A9B00F6CC0D /* Constants.swift in Sources */,
+				13375C01235F105700F6CC0D /* HomeHeaderViewCell.swift in Sources */,
+				13375C0B235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift in Sources */,
+				13375BEC235F0C9B00F6CC0D /* StorageManager.swift in Sources */,
+				13375C05235F115300F6CC0D /* HomeCollectionViewViewModel.swift in Sources */,
+				13004929235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift in Sources */,
+				13375BFF235F102900F6CC0D /* HomeCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +546,7 @@
 		};
 		13375BC9235F0A6900F6CC0D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +565,7 @@
 		};
 		13375BCA235F0A6900F6CC0D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
