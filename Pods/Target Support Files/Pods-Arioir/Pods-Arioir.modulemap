@@ -1,0 +1,6 @@
+framework module Pods_Arioir {
+  umbrella header "Pods-Arioir-umbrella.h"
+
+  export *
+  module * { export * }
+}

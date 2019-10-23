@@ -1,0 +1,30 @@
+PODS:
+  - Realm (3.19.0):
+    - Realm/Headers (= 3.19.0)
+  - Realm/Headers (3.19.0)
+  - RealmSwift (3.19.0):
+    - Realm (= 3.19.0)
+  - SkeletonView (1.8.2)
+  - XMLCoder (0.8.0)
+
+DEPENDENCIES:
+  - RealmSwift
+  - SkeletonView
+  - XMLCoder
+
+SPEC REPOS:
+  trunk:
+    - Realm
+    - RealmSwift
+    - SkeletonView
+    - XMLCoder
+
+SPEC CHECKSUMS:
+  Realm: 995d585bcf699aaff226715886c849a29dd3d07f
+  RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
+  SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
+  XMLCoder: fd2998fcc6195f613e570597d18d789b95a19297
+
+PODFILE CHECKSUM: d37de8db451577869ab04ff24cdb41cab10f7a15
+
+COCOAPODS: 1.8.3
