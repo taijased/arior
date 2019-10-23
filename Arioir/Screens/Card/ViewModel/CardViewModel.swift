@@ -45,17 +45,14 @@ class CardViewModel: CardViewModelType {
 
 extension CardViewModel: CardVCBottomControlsDelegate {
     func openAR() {
-        print(#function)
         self.onNavigation?(CardModel.openAR)
     }
 
     func toOrder() {
-        print(#function)
         self.onNavigation?(CardModel.dismiss)
     }
 
     func addProject() {
-        print(#function)
         self.onNavigation?(CardModel.dismiss)
     }
 }

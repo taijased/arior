@@ -20,7 +20,7 @@ class HomeBottomControls: UIView {
     weak var delegate: HomeBottomControlsDelegate?
     
     let filterButton: UIButton = {
-        var button = UIButton.getCustomtButton(imageName: "filter")
+        var button = UIButton.getCustomButton(imageName: "filter")
         button.addTarget(self, action: #selector(filterTapped), for: .touchUpInside)
         button.backgroundColor = primaryColor
         return button

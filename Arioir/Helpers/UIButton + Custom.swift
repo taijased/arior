@@ -12,7 +12,7 @@ import UIKit
 
 // MARK: extension default setting for button
 extension UIButton {
-    static func getCustomtButton(imageName: String) -> UIButton {
+    static func getCustomButton(imageName: String) -> UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: imageName), for: .normal)
@@ -26,7 +26,7 @@ extension UIButton {
         return button
     }
     
-    static func getCustomtButton(label: String) -> UIButton {
+    static func getCustomButton(label: String) -> UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = UIColor(hexValue: "#E27F5D", alpha: 1)
@@ -41,6 +41,21 @@ extension UIButton {
         button.titleLabel!.font = UIFont(name: "TTNorms-Medium", size: 14)
         return button
     }
+    
+    static func getCustomButton(imageName: String, colorHex: String, cornerRadius: CGFloat) -> UIButton {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: imageName), for: .normal)
+        button.backgroundColor = UIColor(hexValue: colorHex, alpha: 1)
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        button.layer.shadowRadius = 1.0
+        button.layer.shadowOpacity = 0.5
+        button.layer.cornerRadius = cornerRadius
+        button.layer.masksToBounds = false
+        return button
+    }
+
 }
 
 

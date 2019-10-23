@@ -20,14 +20,14 @@ class CardVCBottomControls: UIView {
     weak var delegate: CardVCBottomControlsDelegate?
     
     let arButton: UIButton = {
-        var button = UIButton.getCustomtButton(imageName: "shape")
+        var button = UIButton.getCustomButton(imageName: "shape")
         button.addTarget(self, action: #selector(arButtonTapped), for: .touchUpInside)
         button.backgroundColor = .white
         return button
     }()
     
     let addProjectButton: UIButton = {
-        var button = UIButton.getCustomtButton(imageName: "plus-yellow")
+        var button = UIButton.getCustomButton(imageName: "plus-yellow")
         button.addTarget(self, action: #selector(addProjectButtonTapped), for: .touchUpInside)
         button.backgroundColor = .white
         button.tintColor = .random()
@@ -35,7 +35,7 @@ class CardVCBottomControls: UIView {
     }()
     
     let toOrderButton: UIButton = {
-        let button = UIButton.getCustomtButton(label: "Добавить в корзину")
+        let button = UIButton.getCustomButton(label: "Добавить в корзину")
         button.addTarget(self, action: #selector(toOrderButtonTapped), for: .touchUpInside)
         button.backgroundColor = primaryColor
         return button

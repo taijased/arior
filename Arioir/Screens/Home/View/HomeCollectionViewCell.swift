@@ -15,6 +15,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     static let reuseId = "HomeCollectionViewCell"
     
+    private var gradientLayer: CAGradientLayer?
+    
+    
     weak var viewModel: HomeCollectionViewCellViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
@@ -58,6 +61,15 @@ class HomeCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    let viewGradientMask: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -72,6 +84,24 @@ class HomeCollectionViewCell: UICollectionViewCell {
         myImageView.fillSuperview()
         
         
+        // second layer
+        myImageView.addSubview(viewGradientMask)
+        viewGradientMask.bottomAnchor.constraint(equalTo: myImageView.bottomAnchor).isActive = true
+        viewGradientMask.leadingAnchor.constraint(equalTo: myImageView.leadingAnchor).isActive = true
+        viewGradientMask.trailingAnchor.constraint(equalTo: myImageView.trailingAnchor).isActive = true
+        viewGradientMask.heightAnchor.constraint(equalToConstant: 42).isActive = true
+        // thrid layer
+        
+        // add gradient
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor,
+                                UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor]
+        
+        gradientLayer.locations = [0.0, 0.3]
+        gradientLayer.frame = bounds
+        viewGradientMask.layer.insertSublayer(gradientLayer, at: 0)
+        
+    
         addSubview(label)
         label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 30).isActive = true
         label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true

@@ -62,6 +62,9 @@ class HomeViewController: UIViewController, StoryboardInitializable {
 extension HomeViewController: HomeCollectionViewDelegate {
     func selectProject(project: Project) {
         print(project)
+        let viewController = ARViewController()
+        viewController.modalPresentationStyle = .fullScreen 
+        self.present(viewController, animated: true, completion: nil)
         
     }
 

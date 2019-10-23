@@ -33,12 +33,7 @@ class CardViewController: UIViewController {
         
         guard let viewModel = viewModel else { return }
         
-        view.addSubview(viewModel.cardVCBottomControls)
-        viewModel.cardVCBottomControls.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        viewModel.cardVCBottomControls.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        viewModel.cardVCBottomControls.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42).isActive = true
-        viewModel.cardVCBottomControls.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
-        
+       
         view.addSubview(cardView)
         cardView.fillSuperview()
         
@@ -48,6 +43,13 @@ class CardViewController: UIViewController {
         viewModel.cardTableView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor).isActive = true
         viewModel.cardTableView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor).isActive = true
         viewModel.cardTableView.topAnchor.constraint(equalTo: cardView.topAnchor).isActive = true
+        
+        view.addSubview(viewModel.cardVCBottomControls)
+        viewModel.cardVCBottomControls.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        viewModel.cardVCBottomControls.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        viewModel.cardVCBottomControls.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42).isActive = true
+        viewModel.cardVCBottomControls.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+               
         
     }
     

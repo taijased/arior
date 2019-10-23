@@ -52,6 +52,54 @@
 		1350C1EE23607377005030E7 /* CardTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1ED23607377005030E7 /* CardTableViewViewModel.swift */; };
 		1350C1F0236075E1005030E7 /* CardTableHeaderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1EF236075E1005030E7 /* CardTableHeaderCellViewModel.swift */; };
 		1350C1F223607603005030E7 /* CardTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1F123607603005030E7 /* CardTableViewCellViewModel.swift */; };
+		1350C1F42360943E005030E7 /* UserCoaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1F32360943E005030E7 /* UserCoaching.swift */; };
+		1350C22C236094A1005030E7 /* ARPreviewFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1F9236094A1005030E7 /* ARPreviewFacade.swift */; };
+		1350C22D236094A1005030E7 /* ARPreviewFacade+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1FA236094A1005030E7 /* ARPreviewFacade+ARSessionDelegate.swift */; };
+		1350C22E236094A1005030E7 /* ARPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1FB236094A1005030E7 /* ARPreviewViewModel.swift */; };
+		1350C22F236094A1005030E7 /* ARPreviewFacade+ARCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1FC236094A1005030E7 /* ARPreviewFacade+ARCNViewDelegate.swift */; };
+		1350C230236094A1005030E7 /* ARPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1FD236094A1005030E7 /* ARPreviewViewController.swift */; };
+		1350C231236094A1005030E7 /* ARSCNView+nodeAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1FF236094A1005030E7 /* ARSCNView+nodeAt.swift */; };
+		1350C232236094A1005030E7 /* ARInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C200236094A1005030E7 /* ARInteraction.swift */; };
+		1350C233236094A1005030E7 /* VirtualObjectInteractionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C201236094A1005030E7 /* VirtualObjectInteractionProtocol.swift */; };
+		1350C234236094A1005030E7 /* ARInteractionsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C202236094A1005030E7 /* ARInteractionsProtocol.swift */; };
+		1350C235236094A1005030E7 /* UIGestureRecognizer+center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C203236094A1005030E7 /* UIGestureRecognizer+center.swift */; };
+		1350C236236094A1005030E7 /* DirectingLinesProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C205236094A1005030E7 /* DirectingLinesProcessor.swift */; };
+		1350C237236094A1005030E7 /* PointerPositionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C206236094A1005030E7 /* PointerPositionProcessor.swift */; };
+		1350C238236094A1005030E7 /* AreaLabelsProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C207236094A1005030E7 /* AreaLabelsProcessor.swift */; };
+		1350C239236094A1005030E7 /* PlaneDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C208236094A1005030E7 /* PlaneDetector.swift */; };
+		1350C23A236094A1005030E7 /* Raycaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C209236094A1005030E7 /* Raycaster.swift */; };
+		1350C23B236094A1005030E7 /* LengthLabelsProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C20A236094A1005030E7 /* LengthLabelsProcessor.swift */; };
+		1350C23C236094A1005030E7 /* ConnectingLinesProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C20B236094A1005030E7 /* ConnectingLinesProcessor.swift */; };
+		1350C23D236094A1005030E7 /* PointersProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C20C236094A1005030E7 /* PointersProcessor.swift */; };
+		1350C23E236094A1005030E7 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C20E236094A1005030E7 /* Math.swift */; };
+		1350C23F236094A1005030E7 /* ARSCNView+addToSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C20F236094A1005030E7 /* ARSCNView+addToSceneView.swift */; };
+		1350C240236094A1005030E7 /* LineParametricEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C210236094A1005030E7 /* LineParametricEquation.swift */; };
+		1350C241236094A1005030E7 /* ConnectionLineConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C211236094A1005030E7 /* ConnectionLineConfigs.swift */; };
+		1350C242236094A1005030E7 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C212236094A1005030E7 /* Time.swift */; };
+		1350C243236094A1005030E7 /* DirectingLineConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C213236094A1005030E7 /* DirectingLineConfig.swift */; };
+		1350C244236094A1005030E7 /* SCNode+changeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C214236094A1005030E7 /* SCNode+changeColor.swift */; };
+		1350C245236094A1005030E7 /* NodeTechnique.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1350C215236094A1005030E7 /* NodeTechnique.plist */; };
+		1350C246236094A1005030E7 /* ARUtilis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C216236094A1005030E7 /* ARUtilis.swift */; };
+		1350C247236094A1005030E7 /* WallSigmentConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C217236094A1005030E7 /* WallSigmentConfigs.swift */; };
+		1350C248236094A1005030E7 /* SCNNode+glowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C218236094A1005030E7 /* SCNNode+glowing.swift */; };
+		1350C249236094A1005030E7 /* NodeRender.metal in Sources */ = {isa = PBXBuildFile; fileRef = 1350C219236094A1005030E7 /* NodeRender.metal */; };
+		1350C24A236094A1005030E7 /* WallBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C21B236094A1005030E7 /* WallBuilder.swift */; };
+		1350C24B236094A1005030E7 /* Pointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C21C236094A1005030E7 /* Pointer.swift */; };
+		1350C24C236094A1005030E7 /* WallPapersPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C21D236094A1005030E7 /* WallPapersPreview.swift */; };
+		1350C24D236094A1005030E7 /* WallPaperPreviewPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C21E236094A1005030E7 /* WallPaperPreviewPointer.swift */; };
+		1350C24E236094A1005030E7 /* WallSgment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C21F236094A1005030E7 /* WallSgment.swift */; };
+		1350C24F236094A1005030E7 /* DirectingLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C220236094A1005030E7 /* DirectingLine.swift */; };
+		1350C250236094A1005030E7 /* ConnectingLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C221236094A1005030E7 /* ConnectingLine.swift */; };
+		1350C251236094A1005030E7 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C222236094A1005030E7 /* VirtualObject.swift */; };
+		1350C252236094A1005030E7 /* ViewModelUpdateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C224236094A1005030E7 /* ViewModelUpdateProtocol.swift */; };
+		1350C253236094A1005030E7 /* ARViewController+ARViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C225236094A1005030E7 /* ARViewController+ARViewModelProtocol.swift */; };
+		1350C254236094A1005030E7 /* ARFacadeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C226236094A1005030E7 /* ARFacadeProtocol.swift */; };
+		1350C255236094A1005030E7 /* ARFacade+ARSceneSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C227236094A1005030E7 /* ARFacade+ARSceneSessionDelegate.swift */; };
+		1350C256236094A1005030E7 /* ARFacade+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C228236094A1005030E7 /* ARFacade+ARSCNViewDelegate.swift */; };
+		1350C257236094A1005030E7 /* ARFaced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C229236094A1005030E7 /* ARFaced.swift */; };
+		1350C258236094A1005030E7 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C22A236094A1005030E7 /* ARViewController.swift */; };
+		1350C259236094A1005030E7 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C22B236094A1005030E7 /* ARViewModel.swift */; };
+		1350C25B2360973C005030E7 /* ScnAssets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 1350C25A2360973C005030E7 /* ScnAssets.scnassets */; };
 		4C48CA5B31BEB450323462DC /* Pods_Arioir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +151,54 @@
 		1350C1ED23607377005030E7 /* CardTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewViewModel.swift; sourceTree = "<group>"; };
 		1350C1EF236075E1005030E7 /* CardTableHeaderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableHeaderCellViewModel.swift; sourceTree = "<group>"; };
 		1350C1F123607603005030E7 /* CardTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		1350C1F32360943E005030E7 /* UserCoaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoaching.swift; sourceTree = "<group>"; };
+		1350C1F9236094A1005030E7 /* ARPreviewFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARPreviewFacade.swift; sourceTree = "<group>"; };
+		1350C1FA236094A1005030E7 /* ARPreviewFacade+ARSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ARPreviewFacade+ARSessionDelegate.swift"; sourceTree = "<group>"; };
+		1350C1FB236094A1005030E7 /* ARPreviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARPreviewViewModel.swift; sourceTree = "<group>"; };
+		1350C1FC236094A1005030E7 /* ARPreviewFacade+ARCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ARPreviewFacade+ARCNViewDelegate.swift"; sourceTree = "<group>"; };
+		1350C1FD236094A1005030E7 /* ARPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARPreviewViewController.swift; sourceTree = "<group>"; };
+		1350C1FF236094A1005030E7 /* ARSCNView+nodeAt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ARSCNView+nodeAt.swift"; sourceTree = "<group>"; };
+		1350C200236094A1005030E7 /* ARInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARInteraction.swift; sourceTree = "<group>"; };
+		1350C201236094A1005030E7 /* VirtualObjectInteractionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteractionProtocol.swift; sourceTree = "<group>"; };
+		1350C202236094A1005030E7 /* ARInteractionsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARInteractionsProtocol.swift; sourceTree = "<group>"; };
+		1350C203236094A1005030E7 /* UIGestureRecognizer+center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+center.swift"; sourceTree = "<group>"; };
+		1350C205236094A1005030E7 /* DirectingLinesProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectingLinesProcessor.swift; sourceTree = "<group>"; };
+		1350C206236094A1005030E7 /* PointerPositionProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerPositionProcessor.swift; sourceTree = "<group>"; };
+		1350C207236094A1005030E7 /* AreaLabelsProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaLabelsProcessor.swift; sourceTree = "<group>"; };
+		1350C208236094A1005030E7 /* PlaneDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaneDetector.swift; sourceTree = "<group>"; };
+		1350C209236094A1005030E7 /* Raycaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Raycaster.swift; sourceTree = "<group>"; };
+		1350C20A236094A1005030E7 /* LengthLabelsProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LengthLabelsProcessor.swift; sourceTree = "<group>"; };
+		1350C20B236094A1005030E7 /* ConnectingLinesProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectingLinesProcessor.swift; sourceTree = "<group>"; };
+		1350C20C236094A1005030E7 /* PointersProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointersProcessor.swift; sourceTree = "<group>"; };
+		1350C20E236094A1005030E7 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		1350C20F236094A1005030E7 /* ARSCNView+addToSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ARSCNView+addToSceneView.swift"; sourceTree = "<group>"; };
+		1350C210236094A1005030E7 /* LineParametricEquation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineParametricEquation.swift; sourceTree = "<group>"; };
+		1350C211236094A1005030E7 /* ConnectionLineConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionLineConfigs.swift; sourceTree = "<group>"; };
+		1350C212236094A1005030E7 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		1350C213236094A1005030E7 /* DirectingLineConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectingLineConfig.swift; sourceTree = "<group>"; };
+		1350C214236094A1005030E7 /* SCNode+changeColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNode+changeColor.swift"; sourceTree = "<group>"; };
+		1350C215236094A1005030E7 /* NodeTechnique.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NodeTechnique.plist; sourceTree = "<group>"; };
+		1350C216236094A1005030E7 /* ARUtilis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARUtilis.swift; sourceTree = "<group>"; };
+		1350C217236094A1005030E7 /* WallSigmentConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallSigmentConfigs.swift; sourceTree = "<group>"; };
+		1350C218236094A1005030E7 /* SCNNode+glowing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNNode+glowing.swift"; sourceTree = "<group>"; };
+		1350C219236094A1005030E7 /* NodeRender.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = NodeRender.metal; sourceTree = "<group>"; };
+		1350C21B236094A1005030E7 /* WallBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallBuilder.swift; sourceTree = "<group>"; };
+		1350C21C236094A1005030E7 /* Pointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pointer.swift; sourceTree = "<group>"; };
+		1350C21D236094A1005030E7 /* WallPapersPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPapersPreview.swift; sourceTree = "<group>"; };
+		1350C21E236094A1005030E7 /* WallPaperPreviewPointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPaperPreviewPointer.swift; sourceTree = "<group>"; };
+		1350C21F236094A1005030E7 /* WallSgment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallSgment.swift; sourceTree = "<group>"; };
+		1350C220236094A1005030E7 /* DirectingLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectingLine.swift; sourceTree = "<group>"; };
+		1350C221236094A1005030E7 /* ConnectingLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectingLine.swift; sourceTree = "<group>"; };
+		1350C222236094A1005030E7 /* VirtualObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
+		1350C224236094A1005030E7 /* ViewModelUpdateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelUpdateProtocol.swift; sourceTree = "<group>"; };
+		1350C225236094A1005030E7 /* ARViewController+ARViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARViewModelProtocol.swift"; sourceTree = "<group>"; };
+		1350C226236094A1005030E7 /* ARFacadeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARFacadeProtocol.swift; sourceTree = "<group>"; };
+		1350C227236094A1005030E7 /* ARFacade+ARSceneSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ARFacade+ARSceneSessionDelegate.swift"; sourceTree = "<group>"; };
+		1350C228236094A1005030E7 /* ARFacade+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ARFacade+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		1350C229236094A1005030E7 /* ARFaced.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARFaced.swift; sourceTree = "<group>"; };
+		1350C22A236094A1005030E7 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		1350C22B236094A1005030E7 /* ARViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
+		1350C25A2360973C005030E7 /* ScnAssets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = ScnAssets.scnassets; sourceTree = "<group>"; };
 		24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.debug.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.debug.xcconfig"; sourceTree = "<group>"; };
 		586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arioir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.release.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,9 +251,11 @@
 				1300492E235F42AB006DA2C9 /* ControlsViews */,
 				13375BDC235F0B3500F6CC0D /* Services */,
 				13375BD8235F0B0F00F6CC0D /* Screens */,
+				1350C1F7236094A1005030E7 /* AR */,
 				13375BCB235F0A8A00F6CC0D /* Helpers */,
 				13375BBD235F0A6700F6CC0D /* Main.storyboard */,
 				13375BC0235F0A6900F6CC0D /* Assets.xcassets */,
+				1350C25A2360973C005030E7 /* ScnAssets.scnassets */,
 				13375BC2235F0A6900F6CC0D /* LaunchScreen.storyboard */,
 				13375BC5235F0A6900F6CC0D /* Info.plist */,
 			);
@@ -173,6 +271,7 @@
 				13375BD2235F0AD000F6CC0D /* UIColor + random.swift */,
 				13375BD4235F0AE500F6CC0D /* WebImageView.swift */,
 				13375BD6235F0AF600F6CC0D /* UITableView + ReloadData.swift */,
+				1350C1F32360943E005030E7 /* UserCoaching.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -319,6 +418,107 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1350C1F7236094A1005030E7 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				1350C1F8236094A1005030E7 /* ARPreview */,
+				1350C1FE236094A1005030E7 /* ARInteractions */,
+				1350C204236094A1005030E7 /* Components */,
+				1350C20D236094A1005030E7 /* Helpers */,
+				1350C21A236094A1005030E7 /* Entities */,
+				1350C223236094A1005030E7 /* ARView */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		1350C1F8236094A1005030E7 /* ARPreview */ = {
+			isa = PBXGroup;
+			children = (
+				1350C1F9236094A1005030E7 /* ARPreviewFacade.swift */,
+				1350C1FA236094A1005030E7 /* ARPreviewFacade+ARSessionDelegate.swift */,
+				1350C1FB236094A1005030E7 /* ARPreviewViewModel.swift */,
+				1350C1FC236094A1005030E7 /* ARPreviewFacade+ARCNViewDelegate.swift */,
+				1350C1FD236094A1005030E7 /* ARPreviewViewController.swift */,
+			);
+			path = ARPreview;
+			sourceTree = "<group>";
+		};
+		1350C1FE236094A1005030E7 /* ARInteractions */ = {
+			isa = PBXGroup;
+			children = (
+				1350C1FF236094A1005030E7 /* ARSCNView+nodeAt.swift */,
+				1350C200236094A1005030E7 /* ARInteraction.swift */,
+				1350C201236094A1005030E7 /* VirtualObjectInteractionProtocol.swift */,
+				1350C202236094A1005030E7 /* ARInteractionsProtocol.swift */,
+				1350C203236094A1005030E7 /* UIGestureRecognizer+center.swift */,
+			);
+			path = ARInteractions;
+			sourceTree = "<group>";
+		};
+		1350C204236094A1005030E7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1350C205236094A1005030E7 /* DirectingLinesProcessor.swift */,
+				1350C206236094A1005030E7 /* PointerPositionProcessor.swift */,
+				1350C207236094A1005030E7 /* AreaLabelsProcessor.swift */,
+				1350C208236094A1005030E7 /* PlaneDetector.swift */,
+				1350C209236094A1005030E7 /* Raycaster.swift */,
+				1350C20A236094A1005030E7 /* LengthLabelsProcessor.swift */,
+				1350C20B236094A1005030E7 /* ConnectingLinesProcessor.swift */,
+				1350C20C236094A1005030E7 /* PointersProcessor.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1350C20D236094A1005030E7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1350C20E236094A1005030E7 /* Math.swift */,
+				1350C20F236094A1005030E7 /* ARSCNView+addToSceneView.swift */,
+				1350C210236094A1005030E7 /* LineParametricEquation.swift */,
+				1350C211236094A1005030E7 /* ConnectionLineConfigs.swift */,
+				1350C212236094A1005030E7 /* Time.swift */,
+				1350C213236094A1005030E7 /* DirectingLineConfig.swift */,
+				1350C214236094A1005030E7 /* SCNode+changeColor.swift */,
+				1350C215236094A1005030E7 /* NodeTechnique.plist */,
+				1350C216236094A1005030E7 /* ARUtilis.swift */,
+				1350C217236094A1005030E7 /* WallSigmentConfigs.swift */,
+				1350C218236094A1005030E7 /* SCNNode+glowing.swift */,
+				1350C219236094A1005030E7 /* NodeRender.metal */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1350C21A236094A1005030E7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				1350C21B236094A1005030E7 /* WallBuilder.swift */,
+				1350C21C236094A1005030E7 /* Pointer.swift */,
+				1350C21D236094A1005030E7 /* WallPapersPreview.swift */,
+				1350C21E236094A1005030E7 /* WallPaperPreviewPointer.swift */,
+				1350C21F236094A1005030E7 /* WallSgment.swift */,
+				1350C220236094A1005030E7 /* DirectingLine.swift */,
+				1350C221236094A1005030E7 /* ConnectingLine.swift */,
+				1350C222236094A1005030E7 /* VirtualObject.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		1350C223236094A1005030E7 /* ARView */ = {
+			isa = PBXGroup;
+			children = (
+				1350C224236094A1005030E7 /* ViewModelUpdateProtocol.swift */,
+				1350C225236094A1005030E7 /* ARViewController+ARViewModelProtocol.swift */,
+				1350C226236094A1005030E7 /* ARFacadeProtocol.swift */,
+				1350C227236094A1005030E7 /* ARFacade+ARSceneSessionDelegate.swift */,
+				1350C228236094A1005030E7 /* ARFacade+ARSCNViewDelegate.swift */,
+				1350C229236094A1005030E7 /* ARFaced.swift */,
+				1350C22A236094A1005030E7 /* ARViewController.swift */,
+				1350C22B236094A1005030E7 /* ARViewModel.swift */,
+			);
+			path = ARView;
+			sourceTree = "<group>";
+		};
 		579C4987B9DF7B31F93676DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,7 +596,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1350C25B2360973C005030E7 /* ScnAssets.scnassets in Resources */,
 				13375BC4235F0A6900F6CC0D /* LaunchScreen.storyboard in Resources */,
+				1350C245236094A1005030E7 /* NodeTechnique.plist in Resources */,
 				13375BC1235F0A6900F6CC0D /* Assets.xcassets in Resources */,
 				13375BBF235F0A6700F6CC0D /* Main.storyboard in Resources */,
 			);
@@ -452,40 +654,82 @@
 			buildActionMask = 2147483647;
 			files = (
 				13375BE6235F0BB500F6CC0D /* NetworkDataFetcher.swift in Sources */,
+				1350C24C236094A1005030E7 /* WallPapersPreview.swift in Sources */,
+				1350C23E236094A1005030E7 /* Math.swift in Sources */,
+				1350C254236094A1005030E7 /* ARFacadeProtocol.swift in Sources */,
+				1350C256236094A1005030E7 /* ARFacade+ARSCNViewDelegate.swift in Sources */,
 				13375BF6235F0D4300F6CC0D /* HomeViewController.swift in Sources */,
+				1350C257236094A1005030E7 /* ARFaced.swift in Sources */,
+				1350C239236094A1005030E7 /* PlaneDetector.swift in Sources */,
 				13004922235F2D3B006DA2C9 /* ProjectsCollectionViewCell.swift in Sources */,
+				1350C23C236094A1005030E7 /* ConnectingLinesProcessor.swift in Sources */,
 				13375BFD235F0E8D00F6CC0D /* HomeViewModel.swift in Sources */,
 				1350C1E123606854005030E7 /* CardViewModel.swift in Sources */,
 				1350C1E923606944005030E7 /* CardTableViewCell.swift in Sources */,
+				1350C23F236094A1005030E7 /* ARSCNView+addToSceneView.swift in Sources */,
+				1350C24D236094A1005030E7 /* WallPaperPreviewPointer.swift in Sources */,
 				13375BD5235F0AE500F6CC0D /* WebImageView.swift in Sources */,
+				1350C241236094A1005030E7 /* ConnectionLineConfigs.swift in Sources */,
 				1350C1E72360692F005030E7 /* CardTableHeaderCell.swift in Sources */,
+				1350C238236094A1005030E7 /* AreaLabelsProcessor.swift in Sources */,
+				1350C24E236094A1005030E7 /* WallSgment.swift in Sources */,
+				1350C240236094A1005030E7 /* LineParametricEquation.swift in Sources */,
+				1350C252236094A1005030E7 /* ViewModelUpdateProtocol.swift in Sources */,
+				1350C235236094A1005030E7 /* UIGestureRecognizer+center.swift in Sources */,
+				1350C24F236094A1005030E7 /* DirectingLine.swift in Sources */,
 				13375C0E235F19CD00F6CC0D /* GoodsModel.swift in Sources */,
+				1350C231236094A1005030E7 /* ARSCNView+nodeAt.swift in Sources */,
+				1350C1F42360943E005030E7 /* UserCoaching.swift in Sources */,
 				1350C1E523606912005030E7 /* CardTableView.swift in Sources */,
 				1350C1EC23606EA5005030E7 /* CardModels.swift in Sources */,
 				13375C07235F117300F6CC0D /* HomeCollectionViewCellViewModel.swift in Sources */,
 				13375BB8235F0A6700F6CC0D /* AppDelegate.swift in Sources */,
+				1350C244236094A1005030E7 /* SCNode+changeColor.swift in Sources */,
+				1350C253236094A1005030E7 /* ARViewController+ARViewModelProtocol.swift in Sources */,
+				1350C233236094A1005030E7 /* VirtualObjectInteractionProtocol.swift in Sources */,
+				1350C24B236094A1005030E7 /* Pointer.swift in Sources */,
+				1350C242236094A1005030E7 /* Time.swift in Sources */,
 				1350C1DF23606785005030E7 /* CardViewController.swift in Sources */,
 				13375BD3235F0AD000F6CC0D /* UIColor + random.swift in Sources */,
+				1350C250236094A1005030E7 /* ConnectingLine.swift in Sources */,
 				13375BE8235F0BC700F6CC0D /* DataFetcherService.swift in Sources */,
+				1350C22F236094A1005030E7 /* ARPreviewFacade+ARCNViewDelegate.swift in Sources */,
 				1350C1EE23607377005030E7 /* CardTableViewViewModel.swift in Sources */,
 				13375BDF235F0B6300F6CC0D /* DynamicNodeEncoding.swift in Sources */,
 				13375BD1235F0ABC00F6CC0D /* UIButton + Custom.swift in Sources */,
 				13375BE2235F0B8A00F6CC0D /* DemmoksiCatalogModel.swift in Sources */,
 				13375BCF235F0AAC00F6CC0D /* Constraints.swift in Sources */,
+				1350C22E236094A1005030E7 /* ARPreviewViewModel.swift in Sources */,
+				1350C237236094A1005030E7 /* PointerPositionProcessor.swift in Sources */,
 				1350C1F0236075E1005030E7 /* CardTableHeaderCellViewModel.swift in Sources */,
 				1350C1F223607603005030E7 /* CardTableViewCellViewModel.swift in Sources */,
 				13375BDB235F0B2A00F6CC0D /* StoryboardInitializable.swift in Sources */,
 				1300492B235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift in Sources */,
+				1350C255236094A1005030E7 /* ARFacade+ARSceneSessionDelegate.swift in Sources */,
+				1350C230236094A1005030E7 /* ARPreviewViewController.swift in Sources */,
 				13375BF0235F0CBF00F6CC0D /* BasketItemModel.swift in Sources */,
+				1350C243236094A1005030E7 /* DirectingLineConfig.swift in Sources */,
+				1350C23B236094A1005030E7 /* LengthLabelsProcessor.swift in Sources */,
+				1350C22D236094A1005030E7 /* ARPreviewFacade+ARSessionDelegate.swift in Sources */,
+				1350C246236094A1005030E7 /* ARUtilis.swift in Sources */,
+				1350C259236094A1005030E7 /* ARViewModel.swift in Sources */,
 				13375BBA235F0A6700F6CC0D /* SceneDelegate.swift in Sources */,
 				13375BD7235F0AF600F6CC0D /* UITableView + ReloadData.swift in Sources */,
+				1350C22C236094A1005030E7 /* ARPreviewFacade.swift in Sources */,
+				1350C23A236094A1005030E7 /* Raycaster.swift in Sources */,
 				13375BE4235F0B9F00F6CC0D /* NetworkService.swift in Sources */,
+				1350C248236094A1005030E7 /* SCNNode+glowing.swift in Sources */,
 				13004927235F2DD5006DA2C9 /* Project.swift in Sources */,
+				1350C251236094A1005030E7 /* VirtualObject.swift in Sources */,
 				13004924235F2D4E006DA2C9 /* ProjectsCollectionView.swift in Sources */,
+				1350C23D236094A1005030E7 /* PointersProcessor.swift in Sources */,
+				1350C24A236094A1005030E7 /* WallBuilder.swift in Sources */,
+				1350C247236094A1005030E7 /* WallSigmentConfigs.swift in Sources */,
 				13375C03235F106100F6CC0D /* HomeCollectionViewCell.swift in Sources */,
 				1350C1E323606878005030E7 /* CardVCBottomControls.swift in Sources */,
 				13375BCD235F0A9B00F6CC0D /* Constants.swift in Sources */,
 				1300492D235F4290006DA2C9 /* HomeBottomControls.swift in Sources */,
+				1350C236236094A1005030E7 /* DirectingLinesProcessor.swift in Sources */,
 				13375C01235F105700F6CC0D /* HomeHeaderViewCell.swift in Sources */,
 				13375C0B235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift in Sources */,
 				13004930235F42BD006DA2C9 /* ButtonWithBadge.swift in Sources */,
@@ -493,6 +737,10 @@
 				13375C05235F115300F6CC0D /* HomeCollectionViewViewModel.swift in Sources */,
 				13004929235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift in Sources */,
 				13375BFF235F102900F6CC0D /* HomeCollectionView.swift in Sources */,
+				1350C232236094A1005030E7 /* ARInteraction.swift in Sources */,
+				1350C258236094A1005030E7 /* ARViewController.swift in Sources */,
+				1350C234236094A1005030E7 /* ARInteractionsProtocol.swift in Sources */,
+				1350C249236094A1005030E7 /* NodeRender.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
