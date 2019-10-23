@@ -20,12 +20,17 @@ class HomeViewController: UIViewController, StoryboardInitializable {
         super.viewDidLoad()
         viewModel = HomeViewModel()
         setupUI()
-//        testAPI()
+        testAPI()
     }
     
     
     fileprivate func setupUI() {
         view.backgroundColor = .random()
+        viewModel?.onNavigation = { [weak self] type in
+            self?.navigation(type)
+        }
+        
+        viewModel?.updateLabel()
         guard let viewModel = viewModel else { return }
         view.addSubview(viewModel.collectionView)
         viewModel.collectionView.fillSuperview()
@@ -35,7 +40,6 @@ class HomeViewController: UIViewController, StoryboardInitializable {
         viewModel.homeBottomControls.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         viewModel.homeBottomControls.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42).isActive = true
         viewModel.homeBottomControls.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
-        viewModel.homeBottomControls.delegate = self
         
     }
     
@@ -43,15 +47,41 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     
     fileprivate func testAPI() {
         
-        
-        self.dataFetcherService.fetchWallpapers { (catalog) in
-            for index in 1...20 {
-                let offer = catalog?.shop.offers.offers[index]
-                StorageManager.saveObject(Goods(offer: offer!)) {
-                    print("compilete")
+        if realm.isEmpty {
+            print("realm.isEmpty")
+            self.dataFetcherService.fetchWallpapers { (catalog) in
+                for index in 1...20 {
+                    let offer = catalog?.shop.offers.offers[index]
+                    StorageManager.saveObject(Goods(offer: offer!)) {
+                        print("compilete")
+                    }
                 }
             }
         }
+        
+    }
+    
+    fileprivate func navigation(_ type: HomeNavigation) {
+        print(type)
+        switch type {
+            
+        case .filtres:
+            self.dismiss(animated: true, completion: nil)
+        case .favorites:
+            self.dismiss(animated: true, completion: nil)
+        case .basket:
+            let viewController = BasketViewController.initFromStoryboard(name: "Main")
+            self.present(viewController, animated: true, completion: nil)
+        case .arScene:
+            self.dismiss(animated: true, completion: nil)
+        case .dissmis:
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(#function)
     }
     
     
@@ -63,36 +93,29 @@ extension HomeViewController: HomeCollectionViewDelegate {
     func selectProject(project: Project) {
         print(project)
         let viewController = ARViewController()
-        viewController.modalPresentationStyle = .fullScreen 
+        viewController.modalPresentationStyle = .fullScreen
+       
         self.present(viewController, animated: true, completion: nil)
-        
     }
-
+    
     
     func selectItem() {
+        
         guard let goods = viewModel?.collectionView.viewModel?.viewModelForSelectedRow() else { return }
         let viewController = CardViewController()
         viewController.viewModel = CardViewModel()
         viewController.viewModel!.setItem(item: goods)
+        viewController.delegate = self
         self.present(viewController, animated: true, completion: nil)
         
     }
 }
 
 
+//MARK: CardViewControllerDelegate
 
-//MARK: - HomeBottomControlsDelegate
-
-extension HomeViewController: HomeBottomControlsDelegate {
-    func onTappedFilter() {
-        print(#function)
-    }
-    
-    func onTappedFavorites() {
-        print(#function)
-    }
-    
-    func onTappedCart() {
-        print(#function)
+extension HomeViewController: CardViewControllerDelegate {
+    func toOrderFinished() {
+        self.viewModel?.updateLabel()
     }
 }

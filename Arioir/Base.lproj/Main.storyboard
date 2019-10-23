@@ -52,5 +52,35 @@
             </objects>
             <point key="canvasLocation" x="2440" y="129"/>
         </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="rWC-ZS-JqA">
+            <objects>
+                <viewController storyboardIdentifier="ARPreviewViewController" id="gEM-7m-Oek" customClass="ARPreviewViewController" customModule="Arioir" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qbd-fF-kDD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XCd-Bs-Ggd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gOu-J8-aSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3698" y="129"/>
+        </scene>
+        <!--Basket View Controller-->
+        <scene sceneID="CZO-dS-2ee">
+            <objects>
+                <viewController storyboardIdentifier="BasketViewController" id="kdF-Gd-Ztj" customClass="BasketViewController" customModule="Arioir" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="REb-bD-XDv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="gDD-wq-U2P"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dsd-GQ-a23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4954" y="122"/>
+        </scene>
     </scenes>
 </document>

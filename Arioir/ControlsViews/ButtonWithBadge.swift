@@ -91,9 +91,7 @@ class ButtonWithBadge: UIView {
     
     
     func updateLabel(newValue: String) {
-        DispatchQueue.main.async {
-            self.badge.text = newValue
-        }
+        self.badge.text = newValue
     }
     
     

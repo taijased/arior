@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol CardViewControllerDelegate: class {
+    func toOrderFinished()
+}
+
 
 class CardViewController: UIViewController {
     
+    weak var delegate: CardViewControllerDelegate?
     var viewModel: CardViewModelType?
     
     private let cardView: UIView = {
@@ -56,9 +61,14 @@ class CardViewController: UIViewController {
     fileprivate func navigation(type: CardModel) {
         switch type {
         case .openAR:
-            self.dismiss(animated: true, completion: nil)
+            let viewController = ARPreviewViewController()
+            viewController.modalPresentationStyle = .fullScreen
+            self.present(viewController, animated: true, completion: nil)
+            
         case .dismiss:
+            delegate?.toOrderFinished()
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
 }

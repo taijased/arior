@@ -38,6 +38,8 @@ class CardViewModel: CardViewModelType {
         cardTableView.reloadData()
     }
     
+   
+    
 }
 
 
@@ -49,7 +51,10 @@ extension CardViewModel: CardVCBottomControlsDelegate {
     }
 
     func toOrder() {
-        self.onNavigation?(CardModel.dismiss)
+        guard let product = cardTableView.viewModel?.getItem() else { return }
+        StorageManager.saveToOrder(product) { [weak self] in
+            self?.onNavigation?(CardModel.dismiss)
+        }
     }
 
     func addProject() {

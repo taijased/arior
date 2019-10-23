@@ -16,17 +16,19 @@ protocol CardTableViewViewModelType {
     func cellViewModel(forIndexPath indexPath: IndexPath) -> CardTableViewCellViewModelType?
     func cellHeader() -> CardTableHeaderCellViewModelType?
     func setItem(item: Goods)
+    func getItem() -> Goods
     var onReloadData: (() -> Void)? { get set }
     
 }
 
 
 class CardTableViewViewModel: CardTableViewViewModelType {
+    
  
     
     var onReloadData: (() -> Void)?
-
     var item: Goods?
+    
     
     
     init() {
@@ -59,8 +61,12 @@ class CardTableViewViewModel: CardTableViewViewModelType {
         return CardTableHeaderCellViewModel(item: item)
     }
     
+    // хуета полная просто хз почему так сделал
     func setItem(item: Goods) {
         self.item = item
     }
-     
+    func getItem() -> Goods {
+        return self.item!
+    }
+    
 }

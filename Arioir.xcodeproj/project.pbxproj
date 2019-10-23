@@ -100,6 +100,14 @@
 		1350C258236094A1005030E7 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C22A236094A1005030E7 /* ARViewController.swift */; };
 		1350C259236094A1005030E7 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C22B236094A1005030E7 /* ARViewModel.swift */; };
 		1350C25B2360973C005030E7 /* ScnAssets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 1350C25A2360973C005030E7 /* ScnAssets.scnassets */; };
+		1350C26123609CA6005030E7 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C26023609CA6005030E7 /* BasketViewController.swift */; };
+		1350C26323609CC0005030E7 /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C26223609CC0005030E7 /* BasketViewModel.swift */; };
+		1350C26523609CE6005030E7 /* BasketViewControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C26423609CE6005030E7 /* BasketViewControls.swift */; };
+		1350C26723609CF4005030E7 /* BasketCellControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C26623609CF4005030E7 /* BasketCellControls.swift */; };
+		1350C26923609D37005030E7 /* BasketTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C26823609D37005030E7 /* BasketTableView.swift */; };
+		1350C26B23609D45005030E7 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C26A23609D45005030E7 /* BasketTableViewCell.swift */; };
+		1350C26D23609D55005030E7 /* BasketTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C26C23609D55005030E7 /* BasketTableViewHeaderCell.swift */; };
+		1350C27223609EF8005030E7 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C27123609EF8005030E7 /* HomeModel.swift */; };
 		4C48CA5B31BEB450323462DC /* Pods_Arioir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */; };
 /* End PBXBuildFile section */
 
@@ -199,6 +207,14 @@
 		1350C22A236094A1005030E7 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		1350C22B236094A1005030E7 /* ARViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
 		1350C25A2360973C005030E7 /* ScnAssets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = ScnAssets.scnassets; sourceTree = "<group>"; };
+		1350C26023609CA6005030E7 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		1350C26223609CC0005030E7 /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
+		1350C26423609CE6005030E7 /* BasketViewControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewControls.swift; sourceTree = "<group>"; };
+		1350C26623609CF4005030E7 /* BasketCellControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCellControls.swift; sourceTree = "<group>"; };
+		1350C26823609D37005030E7 /* BasketTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableView.swift; sourceTree = "<group>"; };
+		1350C26A23609D45005030E7 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
+		1350C26C23609D55005030E7 /* BasketTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewHeaderCell.swift; sourceTree = "<group>"; };
+		1350C27123609EF8005030E7 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.debug.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.debug.xcconfig"; sourceTree = "<group>"; };
 		586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arioir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.release.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.release.xcconfig"; sourceTree = "<group>"; };
@@ -279,8 +295,9 @@
 		13375BD8235F0B0F00F6CC0D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				1350C1D923606712005030E7 /* Card */,
 				13375BF1235F0CE400F6CC0D /* Home */,
+				1350C1D923606712005030E7 /* Card */,
+				1350C25C23609BEA005030E7 /* Basket */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -360,6 +377,7 @@
 			children = (
 				13375C0D235F19CD00F6CC0D /* GoodsModel.swift */,
 				13004926235F2DD5006DA2C9 /* Project.swift */,
+				1350C27123609EF8005030E7 /* HomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -519,6 +537,44 @@
 			path = ARView;
 			sourceTree = "<group>";
 		};
+		1350C25C23609BEA005030E7 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				1350C25F23609C0C005030E7 /* Model */,
+				1350C25E23609C08005030E7 /* View */,
+				1350C25D23609BFD005030E7 /* ViewModel */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		1350C25D23609BFD005030E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1350C26223609CC0005030E7 /* BasketViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1350C25E23609C08005030E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1350C26023609CA6005030E7 /* BasketViewController.swift */,
+				1350C26823609D37005030E7 /* BasketTableView.swift */,
+				1350C26A23609D45005030E7 /* BasketTableViewCell.swift */,
+				1350C26C23609D55005030E7 /* BasketTableViewHeaderCell.swift */,
+				1350C26623609CF4005030E7 /* BasketCellControls.swift */,
+				1350C26423609CE6005030E7 /* BasketViewControls.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1350C25F23609C0C005030E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		579C4987B9DF7B31F93676DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +713,7 @@
 				1350C24C236094A1005030E7 /* WallPapersPreview.swift in Sources */,
 				1350C23E236094A1005030E7 /* Math.swift in Sources */,
 				1350C254236094A1005030E7 /* ARFacadeProtocol.swift in Sources */,
+				1350C26323609CC0005030E7 /* BasketViewModel.swift in Sources */,
 				1350C256236094A1005030E7 /* ARFacade+ARSCNViewDelegate.swift in Sources */,
 				13375BF6235F0D4300F6CC0D /* HomeViewController.swift in Sources */,
 				1350C257236094A1005030E7 /* ARFaced.swift in Sources */,
@@ -685,6 +742,7 @@
 				13375C07235F117300F6CC0D /* HomeCollectionViewCellViewModel.swift in Sources */,
 				13375BB8235F0A6700F6CC0D /* AppDelegate.swift in Sources */,
 				1350C244236094A1005030E7 /* SCNode+changeColor.swift in Sources */,
+				1350C26723609CF4005030E7 /* BasketCellControls.swift in Sources */,
 				1350C253236094A1005030E7 /* ARViewController+ARViewModelProtocol.swift in Sources */,
 				1350C233236094A1005030E7 /* VirtualObjectInteractionProtocol.swift in Sources */,
 				1350C24B236094A1005030E7 /* Pointer.swift in Sources */,
@@ -694,6 +752,7 @@
 				1350C250236094A1005030E7 /* ConnectingLine.swift in Sources */,
 				13375BE8235F0BC700F6CC0D /* DataFetcherService.swift in Sources */,
 				1350C22F236094A1005030E7 /* ARPreviewFacade+ARCNViewDelegate.swift in Sources */,
+				1350C26523609CE6005030E7 /* BasketViewControls.swift in Sources */,
 				1350C1EE23607377005030E7 /* CardTableViewViewModel.swift in Sources */,
 				13375BDF235F0B6300F6CC0D /* DynamicNodeEncoding.swift in Sources */,
 				13375BD1235F0ABC00F6CC0D /* UIButton + Custom.swift in Sources */,
@@ -703,6 +762,7 @@
 				1350C237236094A1005030E7 /* PointerPositionProcessor.swift in Sources */,
 				1350C1F0236075E1005030E7 /* CardTableHeaderCellViewModel.swift in Sources */,
 				1350C1F223607603005030E7 /* CardTableViewCellViewModel.swift in Sources */,
+				1350C26B23609D45005030E7 /* BasketTableViewCell.swift in Sources */,
 				13375BDB235F0B2A00F6CC0D /* StoryboardInitializable.swift in Sources */,
 				1300492B235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift in Sources */,
 				1350C255236094A1005030E7 /* ARFacade+ARSceneSessionDelegate.swift in Sources */,
@@ -713,9 +773,11 @@
 				1350C22D236094A1005030E7 /* ARPreviewFacade+ARSessionDelegate.swift in Sources */,
 				1350C246236094A1005030E7 /* ARUtilis.swift in Sources */,
 				1350C259236094A1005030E7 /* ARViewModel.swift in Sources */,
+				1350C26923609D37005030E7 /* BasketTableView.swift in Sources */,
 				13375BBA235F0A6700F6CC0D /* SceneDelegate.swift in Sources */,
 				13375BD7235F0AF600F6CC0D /* UITableView + ReloadData.swift in Sources */,
 				1350C22C236094A1005030E7 /* ARPreviewFacade.swift in Sources */,
+				1350C27223609EF8005030E7 /* HomeModel.swift in Sources */,
 				1350C23A236094A1005030E7 /* Raycaster.swift in Sources */,
 				13375BE4235F0B9F00F6CC0D /* NetworkService.swift in Sources */,
 				1350C248236094A1005030E7 /* SCNNode+glowing.swift in Sources */,
@@ -724,6 +786,7 @@
 				13004924235F2D4E006DA2C9 /* ProjectsCollectionView.swift in Sources */,
 				1350C23D236094A1005030E7 /* PointersProcessor.swift in Sources */,
 				1350C24A236094A1005030E7 /* WallBuilder.swift in Sources */,
+				1350C26123609CA6005030E7 /* BasketViewController.swift in Sources */,
 				1350C247236094A1005030E7 /* WallSigmentConfigs.swift in Sources */,
 				13375C03235F106100F6CC0D /* HomeCollectionViewCell.swift in Sources */,
 				1350C1E323606878005030E7 /* CardVCBottomControls.swift in Sources */,
@@ -741,6 +804,7 @@
 				1350C258236094A1005030E7 /* ARViewController.swift in Sources */,
 				1350C234236094A1005030E7 /* ARInteractionsProtocol.swift in Sources */,
 				1350C249236094A1005030E7 /* NodeRender.metal in Sources */,
+				1350C26D23609D55005030E7 /* BasketTableViewHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
