@@ -14,6 +14,8 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     
     var viewModel: HomeViewModelType?
     var dataFetcherService = DataFetcherService()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = HomeViewModel()
@@ -28,6 +30,13 @@ class HomeViewController: UIViewController, StoryboardInitializable {
         view.addSubview(viewModel.collectionView)
         viewModel.collectionView.fillSuperview()
         viewModel.collectionView.collectionDelegate = self
+        view.addSubview(viewModel.homeBottomControls)
+        viewModel.homeBottomControls.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        viewModel.homeBottomControls.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        viewModel.homeBottomControls.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42).isActive = true
+        viewModel.homeBottomControls.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+        viewModel.homeBottomControls.delegate = self
+        
     }
     
     
@@ -53,11 +62,34 @@ class HomeViewController: UIViewController, StoryboardInitializable {
 extension HomeViewController: HomeCollectionViewDelegate {
     func selectProject(project: Project) {
         print(project)
+        
     }
 
     
     func selectItem() {
         guard let goods = viewModel?.collectionView.viewModel?.viewModelForSelectedRow() else { return }
-        print(goods)
+        let viewController = CardViewController()
+        viewController.viewModel = CardViewModel()
+        viewController.viewModel!.setItem(item: goods)
+        self.present(viewController, animated: true, completion: nil)
+        
+    }
+}
+
+
+
+//MARK: - HomeBottomControlsDelegate
+
+extension HomeViewController: HomeBottomControlsDelegate {
+    func onTappedFilter() {
+        print(#function)
+    }
+    
+    func onTappedFavorites() {
+        print(#function)
+    }
+    
+    func onTappedCart() {
+        print(#function)
     }
 }

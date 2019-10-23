@@ -12,6 +12,8 @@
 		13004927235F2DD5006DA2C9 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13004926235F2DD5006DA2C9 /* Project.swift */; };
 		13004929235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13004928235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift */; };
 		1300492B235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300492A235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift */; };
+		1300492D235F4290006DA2C9 /* HomeBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300492C235F4290006DA2C9 /* HomeBottomControls.swift */; };
+		13004930235F42BD006DA2C9 /* ButtonWithBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300492F235F42BD006DA2C9 /* ButtonWithBadge.swift */; };
 		13375BB8235F0A6700F6CC0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BB7235F0A6700F6CC0D /* AppDelegate.swift */; };
 		13375BBA235F0A6700F6CC0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */; };
 		13375BBF235F0A6700F6CC0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13375BBD235F0A6700F6CC0D /* Main.storyboard */; };
@@ -40,6 +42,16 @@
 		13375C07235F117300F6CC0D /* HomeCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375C06235F117300F6CC0D /* HomeCollectionViewCellViewModel.swift */; };
 		13375C0B235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375C0A235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift */; };
 		13375C0E235F19CD00F6CC0D /* GoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375C0D235F19CD00F6CC0D /* GoodsModel.swift */; };
+		1350C1DF23606785005030E7 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1DE23606785005030E7 /* CardViewController.swift */; };
+		1350C1E123606854005030E7 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1E023606854005030E7 /* CardViewModel.swift */; };
+		1350C1E323606878005030E7 /* CardVCBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1E223606878005030E7 /* CardVCBottomControls.swift */; };
+		1350C1E523606912005030E7 /* CardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1E423606912005030E7 /* CardTableView.swift */; };
+		1350C1E72360692F005030E7 /* CardTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1E62360692F005030E7 /* CardTableHeaderCell.swift */; };
+		1350C1E923606944005030E7 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1E823606944005030E7 /* CardTableViewCell.swift */; };
+		1350C1EC23606EA5005030E7 /* CardModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1EB23606EA5005030E7 /* CardModels.swift */; };
+		1350C1EE23607377005030E7 /* CardTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1ED23607377005030E7 /* CardTableViewViewModel.swift */; };
+		1350C1F0236075E1005030E7 /* CardTableHeaderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1EF236075E1005030E7 /* CardTableHeaderCellViewModel.swift */; };
+		1350C1F223607603005030E7 /* CardTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C1F123607603005030E7 /* CardTableViewCellViewModel.swift */; };
 		4C48CA5B31BEB450323462DC /* Pods_Arioir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +61,8 @@
 		13004926235F2DD5006DA2C9 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		13004928235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewViewModel.swift; sourceTree = "<group>"; };
 		1300492A235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		1300492C235F4290006DA2C9 /* HomeBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomControls.swift; sourceTree = "<group>"; };
+		1300492F235F42BD006DA2C9 /* ButtonWithBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithBadge.swift; sourceTree = "<group>"; };
 		13375BB4235F0A6700F6CC0D /* Arioir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arioir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13375BB7235F0A6700F6CC0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +93,16 @@
 		13375C06235F117300F6CC0D /* HomeCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		13375C0A235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderViewCellViewModel.swift; sourceTree = "<group>"; };
 		13375C0D235F19CD00F6CC0D /* GoodsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsModel.swift; sourceTree = "<group>"; };
+		1350C1DE23606785005030E7 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		1350C1E023606854005030E7 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		1350C1E223606878005030E7 /* CardVCBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVCBottomControls.swift; sourceTree = "<group>"; };
+		1350C1E423606912005030E7 /* CardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableView.swift; sourceTree = "<group>"; };
+		1350C1E62360692F005030E7 /* CardTableHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableHeaderCell.swift; sourceTree = "<group>"; };
+		1350C1E823606944005030E7 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		1350C1EB23606EA5005030E7 /* CardModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModels.swift; sourceTree = "<group>"; };
+		1350C1ED23607377005030E7 /* CardTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewViewModel.swift; sourceTree = "<group>"; };
+		1350C1EF236075E1005030E7 /* CardTableHeaderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableHeaderCellViewModel.swift; sourceTree = "<group>"; };
+		1350C1F123607603005030E7 /* CardTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.debug.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.debug.xcconfig"; sourceTree = "<group>"; };
 		586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arioir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.release.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1300492E235F42AB006DA2C9 /* ControlsViews */ = {
+			isa = PBXGroup;
+			children = (
+				1300492F235F42BD006DA2C9 /* ButtonWithBadge.swift */,
+			);
+			path = ControlsViews;
+			sourceTree = "<group>";
+		};
 		13375BAB235F0A6700F6CC0D = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +152,7 @@
 				13375BB7235F0A6700F6CC0D /* AppDelegate.swift */,
 				13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */,
 				13375BD9235F0B1A00F6CC0D /* Library */,
+				1300492E235F42AB006DA2C9 /* ControlsViews */,
 				13375BDC235F0B3500F6CC0D /* Services */,
 				13375BD8235F0B0F00F6CC0D /* Screens */,
 				13375BCB235F0A8A00F6CC0D /* Helpers */,
@@ -147,6 +180,7 @@
 		13375BD8235F0B0F00F6CC0D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1350C1D923606712005030E7 /* Card */,
 				13375BF1235F0CE400F6CC0D /* Home */,
 			);
 			path = Screens;
@@ -217,6 +251,7 @@
 				13375C00235F105700F6CC0D /* HomeHeaderViewCell.swift */,
 				13004923235F2D4E006DA2C9 /* ProjectsCollectionView.swift */,
 				13004921235F2D3B006DA2C9 /* ProjectsCollectionViewCell.swift */,
+				1300492C235F4290006DA2C9 /* HomeBottomControls.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +276,47 @@
 				1300492A235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1350C1D923606712005030E7 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				1350C1DD23606755005030E7 /* Model */,
+				1350C1DC2360674B005030E7 /* View */,
+				1350C1DB2360673C005030E7 /* ViewModel */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		1350C1DB2360673C005030E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1350C1E023606854005030E7 /* CardViewModel.swift */,
+				1350C1ED23607377005030E7 /* CardTableViewViewModel.swift */,
+				1350C1EF236075E1005030E7 /* CardTableHeaderCellViewModel.swift */,
+				1350C1F123607603005030E7 /* CardTableViewCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1350C1DC2360674B005030E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1350C1DE23606785005030E7 /* CardViewController.swift */,
+				1350C1E423606912005030E7 /* CardTableView.swift */,
+				1350C1E62360692F005030E7 /* CardTableHeaderCell.swift */,
+				1350C1E823606944005030E7 /* CardTableViewCell.swift */,
+				1350C1E223606878005030E7 /* CardVCBottomControls.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1350C1DD23606755005030E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1350C1EB23606EA5005030E7 /* CardModels.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		579C4987B9DF7B31F93676DC /* Frameworks */ = {
@@ -379,16 +455,25 @@
 				13375BF6235F0D4300F6CC0D /* HomeViewController.swift in Sources */,
 				13004922235F2D3B006DA2C9 /* ProjectsCollectionViewCell.swift in Sources */,
 				13375BFD235F0E8D00F6CC0D /* HomeViewModel.swift in Sources */,
+				1350C1E123606854005030E7 /* CardViewModel.swift in Sources */,
+				1350C1E923606944005030E7 /* CardTableViewCell.swift in Sources */,
 				13375BD5235F0AE500F6CC0D /* WebImageView.swift in Sources */,
+				1350C1E72360692F005030E7 /* CardTableHeaderCell.swift in Sources */,
 				13375C0E235F19CD00F6CC0D /* GoodsModel.swift in Sources */,
+				1350C1E523606912005030E7 /* CardTableView.swift in Sources */,
+				1350C1EC23606EA5005030E7 /* CardModels.swift in Sources */,
 				13375C07235F117300F6CC0D /* HomeCollectionViewCellViewModel.swift in Sources */,
 				13375BB8235F0A6700F6CC0D /* AppDelegate.swift in Sources */,
+				1350C1DF23606785005030E7 /* CardViewController.swift in Sources */,
 				13375BD3235F0AD000F6CC0D /* UIColor + random.swift in Sources */,
 				13375BE8235F0BC700F6CC0D /* DataFetcherService.swift in Sources */,
+				1350C1EE23607377005030E7 /* CardTableViewViewModel.swift in Sources */,
 				13375BDF235F0B6300F6CC0D /* DynamicNodeEncoding.swift in Sources */,
 				13375BD1235F0ABC00F6CC0D /* UIButton + Custom.swift in Sources */,
 				13375BE2235F0B8A00F6CC0D /* DemmoksiCatalogModel.swift in Sources */,
 				13375BCF235F0AAC00F6CC0D /* Constraints.swift in Sources */,
+				1350C1F0236075E1005030E7 /* CardTableHeaderCellViewModel.swift in Sources */,
+				1350C1F223607603005030E7 /* CardTableViewCellViewModel.swift in Sources */,
 				13375BDB235F0B2A00F6CC0D /* StoryboardInitializable.swift in Sources */,
 				1300492B235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift in Sources */,
 				13375BF0235F0CBF00F6CC0D /* BasketItemModel.swift in Sources */,
@@ -398,9 +483,12 @@
 				13004927235F2DD5006DA2C9 /* Project.swift in Sources */,
 				13004924235F2D4E006DA2C9 /* ProjectsCollectionView.swift in Sources */,
 				13375C03235F106100F6CC0D /* HomeCollectionViewCell.swift in Sources */,
+				1350C1E323606878005030E7 /* CardVCBottomControls.swift in Sources */,
 				13375BCD235F0A9B00F6CC0D /* Constants.swift in Sources */,
+				1300492D235F4290006DA2C9 /* HomeBottomControls.swift in Sources */,
 				13375C01235F105700F6CC0D /* HomeHeaderViewCell.swift in Sources */,
 				13375C0B235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift in Sources */,
+				13004930235F42BD006DA2C9 /* ButtonWithBadge.swift in Sources */,
 				13375BEC235F0C9B00F6CC0D /* StorageManager.swift in Sources */,
 				13375C05235F115300F6CC0D /* HomeCollectionViewViewModel.swift in Sources */,
 				13004929235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift in Sources */,
