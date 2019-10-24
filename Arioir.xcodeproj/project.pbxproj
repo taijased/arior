@@ -108,6 +108,16 @@
 		1350C26B23609D45005030E7 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C26A23609D45005030E7 /* BasketTableViewCell.swift */; };
 		1350C26D23609D55005030E7 /* BasketTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C26C23609D55005030E7 /* BasketTableViewHeaderCell.swift */; };
 		1350C27223609EF8005030E7 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C27123609EF8005030E7 /* HomeModel.swift */; };
+		138C4FE12361C95F00AB7757 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FE02361C95F00AB7757 /* FavoriteModel.swift */; };
+		138C4FE32361C99A00AB7757 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FE22361C99A00AB7757 /* FavoriteViewController.swift */; };
+		138C4FE52361C9AA00AB7757 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FE42361C9AA00AB7757 /* FavoriteViewModel.swift */; };
+		138C4FE72361CA1E00AB7757 /* FavoriteCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FE62361CA1E00AB7757 /* FavoriteCollectionView.swift */; };
+		138C4FE92361CA2800AB7757 /* FavoriteCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FE82361CA2800AB7757 /* FavoriteCollectionViewViewModel.swift */; };
+		138C4FEB2361CAE800AB7757 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FEA2361CAE800AB7757 /* FavoriteCollectionViewCell.swift */; };
+		138C4FED2361CAF400AB7757 /* FavoriteCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FEC2361CAF400AB7757 /* FavoriteCollectionViewCellViewModel.swift */; };
+		138C4FEF2361CD4D00AB7757 /* FavoriteBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FEE2361CD4D00AB7757 /* FavoriteBottomControls.swift */; };
+		138C4FF12361CE7100AB7757 /* FavoriteNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FF02361CE7100AB7757 /* FavoriteNavigation.swift */; };
+		138C4FF72361D36900AB7757 /* FavoriteCollectionHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FF62361D36900AB7757 /* FavoriteCollectionHeaderViewCell.swift */; };
 		4C48CA5B31BEB450323462DC /* Pods_Arioir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */; };
 /* End PBXBuildFile section */
 
@@ -215,6 +225,16 @@
 		1350C26A23609D45005030E7 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		1350C26C23609D55005030E7 /* BasketTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		1350C27123609EF8005030E7 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		138C4FE02361C95F00AB7757 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
+		138C4FE22361C99A00AB7757 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		138C4FE42361C9AA00AB7757 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		138C4FE62361CA1E00AB7757 /* FavoriteCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionView.swift; sourceTree = "<group>"; };
+		138C4FE82361CA2800AB7757 /* FavoriteCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		138C4FEA2361CAE800AB7757 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		138C4FEC2361CAF400AB7757 /* FavoriteCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		138C4FEE2361CD4D00AB7757 /* FavoriteBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBottomControls.swift; sourceTree = "<group>"; };
+		138C4FF02361CE7100AB7757 /* FavoriteNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNavigation.swift; sourceTree = "<group>"; };
+		138C4FF62361D36900AB7757 /* FavoriteCollectionHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionHeaderViewCell.swift; sourceTree = "<group>"; };
 		24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.debug.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.debug.xcconfig"; sourceTree = "<group>"; };
 		586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arioir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.release.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.release.xcconfig"; sourceTree = "<group>"; };
@@ -295,6 +315,7 @@
 		13375BD8235F0B0F00F6CC0D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				138C4FDC2361C92400AB7757 /* Favorits */,
 				13375BF1235F0CE400F6CC0D /* Home */,
 				1350C1D923606712005030E7 /* Card */,
 				1350C25C23609BEA005030E7 /* Basket */,
@@ -575,6 +596,47 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		138C4FDC2361C92400AB7757 /* Favorits */ = {
+			isa = PBXGroup;
+			children = (
+				138C4FDF2361C93C00AB7757 /* Model */,
+				138C4FDE2361C93700AB7757 /* View */,
+				138C4FDD2361C92F00AB7757 /* ViewModel */,
+			);
+			path = Favorits;
+			sourceTree = "<group>";
+		};
+		138C4FDD2361C92F00AB7757 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				138C4FE42361C9AA00AB7757 /* FavoriteViewModel.swift */,
+				138C4FE82361CA2800AB7757 /* FavoriteCollectionViewViewModel.swift */,
+				138C4FEC2361CAF400AB7757 /* FavoriteCollectionViewCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		138C4FDE2361C93700AB7757 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				138C4FE22361C99A00AB7757 /* FavoriteViewController.swift */,
+				138C4FE62361CA1E00AB7757 /* FavoriteCollectionView.swift */,
+				138C4FEA2361CAE800AB7757 /* FavoriteCollectionViewCell.swift */,
+				138C4FF62361D36900AB7757 /* FavoriteCollectionHeaderViewCell.swift */,
+				138C4FEE2361CD4D00AB7757 /* FavoriteBottomControls.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		138C4FDF2361C93C00AB7757 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				138C4FE02361C95F00AB7757 /* FavoriteModel.swift */,
+				138C4FF02361CE7100AB7757 /* FavoriteNavigation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		579C4987B9DF7B31F93676DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -716,6 +778,7 @@
 				1350C26323609CC0005030E7 /* BasketViewModel.swift in Sources */,
 				1350C256236094A1005030E7 /* ARFacade+ARSCNViewDelegate.swift in Sources */,
 				13375BF6235F0D4300F6CC0D /* HomeViewController.swift in Sources */,
+				138C4FED2361CAF400AB7757 /* FavoriteCollectionViewCellViewModel.swift in Sources */,
 				1350C257236094A1005030E7 /* ARFaced.swift in Sources */,
 				1350C239236094A1005030E7 /* PlaneDetector.swift in Sources */,
 				13004922235F2D3B006DA2C9 /* ProjectsCollectionViewCell.swift in Sources */,
@@ -723,6 +786,7 @@
 				13375BFD235F0E8D00F6CC0D /* HomeViewModel.swift in Sources */,
 				1350C1E123606854005030E7 /* CardViewModel.swift in Sources */,
 				1350C1E923606944005030E7 /* CardTableViewCell.swift in Sources */,
+				138C4FE72361CA1E00AB7757 /* FavoriteCollectionView.swift in Sources */,
 				1350C23F236094A1005030E7 /* ARSCNView+addToSceneView.swift in Sources */,
 				1350C24D236094A1005030E7 /* WallPaperPreviewPointer.swift in Sources */,
 				13375BD5235F0AE500F6CC0D /* WebImageView.swift in Sources */,
@@ -754,18 +818,23 @@
 				1350C22F236094A1005030E7 /* ARPreviewFacade+ARCNViewDelegate.swift in Sources */,
 				1350C26523609CE6005030E7 /* BasketViewControls.swift in Sources */,
 				1350C1EE23607377005030E7 /* CardTableViewViewModel.swift in Sources */,
+				138C4FE92361CA2800AB7757 /* FavoriteCollectionViewViewModel.swift in Sources */,
 				13375BDF235F0B6300F6CC0D /* DynamicNodeEncoding.swift in Sources */,
 				13375BD1235F0ABC00F6CC0D /* UIButton + Custom.swift in Sources */,
 				13375BE2235F0B8A00F6CC0D /* DemmoksiCatalogModel.swift in Sources */,
+				138C4FF12361CE7100AB7757 /* FavoriteNavigation.swift in Sources */,
 				13375BCF235F0AAC00F6CC0D /* Constraints.swift in Sources */,
 				1350C22E236094A1005030E7 /* ARPreviewViewModel.swift in Sources */,
 				1350C237236094A1005030E7 /* PointerPositionProcessor.swift in Sources */,
 				1350C1F0236075E1005030E7 /* CardTableHeaderCellViewModel.swift in Sources */,
 				1350C1F223607603005030E7 /* CardTableViewCellViewModel.swift in Sources */,
 				1350C26B23609D45005030E7 /* BasketTableViewCell.swift in Sources */,
+				138C4FE52361C9AA00AB7757 /* FavoriteViewModel.swift in Sources */,
 				13375BDB235F0B2A00F6CC0D /* StoryboardInitializable.swift in Sources */,
+				138C4FEB2361CAE800AB7757 /* FavoriteCollectionViewCell.swift in Sources */,
 				1300492B235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift in Sources */,
 				1350C255236094A1005030E7 /* ARFacade+ARSceneSessionDelegate.swift in Sources */,
+				138C4FF72361D36900AB7757 /* FavoriteCollectionHeaderViewCell.swift in Sources */,
 				1350C230236094A1005030E7 /* ARPreviewViewController.swift in Sources */,
 				13375BF0235F0CBF00F6CC0D /* BasketItemModel.swift in Sources */,
 				1350C243236094A1005030E7 /* DirectingLineConfig.swift in Sources */,
@@ -789,15 +858,18 @@
 				1350C26123609CA6005030E7 /* BasketViewController.swift in Sources */,
 				1350C247236094A1005030E7 /* WallSigmentConfigs.swift in Sources */,
 				13375C03235F106100F6CC0D /* HomeCollectionViewCell.swift in Sources */,
+				138C4FE32361C99A00AB7757 /* FavoriteViewController.swift in Sources */,
 				1350C1E323606878005030E7 /* CardVCBottomControls.swift in Sources */,
 				13375BCD235F0A9B00F6CC0D /* Constants.swift in Sources */,
 				1300492D235F4290006DA2C9 /* HomeBottomControls.swift in Sources */,
 				1350C236236094A1005030E7 /* DirectingLinesProcessor.swift in Sources */,
 				13375C01235F105700F6CC0D /* HomeHeaderViewCell.swift in Sources */,
 				13375C0B235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift in Sources */,
+				138C4FE12361C95F00AB7757 /* FavoriteModel.swift in Sources */,
 				13004930235F42BD006DA2C9 /* ButtonWithBadge.swift in Sources */,
 				13375BEC235F0C9B00F6CC0D /* StorageManager.swift in Sources */,
 				13375C05235F115300F6CC0D /* HomeCollectionViewViewModel.swift in Sources */,
+				138C4FEF2361CD4D00AB7757 /* FavoriteBottomControls.swift in Sources */,
 				13004929235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift in Sources */,
 				13375BFF235F102900F6CC0D /* HomeCollectionView.swift in Sources */,
 				1350C232236094A1005030E7 /* ARInteraction.swift in Sources */,
