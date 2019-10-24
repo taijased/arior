@@ -71,6 +71,7 @@ class HomeViewController: UIViewController, StoryboardInitializable {
             self.dismiss(animated: true, completion: nil)
         case .basket:
             let viewController = BasketViewController.initFromStoryboard(name: "Main")
+            viewController.delegate = self
             self.present(viewController, animated: true, completion: nil)
         case .arScene:
             self.dismiss(animated: true, completion: nil)
@@ -78,13 +79,6 @@ class HomeViewController: UIViewController, StoryboardInitializable {
             self.dismiss(animated: true, completion: nil)
         }
     }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print(#function)
-    }
-    
-    
 }
 
 //MARK: - HomeCollectionViewDelegate
@@ -112,10 +106,18 @@ extension HomeViewController: HomeCollectionViewDelegate {
 }
 
 
-//MARK: CardViewControllerDelegate
+//MARK: - CardViewControllerDelegate
 
 extension HomeViewController: CardViewControllerDelegate {
     func toOrderFinished() {
+        self.viewModel?.updateLabel()
+    }
+}
+
+
+//MARK: - BasketViewControllerDelegate
+extension HomeViewController: BasketViewControllerDelegate {
+    func deinitController() {
         self.viewModel?.updateLabel()
     }
 }

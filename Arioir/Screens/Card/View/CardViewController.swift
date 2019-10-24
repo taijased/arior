@@ -66,9 +66,12 @@ class CardViewController: UIViewController {
             self.present(viewController, animated: true, completion: nil)
             
         case .dismiss:
-            delegate?.toOrderFinished()
             self.dismiss(animated: true, completion: nil)
         }
     }
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.toOrderFinished()
+    }
 }

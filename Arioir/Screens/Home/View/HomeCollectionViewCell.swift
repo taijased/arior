@@ -10,8 +10,12 @@
 import UIKit
 
 
+
+
 class HomeCollectionViewCell: UICollectionViewCell {
     
+    
+    var onFavoriteTapped: (() -> Void)?
     
     static let reuseId = "HomeCollectionViewCell"
     
@@ -28,7 +32,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     
     
-    let cardView: UIView = {
+    
+    
+    fileprivate let cardView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +47,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    let myImageView: WebImageView = {
+    fileprivate let myImageView: WebImageView = {
         let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -51,7 +57,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    let label: UILabel = {
+    fileprivate let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
@@ -66,6 +72,17 @@ class HomeCollectionViewCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    
+    var buttonFavorite: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        button.setImage(UIImage(named: "favorites"), for: .normal)
+        return button
+    }()
+    
+ 
     
     
     
@@ -101,13 +118,21 @@ class HomeCollectionViewCell: UICollectionViewCell {
         gradientLayer.frame = bounds
         viewGradientMask.layer.insertSublayer(gradientLayer, at: 0)
         
+        
+        
+        viewGradientMask.addSubview(buttonFavorite)
+     
+        buttonFavorite.centerYAnchor.constraint(equalTo: viewGradientMask.centerYAnchor).isActive = true
+        buttonFavorite.leadingAnchor.constraint(equalTo: viewGradientMask.leadingAnchor, constant: 12).isActive = true
+        buttonFavorite.heightAnchor.constraint(equalToConstant: 22).isActive = true
+        buttonFavorite.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        
     
         addSubview(label)
         label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 30).isActive = true
         label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         label.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        
     }
     
     

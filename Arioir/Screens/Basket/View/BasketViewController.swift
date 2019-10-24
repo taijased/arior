@@ -9,9 +9,17 @@
 
 import UIKit
 
+protocol BasketViewControllerDelegate: class {
+    func deinitController()
+}
+
+
 class BasketViewController: UIViewController, StoryboardInitializable {
     
+    
+    weak var delegate: BasketViewControllerDelegate?
     let viewModel = BasketViewModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +47,10 @@ class BasketViewController: UIViewController, StoryboardInitializable {
         viewModel.controlsView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42).isActive = true
         viewModel.controlsView.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
         viewModel.controlsView.delegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.deinitController()
     }
 }
 

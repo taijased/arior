@@ -91,11 +91,11 @@ extension HomeCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
         
         collectionViewCell.viewModel = cellViewModel
-        
+ 
         return collectionViewCell
     }
     
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
         viewModel.selectItem(atIndexPath: indexPath)

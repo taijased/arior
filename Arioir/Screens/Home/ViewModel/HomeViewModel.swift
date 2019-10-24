@@ -40,8 +40,6 @@ class HomeViewModel: HomeViewModelType {
 }
 
 
-
-
 //MARK: - HomeBottomControlsDelegate
 
 extension HomeViewModel: HomeBottomControlsDelegate {
