@@ -41,6 +41,7 @@ class HomeCollectionViewViewModel: HomeCollectionViewViewModelType {
     var cells: Results<Goods>?
     
     init() {
+        
 //        self.dataFetcherService.fetchRSSAppleMusic { [weak self ](feed) in
 //            self?.cells = feed?.feed.results ?? nil
 //            self?.onReloadData?()

@@ -27,6 +27,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             guard let viewModel = viewModel else { return }
             myImageView.set(imageURL: viewModel.imageURL)
             label.text = viewModel.label
+            buttonFavorite.addTarget(self, action: #selector(buttonFavoriteTapped), for: .touchUpInside)
         }
     }
     
@@ -67,7 +68,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let viewGradientMask: UIView = {
+    fileprivate let viewGradientMask: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -77,12 +78,17 @@ class HomeCollectionViewCell: UICollectionViewCell {
     var buttonFavorite: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-
         button.setImage(UIImage(named: "favorites"), for: .normal)
         return button
     }()
     
- 
+    @objc func buttonFavoriteTapped(_ sender: UIButton) {
+        sender.flash()
+        print(#function)
+        self.onFavoriteTapped?()
+//        self.viewModel?.onSelectFavorites?()
+    }
+    
     
     
     
@@ -100,39 +106,44 @@ class HomeCollectionViewCell: UICollectionViewCell {
         cardView.addSubview(myImageView)
         myImageView.fillSuperview()
         
-        
-        // second layer
-        myImageView.addSubview(viewGradientMask)
-        viewGradientMask.bottomAnchor.constraint(equalTo: myImageView.bottomAnchor).isActive = true
-        viewGradientMask.leadingAnchor.constraint(equalTo: myImageView.leadingAnchor).isActive = true
-        viewGradientMask.trailingAnchor.constraint(equalTo: myImageView.trailingAnchor).isActive = true
-        viewGradientMask.heightAnchor.constraint(equalToConstant: 42).isActive = true
-        // thrid layer
-        
-        // add gradient
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor,
-                                UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor]
-        
-        gradientLayer.locations = [0.0, 0.3]
-        gradientLayer.frame = bounds
-        viewGradientMask.layer.insertSublayer(gradientLayer, at: 0)
-        
-        
-        
-        viewGradientMask.addSubview(buttonFavorite)
-     
-        buttonFavorite.centerYAnchor.constraint(equalTo: viewGradientMask.centerYAnchor).isActive = true
-        buttonFavorite.leadingAnchor.constraint(equalTo: viewGradientMask.leadingAnchor, constant: 12).isActive = true
-        buttonFavorite.heightAnchor.constraint(equalToConstant: 22).isActive = true
-        buttonFavorite.widthAnchor.constraint(equalToConstant: 22).isActive = true
-        
+//        
+//        // second layer
+//        myImageView.addSubview(viewGradientMask)
+//        viewGradientMask.bottomAnchor.constraint(equalTo: myImageView.bottomAnchor).isActive = true
+//        viewGradientMask.leadingAnchor.constraint(equalTo: myImageView.leadingAnchor).isActive = true
+//        viewGradientMask.trailingAnchor.constraint(equalTo: myImageView.trailingAnchor).isActive = true
+//        viewGradientMask.heightAnchor.constraint(equalToConstant: 42).isActive = true
+//        // thrid layer
+//        
+//        // add gradient
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor,
+//                                UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor]
+//        
+//        gradientLayer.locations = [0.0, 0.3]
+//        gradientLayer.frame = bounds
+//        viewGradientMask.layer.insertSublayer(gradientLayer, at: 0)
+//        
+//        
+//        
+//        viewGradientMask.addSubview(buttonFavorite)
+//     
+//        buttonFavorite.centerYAnchor.constraint(equalTo: viewGradientMask.centerYAnchor).isActive = true
+//        buttonFavorite.leadingAnchor.constraint(equalTo: viewGradientMask.leadingAnchor, constant: 12).isActive = true
+//        buttonFavorite.heightAnchor.constraint(equalToConstant: 22).isActive = true
+//        buttonFavorite.widthAnchor.constraint(equalToConstant: 22).isActive = true
+//        
     
         addSubview(label)
         label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 30).isActive = true
         label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         label.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        
+        
+        
+        
     }
     
     

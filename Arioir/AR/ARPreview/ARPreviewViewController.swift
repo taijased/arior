@@ -9,9 +9,18 @@
 import UIKit
 import ARKit
 import GameplayKit
+
+
+
+protocol ARPreviewViewControllerDelegate: class {
+    func deinitController()
+}
+
 class ARPreviewViewController: UIViewController
 {
     
+    weak var delegate: ARPreviewViewControllerDelegate?
+    var item: Goods?
     let arView = ARPreviewViewModel(frame: CGRect.init())
     lazy var arFacade = ARPreviewFacade(viewModel: arView)
     
@@ -28,6 +37,9 @@ class ARPreviewViewController: UIViewController
         arFacade.delegate = userCoaching
 
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.deinitController()
+    }
 }
 
 
@@ -35,6 +47,22 @@ class ARPreviewViewController: UIViewController
 //MARK: - ARPreviewModelProtocol
 
 extension ARPreviewViewController: ARPreviewModelProtocol {
+    func toCart() {
+        guard let product = item else { return }
+        StorageManager.saveToOrder(product) { [weak self] in
+            self?.dismiss(animated: true , completion: nil)
+        }
+      
+    }
+    
+    func toFavorite() {
+        guard let product = item else { return }
+        StorageManager.saveToFavorits(product) { [weak self] in
+           self?.dismiss(animated: true , completion: nil)
+        }
+        
+    }
+    
     
     func close() {
         self.dismiss(animated: true , completion: nil)

@@ -46,6 +46,13 @@ class CardViewModel: CardViewModelType {
 //MARK: - CardVCBottomControlsDelegate
 
 extension CardViewModel: CardVCBottomControlsDelegate {
+    func addFavorite() {
+        guard let product = cardTableView.viewModel?.getItem() else { return }
+        StorageManager.saveToFavorits(product) { [weak self] in
+            self?.onNavigation?(CardModel.dismiss)
+        }
+    }
+    
     func openAR() {
         self.onNavigation?(CardModel.openAR)
     }

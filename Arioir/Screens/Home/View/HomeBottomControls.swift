@@ -75,7 +75,6 @@ class HomeBottomControls: UIView {
         favoritesButton.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
         favoritesButton.onSelectButton = { [weak self] in
             self?.delegate?.onTappedFavorites()
-            self?.favoritesButton.updateLabel(newValue: "9")
         }
     }
     

@@ -108,6 +108,9 @@
 		1350C26B23609D45005030E7 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C26A23609D45005030E7 /* BasketTableViewCell.swift */; };
 		1350C26D23609D55005030E7 /* BasketTableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C26C23609D55005030E7 /* BasketTableViewHeaderCell.swift */; };
 		1350C27223609EF8005030E7 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1350C27123609EF8005030E7 /* HomeModel.swift */; };
+		1375515B23633BC000E29D5E /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375515A23633BC000E29D5E /* CreateViewController.swift */; };
+		1375515F2363400F00E29D5E /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375515E2363400F00E29D5E /* PresentationController.swift */; };
+		13755161236341B800E29D5E /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13755160236341B800E29D5E /* PresentationViewController.swift */; };
 		138C4FE12361C95F00AB7757 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FE02361C95F00AB7757 /* FavoriteModel.swift */; };
 		138C4FE32361C99A00AB7757 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FE22361C99A00AB7757 /* FavoriteViewController.swift */; };
 		138C4FE52361C9AA00AB7757 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C4FE42361C9AA00AB7757 /* FavoriteViewModel.swift */; };
@@ -225,6 +228,9 @@
 		1350C26A23609D45005030E7 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		1350C26C23609D55005030E7 /* BasketTableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewHeaderCell.swift; sourceTree = "<group>"; };
 		1350C27123609EF8005030E7 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		1375515A23633BC000E29D5E /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		1375515E2363400F00E29D5E /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		13755160236341B800E29D5E /* PresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
 		138C4FE02361C95F00AB7757 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		138C4FE22361C99A00AB7757 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		138C4FE42361C9AA00AB7757 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
@@ -315,6 +321,7 @@
 		13375BD8235F0B0F00F6CC0D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1375515923633BA900E29D5E /* Create */,
 				138C4FDC2361C92400AB7757 /* Favorits */,
 				13375BF1235F0CE400F6CC0D /* Home */,
 				1350C1D923606712005030E7 /* Card */,
@@ -596,6 +603,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1375515923633BA900E29D5E /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				1375515A23633BC000E29D5E /* CreateViewController.swift */,
+				13755160236341B800E29D5E /* PresentationViewController.swift */,
+				1375515E2363400F00E29D5E /* PresentationController.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
 		138C4FDC2361C92400AB7757 /* Favorits */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,6 +797,7 @@
 				13375BF6235F0D4300F6CC0D /* HomeViewController.swift in Sources */,
 				138C4FED2361CAF400AB7757 /* FavoriteCollectionViewCellViewModel.swift in Sources */,
 				1350C257236094A1005030E7 /* ARFaced.swift in Sources */,
+				1375515B23633BC000E29D5E /* CreateViewController.swift in Sources */,
 				1350C239236094A1005030E7 /* PlaneDetector.swift in Sources */,
 				13004922235F2D3B006DA2C9 /* ProjectsCollectionViewCell.swift in Sources */,
 				1350C23C236094A1005030E7 /* ConnectingLinesProcessor.swift in Sources */,
@@ -840,11 +858,13 @@
 				1350C243236094A1005030E7 /* DirectingLineConfig.swift in Sources */,
 				1350C23B236094A1005030E7 /* LengthLabelsProcessor.swift in Sources */,
 				1350C22D236094A1005030E7 /* ARPreviewFacade+ARSessionDelegate.swift in Sources */,
+				13755161236341B800E29D5E /* PresentationViewController.swift in Sources */,
 				1350C246236094A1005030E7 /* ARUtilis.swift in Sources */,
 				1350C259236094A1005030E7 /* ARViewModel.swift in Sources */,
 				1350C26923609D37005030E7 /* BasketTableView.swift in Sources */,
 				13375BBA235F0A6700F6CC0D /* SceneDelegate.swift in Sources */,
 				13375BD7235F0AF600F6CC0D /* UITableView + ReloadData.swift in Sources */,
+				1375515F2363400F00E29D5E /* PresentationController.swift in Sources */,
 				1350C22C236094A1005030E7 /* ARPreviewFacade.swift in Sources */,
 				1350C27223609EF8005030E7 /* HomeModel.swift in Sources */,
 				1350C23A236094A1005030E7 /* Raycaster.swift in Sources */,

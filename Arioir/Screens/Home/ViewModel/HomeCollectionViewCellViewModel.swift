@@ -11,12 +11,14 @@ import UIKit
 protocol HomeCollectionViewCellViewModelType: class {
     var label: String { get }
     var imageURL: String { get }
+    var onSelectFavorites: (() -> Void)? { get set}
 }
 
 
 
 class HomeCollectionViewCellViewModel: HomeCollectionViewCellViewModelType {
     
+    var onSelectFavorites: (() -> Void)?
     private var cell: Goods
     
     var label: String {

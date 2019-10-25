@@ -11,6 +11,7 @@ import Foundation
 protocol HomeViewModelType {
     var collectionView: HomeCollectionView { get }
     var homeBottomControls: HomeBottomControls { get }
+    
     var onNavigation: ((HomeNavigation) -> Void)? { get set }
     func updateLabel()
     
@@ -21,19 +22,26 @@ class HomeViewModel: HomeViewModelType {
     var onNavigation: ((HomeNavigation) -> Void)?
     var homeBottomControls: HomeBottomControls
     var collectionView: HomeCollectionView
-    init() { 
+    
+    
+    
+    
+    init() {
+        
         collectionView = HomeCollectionView()
         homeBottomControls = HomeBottomControls()
         homeBottomControls.delegate = self
+       
+        
         updateLabel()
     }
     
     func updateLabel() {
-        print("ololo")
-        let newValue = "\(realm.objects(BasketItem.self).count)"
-  
+        let basketCount = "\(realm.objects(BasketItem.self).count)"
+        let favoriteCount = "\(realm.objects(FavoriteItem.self).count)"
         DispatchQueue.main.async {
-            self.homeBottomControls.cartButton.updateLabel(newValue: newValue)
+            self.homeBottomControls.cartButton.updateLabel(newValue: basketCount)
+            self.homeBottomControls.favoritesButton.updateLabel(newValue: favoriteCount)
         }
       
     }

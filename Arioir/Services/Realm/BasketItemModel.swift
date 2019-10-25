@@ -37,6 +37,17 @@ class BasketItem: Object {
         self.picture = picture
     }
     
+    convenience init(item: FavoriteItem) {
+        self.init()
+        self.id = item.id
+        self.name = item.name
+        self.price = item.price
+        self.count = "\(1)"
+        self.picture = item.picture
+    }
+    
+    
+    
     
     
     func getAllPrice() -> Float {

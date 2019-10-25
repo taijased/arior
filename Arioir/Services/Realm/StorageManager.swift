@@ -35,9 +35,58 @@ class StorageManager {
                 completion()
             }
         }
-        
-        
     }
+    
+    static func saveToFavorits(_ object: Goods, completion: @escaping () -> Void) {
+        
+        let exist = realm.object(ofType: FavoriteItem.self, forPrimaryKey: object.id) != nil
+        if exist {
+            guard let count = realm.object(ofType: FavoriteItem.self, forPrimaryKey: object.id)?.count else { return }
+            let currenCount = Int(count)! + 1
+            let updatingFavoriteItem = FavoriteItem(goods: object)
+            updatingFavoriteItem.count = "\(currenCount)"
+            try! realm.write {
+                realm.add(updatingFavoriteItem, update: .modified)
+            }
+            completion()
+        } else {
+            try! realm.write {
+                realm.add(FavoriteItem(goods: object))
+                completion()
+            }
+        }
+    }
+    
+    
+    static func favoritesToBasket(completion: @escaping () -> Void) {
+        
+        let faboriteItems = realm.objects(FavoriteItem.self)
+        
+        for object in faboriteItems {
+            let exist = realm.object(ofType: BasketItem.self, forPrimaryKey: object.id) != nil
+            if exist {
+                guard let count = realm.object(ofType: BasketItem.self, forPrimaryKey: object.id)?.count else { return }
+                let currenCount = Int(count)! + 1
+                let updatingBasketItem = BasketItem(item: object)
+                updatingBasketItem.count = "\(currenCount)"
+                try! realm.write {
+                    realm.add(updatingBasketItem, update: .modified)
+                }
+
+            } else {
+                try! realm.write {
+                    realm.add(BasketItem(item: object))
+                }
+            }
+        }
+        StorageManager.clearFavorites {
+            completion()
+        }
+    }
+    
+    
+    
+    
     
     static func updateCoutBasketItem(id: String, newCount: String, completion: @escaping () -> Void) {
         guard let basketItem = realm.object(ofType: BasketItem.self, forPrimaryKey: id) else { return }
@@ -54,6 +103,16 @@ class StorageManager {
             realm.delete(object)
         }
     }
+    
+    
+    static func clearFavorites(completion: @escaping () -> Void) {
+        let favoriteObjects = realm.objects(FavoriteItem.self)
+        try! realm.write {
+            realm.delete(favoriteObjects)
+            completion()
+        }
+    }
+    
     
     static func deleteBasketItem(_ id: String, completion: @escaping () -> Void ) {
         

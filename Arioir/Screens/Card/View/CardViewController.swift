@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CardViewControllerDelegate: class {
-    func toOrderFinished()
+    func deinitController()
 }
 
 
@@ -62,7 +62,24 @@ class CardViewController: UIViewController {
         switch type {
         case .openAR:
             let viewController = ARPreviewViewController()
+            viewController.item = viewModel?.cardTableView.viewModel?.getItem()
+            viewController.delegate = self
             viewController.modalPresentationStyle = .fullScreen
+
+            
+            //ToDo: - ОСТОРОЖНО ГОВНО КОД
+            // эту хуету надо исправить
+            let image = WebImageView()
+            image.set(imageURL: viewController.item?.picture)
+            
+            let vo = WallPaperPreview(sceneView: viewController.arView.sceneView,
+                                      planeDetector: viewController.arFacade.planeDetector,
+                                      image: image.image!,
+                                      textureLength: 1.2,
+                                      textureWidth: 0.8)
+            viewController.arFacade.previewEntitie = vo
+            
+            
             self.present(viewController, animated: true, completion: nil)
             
         case .dismiss:
@@ -72,6 +89,15 @@ class CardViewController: UIViewController {
     
     
     override func viewWillDisappear(_ animated: Bool) {
-        delegate?.toOrderFinished()
+        delegate?.deinitController()
+    }
+}
+
+
+//MARK: - ARPreviewViewControllerDelegate
+
+extension CardViewController: ARPreviewViewControllerDelegate {
+    func deinitController() {
+        self.dismiss(animated: true, completion: nil)
     }
 }

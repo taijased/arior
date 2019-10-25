@@ -6,4 +6,8 @@
 //  Copyright © 2019 Максим Спиридонов. All rights reserved.
 //
 
-import Foundation
+
+
+enum FavoriteNavigation {
+    case dissmis
+}

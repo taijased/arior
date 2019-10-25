@@ -16,6 +16,8 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     var dataFetcherService = DataFetcherService()
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = HomeViewModel()
@@ -41,7 +43,10 @@ class HomeViewController: UIViewController, StoryboardInitializable {
         viewModel.homeBottomControls.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42).isActive = true
         viewModel.homeBottomControls.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
         
+        
     }
+    
+
     
     
     
@@ -62,13 +67,14 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     }
     
     fileprivate func navigation(_ type: HomeNavigation) {
-        print(type)
         switch type {
             
         case .filtres:
             self.dismiss(animated: true, completion: nil)
         case .favorites:
-            self.dismiss(animated: true, completion: nil)
+            let viewController = FavoriteViewController.initFromStoryboard(name: "Main")
+            viewController.delegate = self
+            self.present(viewController, animated: true, completion: nil)
         case .basket:
             let viewController = BasketViewController.initFromStoryboard(name: "Main")
             viewController.delegate = self
@@ -85,39 +91,30 @@ class HomeViewController: UIViewController, StoryboardInitializable {
 
 extension HomeViewController: HomeCollectionViewDelegate {
     func selectProject(project: Project) {
-        print(project)
-        let viewController = ARViewController()
-        viewController.modalPresentationStyle = .fullScreen
-       
+        
+        let viewController = CreateViewController()
+//        viewController.modalPresentationStyle = .fullScreen
         self.present(viewController, animated: true, completion: nil)
     }
     
     
     func selectItem() {
-        
         guard let goods = viewModel?.collectionView.viewModel?.viewModelForSelectedRow() else { return }
         let viewController = CardViewController()
         viewController.viewModel = CardViewModel()
         viewController.viewModel!.setItem(item: goods)
         viewController.delegate = self
         self.present(viewController, animated: true, completion: nil)
-        
     }
 }
 
 
-//MARK: - CardViewControllerDelegate
+//MARK: - BasketViewControllerDelegate, FavoriteViewControllerDelegate, CardViewControllerDelegate
 
-extension HomeViewController: CardViewControllerDelegate {
-    func toOrderFinished() {
-        self.viewModel?.updateLabel()
-    }
-}
-
-
-//MARK: - BasketViewControllerDelegate
-extension HomeViewController: BasketViewControllerDelegate {
+extension HomeViewController: BasketViewControllerDelegate, FavoriteViewControllerDelegate, CardViewControllerDelegate {
     func deinitController() {
         self.viewModel?.updateLabel()
     }
 }
+
+

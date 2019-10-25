@@ -94,9 +94,9 @@
             filePath = "Arioir/Screens/Home/View/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "selectItem()"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "navigation(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

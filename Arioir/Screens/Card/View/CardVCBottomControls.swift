@@ -13,6 +13,7 @@ protocol CardVCBottomControlsDelegate: class {
     func openAR()
     func toOrder()
     func addProject()
+    func addFavorite()
 }
 
 class CardVCBottomControls: UIView {
@@ -30,7 +31,14 @@ class CardVCBottomControls: UIView {
         var button = UIButton.getCustomButton(imageName: "plus-yellow")
         button.addTarget(self, action: #selector(addProjectButtonTapped), for: .touchUpInside)
         button.backgroundColor = .white
-        button.tintColor = .random()
+        return button
+    }()
+    
+    
+    let addFavorite: UIButton = {
+        var button = UIButton.getCustomButton(imageName: "favorites")
+        button.addTarget(self, action: #selector(addFavoriteTapped), for: .touchUpInside)
+        button.backgroundColor = primaryColor
         return button
     }()
     
@@ -50,6 +58,12 @@ class CardVCBottomControls: UIView {
         sender.flash()
         delegate?.openAR()
     }
+    
+    @objc func addFavoriteTapped(_ sender: UIButton) {
+        sender.flash()
+        delegate?.addFavorite()
+    }
+    
     
     @objc func toOrderButtonTapped(_ sender: UIButton) {
         sender.flash()
@@ -81,10 +95,20 @@ class CardVCBottomControls: UIView {
         addProjectButton.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
         
         
+        addSubview(addFavorite)
+        addFavorite.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        addFavorite.leadingAnchor.constraint(equalTo: addProjectButton.trailingAnchor, constant: Constants.padding).isActive = true
+        addFavorite.widthAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+        addFavorite.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+        
+        
+        
+        
+        
         addSubview(toOrderButton)
         toOrderButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
         toOrderButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.padding).isActive = true
-        toOrderButton.leadingAnchor.constraint(equalTo: addProjectButton.trailingAnchor, constant: Constants.padding).isActive = true
+        toOrderButton.leadingAnchor.constraint(equalTo: addFavorite.trailingAnchor, constant: Constants.padding).isActive = true
         toOrderButton.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
     }
     

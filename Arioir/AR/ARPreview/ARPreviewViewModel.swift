@@ -12,10 +12,14 @@ protocol ARPreviewModelProtocol: class
 {
     func close()
     func restart()
+    func toCart()
+    func toFavorite()
 }
 
 class ARPreviewViewModel: UIView
 {
+    
+    
     weak var delegate: ARPreviewModelProtocol?
     var sceneView: ARSCNView =
     {
@@ -39,7 +43,7 @@ class ARPreviewViewModel: UIView
     
     var closeButton: UIButton =
     {
-        let button = UIButton.getCustomButton(imageName: "close", colorHex: "#FFFFFF", cornerRadius: 20)
+        let button = UIButton.getCustomButton(imageName: "close-yellow", colorHex: "#FFFFFF", cornerRadius: 20)
         button.addTarget(self, action: #selector(close(_:)), for: .touchUpInside)
         return button
         
@@ -47,12 +51,32 @@ class ARPreviewViewModel: UIView
     
     var restartButton: UIButton =
     {
-        let button = UIButton.getCustomButton(imageName: "restart", colorHex: "#FFBF00", cornerRadius: 20)
+        let button = UIButton.getCustomButton(imageName: "refresh-white", colorHex: "#FFBF00", cornerRadius: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(restart(_:)), for: .touchUpInside)
         return button
         
     }()
+    
+    
+    var favoriteButton: UIButton =
+    {
+        let button = UIButton.getCustomButton(imageName: "favorites-contur", colorHex: "#FFFFFF", cornerRadius: 20)
+        button.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+        return button
+        
+    }()
+    
+    var cartButton: UIButton =
+    {
+        let button = UIButton.getCustomButton(imageName: "cart-contur", colorHex: "#FFFFFF", cornerRadius: 20)
+        button.addTarget(self, action: #selector(cartButtonTapped), for: .touchUpInside)
+        return button
+        
+    }()
+    
+    
+    
     
     
     override init(frame: CGRect)
@@ -90,22 +114,47 @@ class ARPreviewViewModel: UIView
         closeButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         closeButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         closeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
+        
         addSubview(restartButton)
         restartButton.topAnchor.constraint(equalTo: topAnchor, constant: 50).isActive = true
         restartButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         restartButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         restartButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        
+        
+        addSubview(cartButton)
+        cartButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50).isActive = true
+        cartButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        cartButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        cartButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        addSubview(favoriteButton)
+        favoriteButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50).isActive = true
+        favoriteButton.trailingAnchor.constraint(equalTo: cartButton.leadingAnchor, constant: -10).isActive = true
+        favoriteButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        favoriteButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        
     }
     
     @objc func close(_ sender: UIButton)
     {
         delegate?.close()
     }
-   
+    
     @objc func restart(_ sender: UIButton)
     {
         delegate?.restart()
+    }
+    
+    @objc func favoriteButtonTapped(_ sender: UIButton)
+    {
+        delegate?.toFavorite()
+    }
+    @objc func cartButtonTapped(_ sender: UIButton)
+    {
+        delegate?.toCart()
     }
     
 }
