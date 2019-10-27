@@ -112,5 +112,20 @@
             </objects>
             <point key="canvasLocation" x="4954" y="122"/>
         </scene>
+        <!--Order View Controller-->
+        <scene sceneID="Jhz-Ud-nXy">
+            <objects>
+                <viewController storyboardIdentifier="OrderViewController" id="j5V-1H-bmB" customClass="OrderViewController" customModule="Arioir" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cWc-Ge-d9Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="HtK-bp-bw3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXw-PE-2iU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4785" y="1288"/>
+        </scene>
     </scenes>
 </document>

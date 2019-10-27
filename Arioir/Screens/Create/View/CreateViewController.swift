@@ -11,9 +11,6 @@ import UIKit
 
 class CreateViewController: UIViewController {
     
-    
-    
-    
     var viewModel: CreateViewModelType?
     
     
@@ -69,7 +66,7 @@ class CreateViewController: UIViewController {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             guard let viewModel = viewModel else { return }
             var frame = viewModel.tableView.frame
-            frame.origin.y = frame.origin.y - keyboardSize.height
+            frame.origin.y = frame.origin.y - keyboardSize.height + 167
             UIView.animate(withDuration: 0.5) {
                 self.viewModel!.tableView.frame = frame
             }

@@ -13,6 +13,7 @@ class Project: Object {
     @objc dynamic var id: String?
     @objc dynamic var name: String?
     @objc dynamic var iconName: String?
+    
     convenience init(id: String, name: String, iconName: String) {
         self.init()
         self.id = id

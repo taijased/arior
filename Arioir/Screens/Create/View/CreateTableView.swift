@@ -123,9 +123,8 @@ extension CreateTableView: UITableViewDelegate, UITableViewDataSource {
             return
         }
         
-
-        print(projectIcon! + " "  + projectName!)
         
+        print("ololo")
         
         
     }
