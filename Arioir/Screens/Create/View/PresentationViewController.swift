@@ -20,17 +20,16 @@ class PresentationViewController: PresentationController {
         let view = UIVisualEffectView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.effect = nil
-        view.alpha = 0.93
         return view
     }()
     
     override var frameOfPresentedViewInContainerView: CGRect {
         guard let containerView = containerView else { return .zero }
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
-        containerView.addGestureRecognizer(tapGestureRecognizer)
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
+//        containerView.addGestureRecognizer(tapGestureRecognizer)
         
         return containerView.bounds
-            .inset(by: UIEdgeInsets(top: containerView.bounds.height * 0.6, left: 0, bottom: 0, right: 0))
+              .inset(by: UIEdgeInsets(top: containerView.bounds.height * 0.65, left: 0, bottom: 0, right: 0))
 //            .inset(by: containerView.safeAreaInsets)
     }
 
@@ -57,7 +56,7 @@ class PresentationViewController: PresentationController {
     override func dismissalTransitionWillBegin() {
         if let coordinator = presentingViewController.transitionCoordinator {
             coordinator.animate(alongsideTransition: { [weak self] _ in
-//                self?.containerView?.backgroundColor = .clear
+                self?.containerView?.backgroundColor = .clear
                  self?.visualEffectView.effect = nil
             }, completion: nil)
         }

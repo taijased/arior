@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "021-door key.png",
+      "filename" : "toilet.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "021-door key@2x.png",
+      "filename" : "toilet@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "021-door key@3x.png",
+      "filename" : "toilet@3x.png",
       "scale" : "3x"
     }
   ],
