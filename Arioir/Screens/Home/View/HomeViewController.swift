@@ -59,6 +59,7 @@ class HomeViewController: UIViewController, StoryboardInitializable {
                     let offer = catalog?.shop.offers.offers[index]
                     StorageManager.saveObject(Goods(offer: offer!)) {
                         print("compilete")
+                        self.viewModel?.collectionView.reloadData()
                     }
                 }
             }
@@ -92,9 +93,17 @@ class HomeViewController: UIViewController, StoryboardInitializable {
 extension HomeViewController: HomeCollectionViewDelegate {
     func selectProject(project: Project) {
         
-        let viewController = CreateViewController()
-//        viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated: true, completion: nil)
+        print(project)
+        
+        if project.id == "1" {
+            let viewController = CreateViewController()
+            self.present(viewController, animated: true, completion: nil)
+        } else {
+            let viewController = ProjectARViewController.initFromStoryboard(name: "Main")
+            viewController.viewModel = ProjectARViewModel(project: project)
+            viewController.modalPresentationStyle = .fullScreen
+            self.present(viewController, animated: true, completion: nil)
+        }
     }
     
     

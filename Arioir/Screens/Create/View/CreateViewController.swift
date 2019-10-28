@@ -9,10 +9,11 @@
 import UIKit
 
 
+
+
 class CreateViewController: UIViewController {
     
     var viewModel: CreateViewModelType?
-    
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -61,15 +62,18 @@ class CreateViewController: UIViewController {
     
     //MARK: - keyboard functions
     @objc func keyboardWillShow(notification: NSNotification) {
-        print(#function)
         
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            guard let viewModel = viewModel else { return }
-            var frame = viewModel.tableView.frame
-            frame.origin.y = frame.origin.y - keyboardSize.height + 167
-            UIView.animate(withDuration: 0.5) {
-                self.viewModel!.tableView.frame = frame
-            }
+//
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//          
+//        }
+//
+        guard let viewModel = viewModel else { return }
+        var frame = viewModel.tableView.frame
+        //            frame.origin.y = frame.origin.y - keyboardSize.height + 100
+        frame.origin.y = -143
+        UIView.animate(withDuration: 0.5) {
+            self.viewModel!.tableView.frame = frame
         }
     }
     
@@ -93,24 +97,23 @@ class CreateViewController: UIViewController {
 extension CreateViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let presentController = PresentationViewController(presentedViewController: presented, presenting: presenting)
-        presentController.closeDelegate = self
-        
         return presentController
     }
 }
 
-//MARK: - PresentationViewControllerDelegate
-extension CreateViewController: PresentationViewControllerDelegate {
-    func close() {
-        print(#function)
-        //        self.dismiss(animated: true, completion: nil)
-    }
-}
-
-
 
 //MARK: - CreateTableViewDelegate
 extension CreateViewController: CreateTableViewDelegate {
+    func createProject() {
+//        let viewController = ProjectARViewController()
+//        viewController.modalPresentationStyle = .fullScreen
+//        self.present(viewController, animated: true, completion: nil)
+        //ToDo получение только что созданного объекта и открытие
+        
+        print(#function)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func showError(title: String) {
         let toast = ToastViewController(title: title)
         self.present(toast, animated: true)

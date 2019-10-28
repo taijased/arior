@@ -1,15 +1,14 @@
 //
-//  ARViewModel.swift
-//  Arior-AR
+//  ProjectARViewControls.swift
+//  Arioir
 //
-//  Created by Alexey Antipin on 25/09/2019.
-//  Copyright © 2019 Alexey Antipin. All rights reserved.
+//  Created by Максим Спиридонов on 28.10.2019.
+//  Copyright © 2019 Максим Спиридонов. All rights reserved.
 //
 
 import ARKit
 
-protocol ARViewModelProtocol: class
-{
+protocol ProjectARViewControlsDelegate: class {
     func close()
     func plus()
     func undo()
@@ -18,21 +17,19 @@ protocol ARViewModelProtocol: class
     
 }
 
-class ARViewModel: UIView
+class ProjectARViewControls: UIView
 {
     
-    weak var delegate: ARViewModelProtocol?
+    weak var delegate: ProjectARViewControlsDelegate?
     
-    var sceneView: ARSCNView =
-    {
+    var sceneView: ARSCNView = {
         let view = ARSCNView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    var closeButton: UIButton =
-    {
-        let button = UIButton.getCustomButton(imageName: "close", colorHex: "#FFFFFF", cornerRadius: 20)
+    var closeButton: UIButton = {
+        let button = UIButton.getCustomButton(imageName: "close-yellow", colorHex: "#FFFFFF", cornerRadius: 20)
         button.addTarget(self, action: #selector(close(_:)), for: .touchUpInside)
         return button
         
@@ -40,7 +37,7 @@ class ARViewModel: UIView
     
     var plusButton: UIButton =
     {
-        let button = UIButton.getCustomButton(imageName: "plus", colorHex: "#FFFFFF", cornerRadius: 30)
+        let button = UIButton.getCustomButton(imageName: "plus-yellow", colorHex: "#FFFFFF", cornerRadius: 30)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(plus(_:)), for: .touchUpInside)
         return button
@@ -58,7 +55,7 @@ class ARViewModel: UIView
     
     var doneButton: UIButton =
     {
-        let button = UIButton.getCustomButton(imageName: "done", colorHex: "#69D37B", cornerRadius: 20)
+        let button = UIButton.getCustomButton(imageName: "done-white", colorHex: "#69D37B", cornerRadius: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(done(_:)), for: .touchUpInside)
         return button
@@ -67,39 +64,15 @@ class ARViewModel: UIView
     
     var restartButton: UIButton =
     {
-        let button = UIButton.getCustomButton(imageName: "restart", colorHex: "#FFBF00", cornerRadius: 20)
+        let button = UIButton.getCustomButton(imageName: "refresh-white", colorHex: "#FFBF00", cornerRadius: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(restart(_:)), for: .touchUpInside)
         return button
         
     }()
     
-    //    MARK: - Debug Buttons
     
-    var textureWalls: UIButton =
-    {
-        let button = UIButton.getCustomButton(label: "Texture Wall")
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    var hideAreaLabels: UIButton =
-    {
-        let button = UIButton.getCustomButton(label: "Hide Area")
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-        
-    }()
-    
-    var preview: UIButton =
-    {
-        let button = UIButton.getCustomButton(label: "Preview")
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    var heightLabel: UILabel =
-    {
+    var heightLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor(hexValue: "#FFBF00", alpha: 1)
@@ -112,8 +85,7 @@ class ARViewModel: UIView
         return label
     }()
     
-    var coachingLabel: UILabel =
-    {
+    var coachingLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor(hexValue: "#000000", alpha: 0.3)
@@ -125,32 +97,38 @@ class ARViewModel: UIView
         return label
     }()
     
-    @objc func close(_ sender: UIButton)
-    {
+    @objc func close(_ sender: UIButton) {
+        sender.flash()
         delegate?.close()
     }
     
-    @objc func plus(_ sender: UIButton)
-    {
+    @objc func plus(_ sender: UIButton) {
+        sender.flash()
         delegate?.plus()
     }
     
-    @objc func undo(_ sender: UIButton)
-    {
+    @objc func undo(_ sender: UIButton) {
+        sender.flash()
         delegate?.undo()
     }
-    @objc func done(_ sender: UIButton)
-    {
+    @objc func done(_ sender: UIButton) {
+        sender.flash()
         delegate?.done()
     }
-    @objc func restart(_ sender: UIButton)
-    {
+    @objc func restart(_ sender: UIButton) {
+        sender.flash()
         delegate?.restart()
     }
     
     
-    func configurate()
-    {
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
+    func setupUI() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .clear
         
@@ -202,53 +180,10 @@ class ARViewModel: UIView
         coachingLabel.widthAnchor.constraint(equalToConstant: 240).isActive = true
         coachingLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
-        addSubview(textureWalls)
-        textureWalls.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -150).isActive = true
-        textureWalls.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30).isActive = true
-        textureWalls.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        textureWalls.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        
-        addSubview(hideAreaLabels)
-        hideAreaLabels.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -150).isActive = true
-        hideAreaLabels.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30).isActive = true
-        hideAreaLabels.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        hideAreaLabels.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        addSubview(preview)
-        preview.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -300).isActive = true
-        preview.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30).isActive = true
-        preview.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        preview.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configurate()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-}
-
-extension ARViewModel: ViewModelUpdateProtocol
-{
-    
-    
-    func updateHeightLabel(height: CGFloat) {
-        heightLabel.text = String(format: "%.2f", height) + " м"
-    }
-    
-    func activateHeightLabel() {
-        heightLabel.isHidden = false
-    }
-    
-    func deactivateHeightLabel() {
-        heightLabel.isHidden = true
     }
     
 }

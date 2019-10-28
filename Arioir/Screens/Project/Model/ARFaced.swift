@@ -1,15 +1,23 @@
 //
 //  ARFaced.swift
-//  Arior-AR
+//  Arioir
 //
-//  Created by Alexey Antipin on 27/09/2019.
-//  Copyright © 2019 Alexey Antipin. All rights reserved.
+//  Created by Максим Спиридонов on 28.10.2019.
+//  Copyright © 2019 Максим Спиридонов. All rights reserved.
 //
+
 
 import ARKit
 import GameplayKit
-protocol ARSessionStateProtocot: class
-{
+
+
+
+protocol  ARFacadeProtocol:class {
+    func isPlaneDetected() -> Bool
+}
+
+
+protocol ARSessionStateProtocot: class {
     func onPlaneDetected()
     func onSessionInetarapted()
     func onSessionIneraptionEnded(_ session: ARSession)
@@ -20,11 +28,13 @@ protocol ARSessionStateProtocot: class
 
 }
 
-class ARFacade: NSObject, ARFacadeProtocol
-{
+class ARFacade: NSObject, ARFacadeProtocol {
 
     
-    let viewModel: ARViewModel
+//    let viewModel: ARViewModel
+    
+    let viewModel: ProjectARViewModel
+    
     
     let sceneView: ARSCNView
     
@@ -36,21 +46,19 @@ class ARFacade: NSObject, ARFacadeProtocol
     
     var delegate: ARSessionStateProtocot!
     
-    init(viewModel: ARViewModel)
-    {
+    init(viewModel: ProjectARViewModel) {
         self.viewModel = viewModel
-        self.sceneView = viewModel.sceneView
+        self.sceneView = viewModel.controls.sceneView
         self.planeDetector = PlaneDetector(sceneView: sceneView)
         self.wallBuilder = WallBuilder(sceneView: sceneView, planeDetector: planeDetector)
         self.interactions = ARInteractions(sceneView: sceneView, planeDetector: planeDetector)
         super.init()
         wallBuilder.delegate = viewModel
         sceneView.delegate = self
-        sceneView.session.delegate = self   
+        sceneView.session.delegate = self
     }
     
-    func runARSession(planeDetection: ARWorldTrackingConfiguration.PlaneDetection = [.horizontal], autoenableDefaultLighting : Bool = true)
-    {
+    func runARSession(planeDetection: ARWorldTrackingConfiguration.PlaneDetection = [.horizontal], autoenableDefaultLighting : Bool = true) {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = planeDetection
         sceneView.showsStatistics = true
@@ -59,21 +67,18 @@ class ARFacade: NSObject, ARFacadeProtocol
 
     }
     
-    func resetTracking()
-    {
+    func resetTracking() {
         runARSession()
         wallBuilder.reset()
         wallBuilder.raycaster.planeDetector.updatePlaneAnchor()
     }
     
-    func textureWalls()
-    {
+    func textureWalls() {
         let path = "ScnAssets.scnassets/beer.png"
         wallBuilder.testureSegments(textureLength: 0.4625, textureWidth: 1, textureImage: UIImage(named: path))
     }
     
-    func hideAreaLabels()
-    {
+    func hideAreaLabels() {
         
     }
     

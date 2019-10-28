@@ -10,6 +10,7 @@ import UIKit
 
 
 protocol CreateTableViewDelegate: class {
+    func createProject()
     func deinitView()
     func showError(title: String)
 }
@@ -124,7 +125,18 @@ extension CreateTableView: UITableViewDelegate, UITableViewDataSource {
         }
         
         
-        print("ololo")
+    
+        
+        StorageManager.saveProject(projectName!, iconName: projectIcon!) {
+            self.createDelegate?.createProject()
+        }
+
+        
+        
+//                let viewController = CreateViewController()
+//        //        viewController.modalPresentationStyle = .fullScreen
+//                self.present(viewController, animated: true, completion: nil)
+//       
         
         
     }

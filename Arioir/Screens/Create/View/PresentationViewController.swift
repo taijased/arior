@@ -8,13 +8,8 @@
 
 import UIKit
 
-protocol PresentationViewControllerDelegate: class {
-    func close()
-}
-
 class PresentationViewController: PresentationController {
     
-    weak var closeDelegate: PresentationViewControllerDelegate?
     let visualEffectView: UIVisualEffectView = {
 
         let view = UIVisualEffectView()
@@ -25,9 +20,6 @@ class PresentationViewController: PresentationController {
     
     override var frameOfPresentedViewInContainerView: CGRect {
         guard let containerView = containerView else { return .zero }
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
-//        containerView.addGestureRecognizer(tapGestureRecognizer)
-        
         return containerView.bounds
               .inset(by: UIEdgeInsets(top: containerView.bounds.height * 0.65, left: 0, bottom: 0, right: 0))
 //            .inset(by: containerView.safeAreaInsets)
@@ -60,9 +52,5 @@ class PresentationViewController: PresentationController {
                  self?.visualEffectView.effect = nil
             }, completion: nil)
         }
-    }
-    
-    @objc private func close() {
-        self.closeDelegate?.close()
     }
 }

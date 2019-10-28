@@ -8,12 +8,6 @@
 
 import UIKit
 
-struct BasketTVDeliveryCellModel {
-    var name: String
-    var price: String
-    var count: Int
-}
-
 
 class BasketTableViewHeaderCell: UITableViewCell {
     
@@ -141,11 +135,9 @@ class BasketTableViewHeaderCell: UITableViewCell {
     
     
     
-    func set(viewModel: BasketTVDeliveryCellModel) {
+    func set(count: Int) {
         DispatchQueue.main.async {
-            self.labelName.text = viewModel.name
-            self.labelPrice.text = viewModel.price
-            self.countLabel.text = "\(viewModel.count) позиций в корзине"
+            self.countLabel.text = "\(count) позиций в корзине"
         }
     }
     

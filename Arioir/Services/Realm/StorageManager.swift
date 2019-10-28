@@ -145,4 +145,14 @@ class StorageManager {
     }
     
     
+    
+    static func saveProject(_ name: String, iconName: String, completion: @escaping () -> Void) {
+        let identifier = UUID()
+        try! realm.write {
+            realm.add(Project(id: "\(identifier)", name: name, iconName: iconName))
+            completion()
+        }
+    }
+    
+    
 }
