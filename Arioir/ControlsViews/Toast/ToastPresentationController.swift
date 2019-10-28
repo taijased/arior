@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol ToastPresentationControllerDelegate: class {
+    func close()
+}
+
+
 class ToastPresentationController: PresentationController {
+    
+    weak var closeDelegate: ToastPresentationControllerDelegate?
     
     let visualEffectView: UIVisualEffectView = {
         let view = UIVisualEffectView()
@@ -22,7 +29,9 @@ class ToastPresentationController: PresentationController {
         guard let containerView = containerView,
             let presentedView = presentedView else { return .zero }
 
-
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
+        containerView.addGestureRecognizer(tapGestureRecognizer)
+                
         
         let inset: CGFloat = 16
 
@@ -58,8 +67,6 @@ class ToastPresentationController: PresentationController {
            super.presentationTransitionWillBegin()
            presentedView?.layer.cornerRadius = 12
            
-        
-        
            containerView?.addSubview(visualEffectView)
            visualEffectView.fillSuperview()
 
@@ -79,6 +86,8 @@ class ToastPresentationController: PresentationController {
                }, completion: nil)
            }
        }
-    
+    @objc private func close() {
+        self.closeDelegate?.close()
+    }
     
 }

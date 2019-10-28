@@ -23,6 +23,7 @@ class OrderTableHeaderViewCell: UITableViewCell {
         label.font = label.font.withSize(26)
         label.font = UIFont.boldSystemFont(ofSize: 26)
         label.text = "Итого: "
+        label.alpha = 0.3
         return label
     }()
     
@@ -80,7 +81,7 @@ class OrderTableHeaderViewCell: UITableViewCell {
     
     func set(count: String) {
         DispatchQueue.main.async {
-            self.labelPrice.text = count
+            self.labelPrice.text = count + " ₽"
         }
     }
     

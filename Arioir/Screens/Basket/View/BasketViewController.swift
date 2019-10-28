@@ -64,8 +64,17 @@ extension BasketViewController: BasketViewControlsDelegate {
     func toOrder() {
         
         let viewController = OrderViewController()
+        viewController.delegate = self
         viewController.viewModel = OrderViewModel(price: viewModel.basketTableView.getAllItemPrices())
         self.present(viewController, animated: true, completion: nil)
     }
     
 }
+
+extension BasketViewController: OrderViewControllerDelegate {
+    func deinitController() {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+

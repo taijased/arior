@@ -1,10 +1,11 @@
 //
-//  OrderTableFIOViewCell.swift
+//  OrderTableEmailViewCell.swift
 //  Arioir
 //
-//  Created by Максим Спиридонов on 27.10.2019.
+//  Created by Максим Спиридонов on 28.10.2019.
 //  Copyright © 2019 Максим Спиридонов. All rights reserved.
 //
+
 
 
 import UIKit
@@ -14,39 +15,41 @@ import UIKit
 
 
 
-class FIOTextField: CustomTextField {
+class EmailTextField: CustomTextField {
     
     override var textFieldLabel: String {
         get {
-            return "ФИО"
+            return "E-mail"
         }
     }
+
     
     override func validTextField(_ textFieldText: String) -> Bool {
-        if textFieldText.count > 6 && textFieldText.count < 64 {
-           
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+             
+        print(emailPred.evaluate(with: textFieldText))
+        if emailPred.evaluate(with: textFieldText) {
+            
             return true
         } else {
-            self.errorText = "Неверный формат ФИО"
+            self.errorText = "Введите в формате. Пример: name@mail.ru"
             return false
         }
     }
 }
 
 
-class OrderTableFIOViewCell: UITableViewCell {
+class OrderTableEmailViewCell: UITableViewCell {
     
-    static let reuseId = "OrderTableFIOViewCell"
+    static let reuseId = "OrderTableEmailViewCell"
     
-    var textField: CustomTextField
+    var textField: EmailTextField
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        textField = FIOTextField()
-        
+        textField = EmailTextField()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-//        self.textField.textFieldLabel = "ФИО"
-        
+    
         setupUI()
     }
     
@@ -55,8 +58,8 @@ class OrderTableFIOViewCell: UITableViewCell {
         addSubview(textField)
         textField.fillSuperview()
         
-        textField.onValidText = { fio in
-            print(fio)
+        textField.onValidText = { email in
+            print(email)
         }
         
     }

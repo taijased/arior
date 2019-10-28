@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+
+enum OrderModel {
+    case fio
+    case email
+    case phone
+    case comments
+    case address
+    case delivery
+    case payment
+}

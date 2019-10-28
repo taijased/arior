@@ -142,6 +142,17 @@
 		13974AD8236608B00032192A /* OrderTableHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974AD7236608B00032192A /* OrderTableHeaderViewCell.swift */; };
 		13974ADA23660D970032192A /* OrderTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974AD923660D970032192A /* OrderTableViewViewModel.swift */; };
 		13974ADC2366138E0032192A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974ADB2366138E0032192A /* CustomTextField.swift */; };
+		13974ADE23663F740032192A /* OrderTableEmailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974ADD23663F740032192A /* OrderTableEmailViewCell.swift */; };
+		13974AE0236642B70032192A /* OrderTablePhoneViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974ADF236642B70032192A /* OrderTablePhoneViewCell.swift */; };
+		13974AE6236648840032192A /* String + PhoneValidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974AE5236648840032192A /* String + PhoneValidate.swift */; };
+		13974AE823664B160032192A /* OrderTableCommentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974AE723664B160032192A /* OrderTableCommentsViewCell.swift */; };
+		13974AEA23664E320032192A /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974AE923664E320032192A /* PhoneTextField.swift */; };
+		13974AEC236650310032192A /* UITextField+DoneCancelToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974AEB236650310032192A /* UITextField+DoneCancelToolbar.swift */; };
+		13974AEE2366DAAA0032192A /* OrderTableAddressViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974AED2366DAAA0032192A /* OrderTableAddressViewCell.swift */; };
+		13974AF02366DC800032192A /* OrderTableDeliveryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974AEF2366DC800032192A /* OrderTableDeliveryViewCell.swift */; };
+		13974AF42366E8BD0032192A /* OrderTablePaymentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974AF32366E8BD0032192A /* OrderTablePaymentViewCell.swift */; };
+		13974AF62366EABA0032192A /* OrderTablePrivacyPolicyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974AF52366EABA0032192A /* OrderTablePrivacyPolicyViewCell.swift */; };
+		13974AF82366F3D10032192A /* OrderBottomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974AF72366F3D10032192A /* OrderBottomControl.swift */; };
 		4C48CA5B31BEB450323462DC /* Pods_Arioir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */; };
 /* End PBXBuildFile section */
 
@@ -283,6 +294,17 @@
 		13974AD7236608B00032192A /* OrderTableHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableHeaderViewCell.swift; sourceTree = "<group>"; };
 		13974AD923660D970032192A /* OrderTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewViewModel.swift; sourceTree = "<group>"; };
 		13974ADB2366138E0032192A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		13974ADD23663F740032192A /* OrderTableEmailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableEmailViewCell.swift; sourceTree = "<group>"; };
+		13974ADF236642B70032192A /* OrderTablePhoneViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTablePhoneViewCell.swift; sourceTree = "<group>"; };
+		13974AE5236648840032192A /* String + PhoneValidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + PhoneValidate.swift"; sourceTree = "<group>"; };
+		13974AE723664B160032192A /* OrderTableCommentsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableCommentsViewCell.swift; sourceTree = "<group>"; };
+		13974AE923664E320032192A /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
+		13974AEB236650310032192A /* UITextField+DoneCancelToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+DoneCancelToolbar.swift"; sourceTree = "<group>"; };
+		13974AED2366DAAA0032192A /* OrderTableAddressViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableAddressViewCell.swift; sourceTree = "<group>"; };
+		13974AEF2366DC800032192A /* OrderTableDeliveryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableDeliveryViewCell.swift; sourceTree = "<group>"; };
+		13974AF32366E8BD0032192A /* OrderTablePaymentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTablePaymentViewCell.swift; sourceTree = "<group>"; };
+		13974AF52366EABA0032192A /* OrderTablePrivacyPolicyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTablePrivacyPolicyViewCell.swift; sourceTree = "<group>"; };
+		13974AF72366F3D10032192A /* OrderBottomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBottomControl.swift; sourceTree = "<group>"; };
 		24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.debug.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.debug.xcconfig"; sourceTree = "<group>"; };
 		586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arioir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.release.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.release.xcconfig"; sourceTree = "<group>"; };
@@ -306,6 +328,7 @@
 				1300492F235F42BD006DA2C9 /* ButtonWithBadge.swift */,
 				13974ABF2365D4F60032192A /* Toast */,
 				13974ADB2366138E0032192A /* CustomTextField.swift */,
+				13974AE923664E320032192A /* PhoneTextField.swift */,
 			);
 			path = ControlsViews;
 			sourceTree = "<group>";
@@ -351,6 +374,7 @@
 		13375BCB235F0A8A00F6CC0D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				13974AE4236648730032192A /* Form */,
 				13375BCC235F0A9B00F6CC0D /* Constants.swift */,
 				13375BCE235F0AAC00F6CC0D /* Constraints.swift */,
 				13375BD0235F0ABC00F6CC0D /* UIButton + Custom.swift */,
@@ -767,6 +791,7 @@
 			children = (
 				13974ACA2366068E0032192A /* OrderViewController.swift */,
 				13974AD0236608670032192A /* OrderTableView.swift */,
+				13974AF72366F3D10032192A /* OrderBottomControl.swift */,
 				13974AD4236608890032192A /* cells */,
 			);
 			path = View;
@@ -785,8 +810,24 @@
 			children = (
 				13974AD52366089E0032192A /* OrderTableFIOViewCell.swift */,
 				13974AD7236608B00032192A /* OrderTableHeaderViewCell.swift */,
+				13974ADD23663F740032192A /* OrderTableEmailViewCell.swift */,
+				13974ADF236642B70032192A /* OrderTablePhoneViewCell.swift */,
+				13974AE723664B160032192A /* OrderTableCommentsViewCell.swift */,
+				13974AED2366DAAA0032192A /* OrderTableAddressViewCell.swift */,
+				13974AEF2366DC800032192A /* OrderTableDeliveryViewCell.swift */,
+				13974AF32366E8BD0032192A /* OrderTablePaymentViewCell.swift */,
+				13974AF52366EABA0032192A /* OrderTablePrivacyPolicyViewCell.swift */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		13974AE4236648730032192A /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				13974AE5236648840032192A /* String + PhoneValidate.swift */,
+				13974AEB236650310032192A /* UITextField+DoneCancelToolbar.swift */,
+			);
+			path = Form;
 			sourceTree = "<group>";
 		};
 		579C4987B9DF7B31F93676DC /* Frameworks */ = {
@@ -944,6 +985,7 @@
 				1350C23F236094A1005030E7 /* ARSCNView+addToSceneView.swift in Sources */,
 				1350C24D236094A1005030E7 /* WallPaperPreviewPointer.swift in Sources */,
 				13375BD5235F0AE500F6CC0D /* WebImageView.swift in Sources */,
+				13974AF42366E8BD0032192A /* OrderTablePaymentViewCell.swift in Sources */,
 				1350C241236094A1005030E7 /* ConnectionLineConfigs.swift in Sources */,
 				1350C1E72360692F005030E7 /* CardTableHeaderCell.swift in Sources */,
 				1350C238236094A1005030E7 /* AreaLabelsProcessor.swift in Sources */,
@@ -951,12 +993,14 @@
 				1350C240236094A1005030E7 /* LineParametricEquation.swift in Sources */,
 				13974AD1236608670032192A /* OrderTableView.swift in Sources */,
 				1350C252236094A1005030E7 /* ViewModelUpdateProtocol.swift in Sources */,
+				13974AF82366F3D10032192A /* OrderBottomControl.swift in Sources */,
 				13974AC32365D57F0032192A /* ToastPresentationController.swift in Sources */,
 				1350C235236094A1005030E7 /* UIGestureRecognizer+center.swift in Sources */,
 				13974AB423659F830032192A /* CreateTableIconsCell.swift in Sources */,
 				1350C24F236094A1005030E7 /* DirectingLine.swift in Sources */,
 				1358865A236474F5003E13B1 /* CreateTableViewViewModel.swift in Sources */,
 				13974ABC2365A4460032192A /* IconCollectionViewCellViewModel.swift in Sources */,
+				13974AF02366DC800032192A /* OrderTableDeliveryViewCell.swift in Sources */,
 				13375C0E235F19CD00F6CC0D /* GoodsModel.swift in Sources */,
 				1350C231236094A1005030E7 /* ARSCNView+nodeAt.swift in Sources */,
 				1350C1F42360943E005030E7 /* UserCoaching.swift in Sources */,
@@ -984,6 +1028,7 @@
 				138C4FE92361CA2800AB7757 /* FavoriteCollectionViewViewModel.swift in Sources */,
 				13375BDF235F0B6300F6CC0D /* DynamicNodeEncoding.swift in Sources */,
 				13375BD1235F0ABC00F6CC0D /* UIButton + Custom.swift in Sources */,
+				13974AE0236642B70032192A /* OrderTablePhoneViewCell.swift in Sources */,
 				13375BE2235F0B8A00F6CC0D /* DemmoksiCatalogModel.swift in Sources */,
 				13974ACD236606A50032192A /* OrderViewModel.swift in Sources */,
 				13588658236474E3003E13B1 /* CreateTableView.swift in Sources */,
@@ -1017,6 +1062,8 @@
 				13974ACB2366068E0032192A /* OrderViewController.swift in Sources */,
 				1350C22C236094A1005030E7 /* ARPreviewFacade.swift in Sources */,
 				1350C27223609EF8005030E7 /* HomeModel.swift in Sources */,
+				13974AF62366EABA0032192A /* OrderTablePrivacyPolicyViewCell.swift in Sources */,
+				13974AEC236650310032192A /* UITextField+DoneCancelToolbar.swift in Sources */,
 				1350C23A236094A1005030E7 /* Raycaster.swift in Sources */,
 				13375BE4235F0B9F00F6CC0D /* NetworkService.swift in Sources */,
 				1350C248236094A1005030E7 /* SCNNode+glowing.swift in Sources */,
@@ -1024,6 +1071,7 @@
 				1350C251236094A1005030E7 /* VirtualObject.swift in Sources */,
 				13004924235F2D4E006DA2C9 /* ProjectsCollectionView.swift in Sources */,
 				1350C23D236094A1005030E7 /* PointersProcessor.swift in Sources */,
+				13974AE6236648840032192A /* String + PhoneValidate.swift in Sources */,
 				13974ACF236606B40032192A /* OrderModel.swift in Sources */,
 				1350C24A236094A1005030E7 /* WallBuilder.swift in Sources */,
 				1350C26123609CA6005030E7 /* BasketViewController.swift in Sources */,
@@ -1037,13 +1085,16 @@
 				13375BCD235F0A9B00F6CC0D /* Constants.swift in Sources */,
 				1300492D235F4290006DA2C9 /* HomeBottomControls.swift in Sources */,
 				1350C236236094A1005030E7 /* DirectingLinesProcessor.swift in Sources */,
+				13974ADE23663F740032192A /* OrderTableEmailViewCell.swift in Sources */,
 				13375C01235F105700F6CC0D /* HomeHeaderViewCell.swift in Sources */,
+				13974AEA23664E320032192A /* PhoneTextField.swift in Sources */,
 				13375C0B235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift in Sources */,
 				138C4FE12361C95F00AB7757 /* FavoriteModel.swift in Sources */,
 				13004930235F42BD006DA2C9 /* ButtonWithBadge.swift in Sources */,
 				13375BEC235F0C9B00F6CC0D /* StorageManager.swift in Sources */,
 				13974ABE2365A6E80032192A /* CreateTableButtonCell.swift in Sources */,
 				13375C05235F115300F6CC0D /* HomeCollectionViewViewModel.swift in Sources */,
+				13974AEE2366DAAA0032192A /* OrderTableAddressViewCell.swift in Sources */,
 				138C4FEF2361CD4D00AB7757 /* FavoriteBottomControls.swift in Sources */,
 				13004929235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift in Sources */,
 				13375BFF235F102900F6CC0D /* HomeCollectionView.swift in Sources */,
@@ -1052,6 +1103,7 @@
 				13974AC12365D50D0032192A /* ToastViewController.swift in Sources */,
 				1350C234236094A1005030E7 /* ARInteractionsProtocol.swift in Sources */,
 				1350C249236094A1005030E7 /* NodeRender.metal in Sources */,
+				13974AE823664B160032192A /* OrderTableCommentsViewCell.swift in Sources */,
 				1350C26D23609D55005030E7 /* BasketTableViewHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

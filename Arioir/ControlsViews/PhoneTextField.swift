@@ -1,36 +1,23 @@
 //
-//  CustomTextField.swift
+//  PhoneTextField.swift
 //  Arioir
 //
-//  Created by Максим Спиридонов on 27.10.2019.
+//  Created by Максим Спиридонов on 28.10.2019.
 //  Copyright © 2019 Максим Спиридонов. All rights reserved.
 //
+
 
 import UIKit
 
 
 
-class CustomTextField: UIView {
+class PhoneTextField: UIView {
     
     var onValidText: ((String) -> Void)?
     
-    private var errorMessage: String = "errorMessage"
+    var textFieldLabel: String = "Телефон"
     
-    var textFieldLabel: String {
-        get {
-            return "Test"
-        }
-    }
-    
-    var errorText: String {
-        get {
-            return self.errorMessage
-        }
-        set(newValue) {
-            print(newValue)
-            self.errorMessage = newValue
-        }
-    }
+    var errorText: String = "Неправильный формат"
     
     
     final fileprivate let selectedImage: UIImageView = {
@@ -75,6 +62,7 @@ class CustomTextField: UIView {
         textField.addTarget(self, action: #selector(textFieldDidBegin(_:)), for: .editingDidBegin)
         textField.addTarget(self, action: #selector(textFieldDidEnd(_:)), for: .editingDidEnd)
         textField.returnKeyType = .done
+        textField.keyboardType = UIKeyboardType.decimalPad
         return textField
     }()
     
@@ -87,7 +75,12 @@ class CustomTextField: UIView {
     
     
     
+    
+    
+    
     final fileprivate func setupLayers() {
+        
+        
         
         addSubview(mainView)
         
@@ -104,6 +97,8 @@ class CustomTextField: UIView {
         textField.topAnchor.constraint(equalTo: mainView.topAnchor).isActive = true
         textField.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 11).isActive = true
         textField.delegate = self
+        textField.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTapped)))
+        
         
         
         mainView.addSubview(underlineView)
@@ -118,7 +113,7 @@ class CustomTextField: UIView {
         labelName.centerYAnchor.constraint(equalTo: mainView.centerYAnchor).isActive = true
         labelName.heightAnchor.constraint(equalToConstant: 20).isActive = true
         labelName.text = self.textFieldLabel
- 
+        
         
         mainView.addSubview(selectedImage)
         selectedImage.centerYAnchor.constraint(equalTo: mainView.centerYAnchor).isActive = true
@@ -128,6 +123,10 @@ class CustomTextField: UIView {
         
     }
     
+    @objc func doneButtonTapped() {
+        updateUITextLabel(textField)
+        textField.resignFirstResponder()
+    }
     
     
     @objc final fileprivate func textFieldDidBegin(_ textField: UITextField) {
@@ -185,8 +184,10 @@ class CustomTextField: UIView {
     }
     
     
+    
     func validTextField(_ textFieldText: String) -> Bool {
-        return true
+        
+        return textFieldText.isPhoneNumber
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -197,12 +198,41 @@ class CustomTextField: UIView {
 
 
 //MARK: - UITextFieldDelegate
-extension CustomTextField: UITextFieldDelegate {
-    final func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+extension PhoneTextField: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        updateUITextLabel(textField)
         
-        textField.resignFirstResponder()
-        return true
+        let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        print(newString)
+        textField.text = formattedNumber(number: newString)
+        return false
+    }
+    
+}
+
+//MARK: - Formatting phone numbers in Swift
+
+extension PhoneTextField {
+    
+    private func formattedNumber(number: String) -> String {
+        let cleanPhoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        let mask = "+7 (XXX) XXX-XXXX"
+        
+        var result = ""
+        var index = cleanPhoneNumber.startIndex
+        for ch in mask where index < cleanPhoneNumber.endIndex {
+            if ch == "X" {
+                result.append(cleanPhoneNumber[index])
+                index = cleanPhoneNumber.index(after: index)
+            } else if ch == "7" {
+                result.append("7")
+                index = cleanPhoneNumber.index(after: index)
+            } else {
+                result.append(ch)
+            }
+        }
+        return result
     }
 }
+

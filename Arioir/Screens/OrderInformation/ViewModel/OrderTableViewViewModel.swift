@@ -23,7 +23,7 @@ class OrderTableViewViewModel: OrderTableViewViewModelType {
     
     var price: String
     
-    let cells = [CreateTableTextfieldCell(), CreateTableTextfieldCell(), CreateTableTextfieldCell()]
+    let cells = ["", "", "", "", "", "", "", "", ""]
     
     
     
@@ -36,9 +36,17 @@ class OrderTableViewViewModel: OrderTableViewViewModelType {
         case 0:
             return 80.0
         case 1:
-            return 52.0
+            return 62.0
+        case 2:
+            return 62.0
+        case 3:
+            return 62.0
+        case 4:
+            return 62.0
+        case 5:
+            return 62.0
         default:
-            return 80.0
+            return 77.0
         }
     }
     
