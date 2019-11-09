@@ -57,9 +57,11 @@ extension ARPreviewViewController: ARPreviewModelProtocol {
     
     func toFavorite() {
         guard let product = item else { return }
-        StorageManager.saveToFavorits(product) { [weak self] in
-           self?.dismiss(animated: true , completion: nil)
+ 
+        FavoriteService.create(object: product) { [weak self] in
+            self?.dismiss(animated: true , completion: nil)
         }
+        
         
     }
     

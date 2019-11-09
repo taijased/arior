@@ -22,8 +22,12 @@ class FavoriteViewModel: FavoriteViewModelType {
     var onNavigation: ((FavoriteNavigation) -> Void)?
     var collectionView: FavoriteCollectionView
     
+    let storageManager: FavoriteServiceType?
+    
     
     init() {
+        storageManager = FavoriteService()
+        
         collectionView = FavoriteCollectionView()
         bottomControls = FavoriteBottomControls()
         bottomControls.delegate = self
@@ -36,13 +40,15 @@ class FavoriteViewModel: FavoriteViewModelType {
 
 extension FavoriteViewModel: FavoriteBottomControlsDelegate {
     func refresh() {
-        StorageManager.clearFavorites { [weak self] in
+        guard let storageManager = storageManager else { return }
+        storageManager.clearFavorites { [weak self] in
             self?.onNavigation?(.dissmis)
         }
     }
     
     func toOrder() {
-        StorageManager.favoritesToBasket { [weak self] in
+        guard let storageManager = storageManager else { return }
+        storageManager.favoritesToBasket { [weak self] in
             self?.onNavigation?(.dissmis)
         }
     }

@@ -9,8 +9,17 @@
 import ARKit
 import GameplayKit
 
+
+protocol WallBuilderDelegate: class {
+    func onTap()
+}
+
 class WallBuilder: GKEntity
 {
+    
+    weak var eventDelegate: WallBuilderDelegate?
+    
+    
     let sceneView: ARSCNView
     
     let raycaster: Raycaster
@@ -263,6 +272,9 @@ class WallBuilder: GKEntity
     }
 }
 
+
+//MARK: - VirtualObjectInteractionProtocol
+
 extension WallBuilder: VirtualObjectInteractionProtocol
 {
     func onRotate(gesture: UIRotationGestureRecognizer, sceneView: ARSCNView) {
@@ -308,6 +320,11 @@ extension WallBuilder: VirtualObjectInteractionProtocol
     
     func onTap(gesture: UITapGestureRecognizer, sceneView: ARSCNView, virtualObject: VirtualObject)
     {
+        
+        //MARK: - toDo event tap
+        
+        eventDelegate?.onTap()
+        
         if virtualObject is WallSigment
         {
             let segment = virtualObject as! WallSigment

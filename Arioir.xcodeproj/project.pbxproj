@@ -105,6 +105,7 @@
 		1358865A236474F5003E13B1 /* CreateTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13588659236474F5003E13B1 /* CreateTableViewViewModel.swift */; };
 		1358865C23647732003E13B1 /* CreateTableTextfieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358865B23647732003E13B1 /* CreateTableTextfieldCell.swift */; };
 		1358865E23647B2B003E13B1 /* CreateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358865D23647B2B003E13B1 /* CreateModel.swift */; };
+		1359DFE52376D41A006BB135 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1359DFE42376D41A006BB135 /* FavoriteService.swift */; };
 		1375515B23633BC000E29D5E /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375515A23633BC000E29D5E /* CreateViewController.swift */; };
 		1375515F2363400F00E29D5E /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375515E2363400F00E29D5E /* PresentationController.swift */; };
 		13755161236341B800E29D5E /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13755160236341B800E29D5E /* PresentationViewController.swift */; };
@@ -151,6 +152,7 @@
 		13974B02236742B20032192A /* ProjectARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974B01236742B20032192A /* ProjectARViewModel.swift */; };
 		13974B04236743BC0032192A /* ProjectARViewControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974B03236743BC0032192A /* ProjectARViewControls.swift */; };
 		13974B0623674B270032192A /* ARFaced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974B0523674B270032192A /* ARFaced.swift */; };
+		13974B0A236752150032192A /* ViewModelUpdateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974B09236752150032192A /* ViewModelUpdateProtocol.swift */; };
 		4C48CA5B31BEB450323462DC /* Pods_Arioir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */; };
 /* End PBXBuildFile section */
 
@@ -255,6 +257,7 @@
 		13588659236474F5003E13B1 /* CreateTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableViewViewModel.swift; sourceTree = "<group>"; };
 		1358865B23647732003E13B1 /* CreateTableTextfieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableTextfieldCell.swift; sourceTree = "<group>"; };
 		1358865D23647B2B003E13B1 /* CreateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateModel.swift; sourceTree = "<group>"; };
+		1359DFE42376D41A006BB135 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
 		1375515A23633BC000E29D5E /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		1375515E2363400F00E29D5E /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		13755160236341B800E29D5E /* PresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +304,7 @@
 		13974B01236742B20032192A /* ProjectARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectARViewModel.swift; sourceTree = "<group>"; };
 		13974B03236743BC0032192A /* ProjectARViewControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectARViewControls.swift; sourceTree = "<group>"; };
 		13974B0523674B270032192A /* ARFaced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFaced.swift; sourceTree = "<group>"; };
+		13974B09236752150032192A /* ViewModelUpdateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelUpdateProtocol.swift; sourceTree = "<group>"; };
 		24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.debug.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.debug.xcconfig"; sourceTree = "<group>"; };
 		586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arioir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.release.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.release.xcconfig"; sourceTree = "<group>"; };
@@ -385,7 +389,7 @@
 		13375BD8235F0B0F00F6CC0D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				13974AF923673BC40032192A /* Project */,
+				13974AF923673BC40032192A /* ProjectAR */,
 				13974AC4236606160032192A /* OrderInformation */,
 				1375515923633BA900E29D5E /* Create */,
 				138C4FDC2361C92400AB7757 /* Favorits */,
@@ -428,6 +432,7 @@
 			children = (
 				13375BEB235F0C9B00F6CC0D /* StorageManager.swift */,
 				13375BEF235F0CBF00F6CC0D /* BasketItemModel.swift */,
+				1359DFE42376D41A006BB135 /* FavoriteService.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -620,6 +625,7 @@
 			children = (
 				1350C227236094A1005030E7 /* ARFacade+ARSceneSessionDelegate.swift */,
 				1350C228236094A1005030E7 /* ARFacade+ARSCNViewDelegate.swift */,
+				13974B09236752150032192A /* ViewModelUpdateProtocol.swift */,
 			);
 			path = ARView;
 			sourceTree = "<group>";
@@ -820,14 +826,14 @@
 			path = Form;
 			sourceTree = "<group>";
 		};
-		13974AF923673BC40032192A /* Project */ = {
+		13974AF923673BC40032192A /* ProjectAR */ = {
 			isa = PBXGroup;
 			children = (
 				13974AFC23673BDE0032192A /* Model */,
 				13974AFB23673BD70032192A /* View */,
 				13974AFA23673BD10032192A /* ViewModel */,
 			);
-			path = Project;
+			path = ProjectAR;
 			sourceTree = "<group>";
 		};
 		13974AFA23673BD10032192A /* ViewModel */ = {
@@ -990,6 +996,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13974B0A236752150032192A /* ViewModelUpdateProtocol.swift in Sources */,
 				13375BE6235F0BB500F6CC0D /* NetworkDataFetcher.swift in Sources */,
 				1350C24C236094A1005030E7 /* WallPapersPreview.swift in Sources */,
 				1350C23E236094A1005030E7 /* Math.swift in Sources */,
@@ -1007,6 +1014,7 @@
 				1350C1E923606944005030E7 /* CardTableViewCell.swift in Sources */,
 				138C4FE72361CA1E00AB7757 /* FavoriteCollectionView.swift in Sources */,
 				13974AB82365A13B0032192A /* IconCollectionViewCell.swift in Sources */,
+				1359DFE52376D41A006BB135 /* FavoriteService.swift in Sources */,
 				1350C23F236094A1005030E7 /* ARSCNView+addToSceneView.swift in Sources */,
 				1350C24D236094A1005030E7 /* WallPaperPreviewPointer.swift in Sources */,
 				13375BD5235F0AE500F6CC0D /* WebImageView.swift in Sources */,
@@ -1276,6 +1284,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8F3CLJ592;
 				INFOPLIST_FILE = Arioir/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1295,6 +1304,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8F3CLJ592;
 				INFOPLIST_FILE = Arioir/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

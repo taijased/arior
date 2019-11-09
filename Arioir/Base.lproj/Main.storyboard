@@ -140,7 +140,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTX-c9-yCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8276" y="581"/>
+            <point key="canvasLocation" x="7022" y="446"/>
+        </scene>
+        <!--Project View Controller-->
+        <scene sceneID="YwN-Ma-1vG">
+            <objects>
+                <viewController storyboardIdentifier="ProjectViewController" id="AaU-BR-Nsv" customClass="ProjectViewController" customModule="Arioir" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o2k-sB-1nj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="1gt-yf-osu"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="896"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cvd-1n-7eA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8797" y="1239"/>
         </scene>
     </scenes>
 </document>

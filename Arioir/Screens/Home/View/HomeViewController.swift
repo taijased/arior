@@ -93,8 +93,6 @@ class HomeViewController: UIViewController, StoryboardInitializable {
 extension HomeViewController: HomeCollectionViewDelegate {
     func selectProject(project: Project) {
         
-        print(project)
-        
         if project.id == "1" {
             let viewController = CreateViewController()
             self.present(viewController, animated: true, completion: nil)

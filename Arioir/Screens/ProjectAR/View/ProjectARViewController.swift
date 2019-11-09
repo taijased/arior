@@ -12,6 +12,9 @@ import ARKit
 import GameplayKit
 
 class ProjectARViewController: UIViewController, StoryboardInitializable {
+
+    
+    
     
     
     var viewModel: ProjectARViewModel?
@@ -20,6 +23,8 @@ class ProjectARViewController: UIViewController, StoryboardInitializable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         setupUI()
     }
     
@@ -34,9 +39,16 @@ class ProjectARViewController: UIViewController, StoryboardInitializable {
         
         arFacade = ARFacade(viewModel: viewModel)
         guard let arFacade = arFacade else { return }
-        
+        arFacade.onWallTapDelegate = self
         arFacade.runARSession()
         arFacade.delegate = UserCoaching(coachingLabel: viewModel.controls.coachingLabel, arFacade: arFacade)
+        
+       
+        setupCatalog()
+    }
+    
+    
+    func setupCatalog() {
         
         
     }
@@ -45,13 +57,21 @@ class ProjectARViewController: UIViewController, StoryboardInitializable {
 
 
 
-
 //MARK: - ProjectARViewControlsDelegate
 
 extension ProjectARViewController: ProjectARViewControlsDelegate {
     
     func close() {
+        print(#function)
         self.dismiss(animated: true, completion: nil)
+        //        catalogViewController.view.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        //        let viewController = ProjectViewController.initFromStoryboard(name: "Main")
+        //        self.present(viewController, animated: true, completion: nil)
+        
+        
+//        projectVC.view.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.bounds.width, height: projectVC.catalogHeight)
+        
+//         projectVC.view.frame  = CGRect(x: 0, y: projectVC.view.frame.size.height - 300, width: projectVC.view.bounds.width, height: 300)
     }
     
     func plus() {
@@ -70,3 +90,16 @@ extension ProjectARViewController: ProjectARViewControlsDelegate {
         arFacade?.resetTracking()
     }
 }
+
+
+//MARK: - ARFacadeWallTapDelegate
+extension ProjectARViewController: ARFacadeWallTapDelegate {
+    func onTap() {
+        print("tapped")
+        //        let viewController = CreateViewController()
+        //        self.present(viewController, animated: true, completion: nil)
+    }
+    
+}
+
+

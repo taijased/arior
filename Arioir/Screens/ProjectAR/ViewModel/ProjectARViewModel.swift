@@ -14,7 +14,6 @@ protocol ProjectARViewModelType {
     var controls: ProjectARViewControls { get }
 }
 
-
 class ProjectARViewModel: ProjectARViewModelType {
     
     

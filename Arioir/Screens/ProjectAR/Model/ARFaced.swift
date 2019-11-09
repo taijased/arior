@@ -11,8 +11,13 @@ import ARKit
 import GameplayKit
 
 
+protocol ARFacadeWallTapDelegate: class {
+    func onTap()
+}
 
-protocol  ARFacadeProtocol:class {
+
+
+protocol  ARFacadeProtocol: class {
     func isPlaneDetected() -> Bool
 }
 
@@ -30,8 +35,11 @@ protocol ARSessionStateProtocot: class {
 
 class ARFacade: NSObject, ARFacadeProtocol {
 
+    weak var onWallTapDelegate: ARFacadeWallTapDelegate?
     
 //    let viewModel: ARViewModel
+    
+    
     
     let viewModel: ProjectARViewModel
     
@@ -54,6 +62,7 @@ class ARFacade: NSObject, ARFacadeProtocol {
         self.interactions = ARInteractions(sceneView: sceneView, planeDetector: planeDetector)
         super.init()
         wallBuilder.delegate = viewModel
+        wallBuilder.eventDelegate = self
         sceneView.delegate = self
         sceneView.session.delegate = self
     }
@@ -86,6 +95,15 @@ class ARFacade: NSObject, ARFacadeProtocol {
         return planeDetector.isPlaneDetected
     }
     
+}
+
+
+
+//MARK: - EventTap
+extension ARFacade: WallBuilderDelegate {
+    func onTap() {
+        onWallTapDelegate?.onTap()
+    }
 }
 
 
