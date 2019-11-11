@@ -85,11 +85,11 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
         let cell = dequeueReusableCell(withReuseIdentifier: FavoriteCollectionViewCell.reuseId, for: indexPath) as? FavoriteCollectionViewCell
         
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
-
+        
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
-
+        
         collectionViewCell.viewModel = cellViewModel
-      
+        
         return collectionViewCell
     }
     
@@ -101,7 +101,7 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
         viewModel.selectItem(atIndexPath: indexPath)
-        collectionDelegate?.selectItem()
+        //        collectionDelegate?.selectItem()
     }
     
     // MARK: - Add HomeHeaderViewCell
@@ -126,6 +126,7 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
 // MARK: - UICollectionViewDelegateFlowLayout
 extension FavoriteCollectionView: UICollectionViewDelegateFlowLayout {
     
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -146,3 +147,27 @@ extension FavoriteCollectionView: UICollectionViewDelegateFlowLayout {
     
 }
 
+
+
+
+//MARK: - CustomContextViewMenu
+
+extension FavoriteCollectionView: CustomContextViewMenu {
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        guard let viewModel = viewModel else { return nil }
+        viewModel.selectItem(atIndexPath: indexPath)
+        guard let favoriteItem = viewModel.viewModelForSelectedRow() else { return nil}
+        
+        let identifier = NSString(string: favoriteItem.picture!)
+        
+        // Create our configuration with an indentifier
+        return UIContextMenuConfiguration(identifier: identifier, previewProvider: {
+            return FavoritePreviewViewController(imageName: favoriteItem.picture!)
+        }, actionProvider: { suggestedActions in
+            return self.makeDefaultDemoMenu { type in
+                viewModel.contextMenuActions(type: type)
+            }
+        })
+    }
+}

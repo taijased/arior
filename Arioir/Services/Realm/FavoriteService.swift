@@ -1,28 +1,13 @@
 //
-//  FavoriteGRUDService.swift
+//  FavoriteService.swift
 //  Arioir
 //
 //  Created by Максим Спиридонов on 09.11.2019.
 //  Copyright © 2019 Максим Спиридонов. All rights reserved.
 //
 
-import Foundation
 
-
-
-
-
-
-
-
-protocol RealmGRUDType {
-    associatedtype Input
-    associatedtype Output
-    static func create(object: Input, completion: @escaping () -> Void)
-    static func read(id: String, completion: @escaping () -> Output)
-    static func update(object: Output, completion: @escaping () -> Void)
-    static func delete(id: String, completion: @escaping () -> Void)
-}
+import RealmSwift
 
 
 protocol FavoriteServiceType {
@@ -102,9 +87,9 @@ extension FavoriteService: RealmGRUDType {
         }
     }
     
-    static func read(id: String, completion: @escaping () -> FavoriteItem) {
+    static func read(id: String, completion: @escaping (FavoriteItem?) -> Void) {
         print(#function)
-        completion()
+        completion(nil)
     }
     
     static func update(object: FavoriteItem, completion: @escaping () -> Void) {
@@ -113,7 +98,11 @@ extension FavoriteService: RealmGRUDType {
     }
     
     static func delete(id: String, completion: @escaping () -> Void) {
-        print(#function)
-        completion()
+    
+        guard let favoriteItem = realm.object(ofType: Output.self, forPrimaryKey: id) else { return }
+        try! realm.write {
+            realm.delete(favoriteItem)
+            completion()
+        }
     }
 }

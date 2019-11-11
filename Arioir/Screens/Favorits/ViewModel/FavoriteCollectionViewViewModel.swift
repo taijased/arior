@@ -20,6 +20,7 @@ protocol FavoriteCollectionViewViewModelType {
     func viewModelForSelectedRow() -> FavoriteItem?
     func selectItem(atIndexPath indexPath: IndexPath)
     var onReloadData: (() -> Void)? { get set }
+    func contextMenuActions(type: FavoriteContextMenuEnum)
 }
 
 
@@ -27,10 +28,10 @@ protocol FavoriteCollectionViewViewModelType {
 
 
 class FavoriteCollectionViewViewModel: FavoriteCollectionViewViewModelType {
-   
-
+    
+    
     var onReloadData: (() -> Void)?
-
+    
     private var dataFetcherService = DataFetcherService()
     private var selectedIndexPath: IndexPath?
     
@@ -41,10 +42,10 @@ class FavoriteCollectionViewViewModel: FavoriteCollectionViewViewModelType {
     
     init() {
         
-//        self.dataFetcherService.fetchRSSAppleMusic { [weak self ](feed) in
-//            self?.cells = feed?.feed.results ?? nil
-//            self?.onReloadData?()
-//        }
+        //        self.dataFetcherService.fetchRSSAppleMusic { [weak self ](feed) in
+        //            self?.cells = feed?.feed.results ?? nil
+        //            self?.onReloadData?()
+        //        }
         
         cells = realm.objects(FavoriteItem.self)
     }
@@ -78,6 +79,22 @@ class FavoriteCollectionViewViewModel: FavoriteCollectionViewViewModelType {
         self.selectedIndexPath = indexPath
     }
     
-    
-    
+    func contextMenuActions(type: FavoriteContextMenuEnum) {
+        guard
+            let selectedIndexPath = selectedIndexPath,
+            let cells = cells,
+            let id = cells[selectedIndexPath.row].id
+        else { return }
+        
+        switch type {
+        case .toOrder:
+            BasketService.favoritesToBasket(id: id) { [weak self] in
+                self?.onReloadData?()
+            }
+        case .delete:
+            FavoriteService.delete(id: id) { [weak self] in
+                self?.onReloadData?()
+            }
+        }
+    }
 }

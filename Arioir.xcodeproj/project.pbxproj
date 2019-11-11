@@ -105,7 +105,10 @@
 		1358865A236474F5003E13B1 /* CreateTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13588659236474F5003E13B1 /* CreateTableViewViewModel.swift */; };
 		1358865C23647732003E13B1 /* CreateTableTextfieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358865B23647732003E13B1 /* CreateTableTextfieldCell.swift */; };
 		1358865E23647B2B003E13B1 /* CreateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358865D23647B2B003E13B1 /* CreateModel.swift */; };
-		1359DFE52376D41A006BB135 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1359DFE42376D41A006BB135 /* FavoriteService.swift */; };
+		1359DFE72376E11F006BB135 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1359DFE62376E11F006BB135 /* FavoriteService.swift */; };
+		1359DFEE2376FA79006BB135 /* CustomContextViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1359DFED2376FA79006BB135 /* CustomContextViewMenu.swift */; };
+		1359DFF023770138006BB135 /* FavoritePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1359DFEF23770138006BB135 /* FavoritePreviewViewController.swift */; };
+		1359DFF223770248006BB135 /* BasketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1359DFF123770248006BB135 /* BasketService.swift */; };
 		1375515B23633BC000E29D5E /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375515A23633BC000E29D5E /* CreateViewController.swift */; };
 		1375515F2363400F00E29D5E /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375515E2363400F00E29D5E /* PresentationController.swift */; };
 		13755161236341B800E29D5E /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13755160236341B800E29D5E /* PresentationViewController.swift */; };
@@ -257,7 +260,10 @@
 		13588659236474F5003E13B1 /* CreateTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableViewViewModel.swift; sourceTree = "<group>"; };
 		1358865B23647732003E13B1 /* CreateTableTextfieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableTextfieldCell.swift; sourceTree = "<group>"; };
 		1358865D23647B2B003E13B1 /* CreateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateModel.swift; sourceTree = "<group>"; };
-		1359DFE42376D41A006BB135 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		1359DFE62376E11F006BB135 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		1359DFED2376FA79006BB135 /* CustomContextViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContextViewMenu.swift; sourceTree = "<group>"; };
+		1359DFEF23770138006BB135 /* FavoritePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePreviewViewController.swift; sourceTree = "<group>"; };
+		1359DFF123770248006BB135 /* BasketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketService.swift; sourceTree = "<group>"; };
 		1375515A23633BC000E29D5E /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		1375515E2363400F00E29D5E /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		13755160236341B800E29D5E /* PresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +331,7 @@
 		1300492E235F42AB006DA2C9 /* ControlsViews */ = {
 			isa = PBXGroup;
 			children = (
+				1359DFEA2376E4A1006BB135 /* ContextMenu */,
 				1300492F235F42BD006DA2C9 /* ButtonWithBadge.swift */,
 				13974ABF2365D4F60032192A /* Toast */,
 				13974ADB2366138E0032192A /* CustomTextField.swift */,
@@ -432,7 +439,8 @@
 			children = (
 				13375BEB235F0C9B00F6CC0D /* StorageManager.swift */,
 				13375BEF235F0CBF00F6CC0D /* BasketItemModel.swift */,
-				1359DFE42376D41A006BB135 /* FavoriteService.swift */,
+				1359DFE62376E11F006BB135 /* FavoriteService.swift */,
+				1359DFF123770248006BB135 /* BasketService.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -666,6 +674,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1359DFEA2376E4A1006BB135 /* ContextMenu */ = {
+			isa = PBXGroup;
+			children = (
+				1359DFED2376FA79006BB135 /* CustomContextViewMenu.swift */,
+				1359DFEF23770138006BB135 /* FavoritePreviewViewController.swift */,
+			);
+			path = ContextMenu;
 			sourceTree = "<group>";
 		};
 		1375515923633BA900E29D5E /* Create */ = {
@@ -1014,7 +1031,6 @@
 				1350C1E923606944005030E7 /* CardTableViewCell.swift in Sources */,
 				138C4FE72361CA1E00AB7757 /* FavoriteCollectionView.swift in Sources */,
 				13974AB82365A13B0032192A /* IconCollectionViewCell.swift in Sources */,
-				1359DFE52376D41A006BB135 /* FavoriteService.swift in Sources */,
 				1350C23F236094A1005030E7 /* ARSCNView+addToSceneView.swift in Sources */,
 				1350C24D236094A1005030E7 /* WallPaperPreviewPointer.swift in Sources */,
 				13375BD5235F0AE500F6CC0D /* WebImageView.swift in Sources */,
@@ -1035,6 +1051,7 @@
 				13974AF02366DC800032192A /* OrderTableDeliveryViewCell.swift in Sources */,
 				13375C0E235F19CD00F6CC0D /* GoodsModel.swift in Sources */,
 				1350C231236094A1005030E7 /* ARSCNView+nodeAt.swift in Sources */,
+				1359DFEE2376FA79006BB135 /* CustomContextViewMenu.swift in Sources */,
 				1350C1F42360943E005030E7 /* UserCoaching.swift in Sources */,
 				1350C1E523606912005030E7 /* CardTableView.swift in Sources */,
 				1350C1EC23606EA5005030E7 /* CardModels.swift in Sources */,
@@ -1095,6 +1112,7 @@
 				1350C22C236094A1005030E7 /* ARPreviewFacade.swift in Sources */,
 				1350C27223609EF8005030E7 /* HomeModel.swift in Sources */,
 				13974AF62366EABA0032192A /* OrderTablePrivacyPolicyViewCell.swift in Sources */,
+				1359DFF023770138006BB135 /* FavoritePreviewViewController.swift in Sources */,
 				13974AEC236650310032192A /* UITextField+DoneCancelToolbar.swift in Sources */,
 				1350C23A236094A1005030E7 /* Raycaster.swift in Sources */,
 				13375BE4235F0B9F00F6CC0D /* NetworkService.swift in Sources */,
@@ -1102,6 +1120,7 @@
 				1350C251236094A1005030E7 /* VirtualObject.swift in Sources */,
 				13004924235F2D4E006DA2C9 /* ProjectsCollectionView.swift in Sources */,
 				1350C23D236094A1005030E7 /* PointersProcessor.swift in Sources */,
+				1359DFE72376E11F006BB135 /* FavoriteService.swift in Sources */,
 				13974AE6236648840032192A /* String + PhoneValidate.swift in Sources */,
 				13974ACF236606B40032192A /* OrderModel.swift in Sources */,
 				1350C24A236094A1005030E7 /* WallBuilder.swift in Sources */,
@@ -1131,6 +1150,7 @@
 				13004929235F2FDC006DA2C9 /* ProjectsCollectionViewViewModel.swift in Sources */,
 				13375BFF235F102900F6CC0D /* HomeCollectionView.swift in Sources */,
 				1350C232236094A1005030E7 /* ARInteraction.swift in Sources */,
+				1359DFF223770248006BB135 /* BasketService.swift in Sources */,
 				13974AC12365D50D0032192A /* ToastViewController.swift in Sources */,
 				1350C234236094A1005030E7 /* ARInteractionsProtocol.swift in Sources */,
 				1350C249236094A1005030E7 /* NodeRender.metal in Sources */,
