@@ -20,7 +20,7 @@ protocol FavoriteCollectionViewViewModelType {
     func viewModelForSelectedRow() -> FavoriteItem?
     func selectItem(atIndexPath indexPath: IndexPath)
     var onReloadData: (() -> Void)? { get set }
-    func contextMenuActions(type: FavoriteContextMenuEnum)
+    func contextMenuActions(type: FavoriteContextMenuEnum, completion: @escaping (Bool) -> Void)
 }
 
 
@@ -79,21 +79,30 @@ class FavoriteCollectionViewViewModel: FavoriteCollectionViewViewModelType {
         self.selectedIndexPath = indexPath
     }
     
-    func contextMenuActions(type: FavoriteContextMenuEnum) {
+    
+    func contextMenuActions(type: FavoriteContextMenuEnum, completion: @escaping (Bool) -> Void) {
         guard
             let selectedIndexPath = selectedIndexPath,
             let cells = cells,
             let id = cells[selectedIndexPath.row].id
-        else { return }
+        else {
+            completion(true)
+            return
+        }
         
         switch type {
         case .toOrder:
             BasketService.favoritesToBasket(id: id) { [weak self] in
                 self?.onReloadData?()
+                
+                completion(FavoriteService.isEmpty())
             }
+            
+            
         case .delete:
             FavoriteService.delete(id: id) { [weak self] in
                 self?.onReloadData?()
+                completion(FavoriteService.isEmpty())
             }
         }
     }

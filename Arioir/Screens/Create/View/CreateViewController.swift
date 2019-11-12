@@ -9,10 +9,14 @@
 import UIKit
 
 
+protocol CreateViewControllerDelegate: class {
+    func deinitController()
+}
 
 
 class CreateViewController: UIViewController {
     
+    weak var delegate: CreateViewControllerDelegate?
     var viewModel: CreateViewModelType?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -87,6 +91,10 @@ class CreateViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.deinitController()
     }
     
 }

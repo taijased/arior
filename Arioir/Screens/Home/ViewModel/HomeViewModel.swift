@@ -14,7 +14,7 @@ protocol HomeViewModelType {
     
     var onNavigation: ((HomeNavigation) -> Void)? { get set }
     func updateLabel()
-    
+    func updateCollection()
 }
 
 class HomeViewModel: HomeViewModelType {
@@ -45,6 +45,10 @@ class HomeViewModel: HomeViewModelType {
         }
       
     }
+    
+    func updateCollection() {
+        collectionView.reloadData()
+    }
 }
 
 
@@ -56,12 +60,25 @@ extension HomeViewModel: HomeBottomControlsDelegate {
     }
     
     func onTappedFavorites() {
-        self.onNavigation?(.favorites)
+
+        if FavoriteService.isEmpty() {
+            self.onNavigation?(.favoritesEmpty(errorTitle: "Избранное пусто :("))
+        } else {
+            self.onNavigation?(.favorites)
+        }
     }
     
     func onTappedCart() {
-        self.updateLabel()
         
-        self.onNavigation?(.basket)
+        
+        
+        if BasketService.isEmpty() {
+            self.onNavigation?(.basketEmpty(errorTitle: "В корзине пусто :("))
+        } else {
+            self.updateLabel()
+            self.onNavigation?(.basket)
+        }
+        
+
     }
 }

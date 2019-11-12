@@ -13,7 +13,9 @@ import Foundation
 enum HomeNavigation {
     case filtres
     case favorites
+    case favoritesEmpty(errorTitle: String)
     case basket
+    case basketEmpty(errorTitle: String)
     case arScene
     case dissmis
 }

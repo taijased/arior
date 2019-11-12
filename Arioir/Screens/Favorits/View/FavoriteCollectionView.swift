@@ -15,6 +15,7 @@ import RealmSwift
 protocol FavoriteCollectionViewDelegate: class {
     func selectItem()
     func selectProject(project: Project)
+    func dismisController()
 }
 
 class FavoriteCollectionView: UICollectionView {
@@ -91,6 +92,8 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
         collectionViewCell.viewModel = cellViewModel
         
         return collectionViewCell
+        
+        
     }
     
     @objc func connected(sender: UIButton){
@@ -116,7 +119,6 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width, height: 60)
     }
-    
 }
 
 
@@ -166,7 +168,11 @@ extension FavoriteCollectionView: CustomContextViewMenu {
             return FavoritePreviewViewController(imageName: favoriteItem.picture!)
         }, actionProvider: { suggestedActions in
             return self.makeDefaultDemoMenu { type in
-                viewModel.contextMenuActions(type: type)
+                viewModel.contextMenuActions(type: type) { [weak self] hidden in
+                    if hidden {
+                        self?.collectionDelegate?.dismisController()
+                    }
+                }
             }
         })
     }

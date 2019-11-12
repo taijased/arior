@@ -46,7 +46,7 @@ class HomeViewController: UIViewController, StoryboardInitializable {
         
     }
     
-
+    
     
     
     
@@ -67,6 +67,14 @@ class HomeViewController: UIViewController, StoryboardInitializable {
         
     }
     
+    fileprivate func showToast(_ title: String) {
+        let toast = ToastViewController(title: title)
+        self.present(toast, animated: true)
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+            toast.dismiss(animated: true)
+        }
+    }
+    
     fileprivate func navigation(_ type: HomeNavigation) {
         switch type {
             
@@ -76,10 +84,14 @@ class HomeViewController: UIViewController, StoryboardInitializable {
             let viewController = FavoriteViewController.initFromStoryboard(name: "Main")
             viewController.delegate = self
             self.present(viewController, animated: true, completion: nil)
+        case .favoritesEmpty(let errorTitle):
+            self.showToast(errorTitle)
         case .basket:
             let viewController = BasketViewController.initFromStoryboard(name: "Main")
             viewController.delegate = self
             self.present(viewController, animated: true, completion: nil)
+        case .basketEmpty(let errorTitle):
+            self.showToast(errorTitle)
         case .arScene:
             self.dismiss(animated: true, completion: nil)
         case .dissmis:
@@ -95,6 +107,7 @@ extension HomeViewController: HomeCollectionViewDelegate {
         
         if project.id == "1" {
             let viewController = CreateViewController()
+            viewController.delegate = self
             self.present(viewController, animated: true, completion: nil)
         } else {
             let viewController = ProjectARViewController.initFromStoryboard(name: "Main")
@@ -118,9 +131,10 @@ extension HomeViewController: HomeCollectionViewDelegate {
 
 //MARK: - BasketViewControllerDelegate, FavoriteViewControllerDelegate, CardViewControllerDelegate
 
-extension HomeViewController: BasketViewControllerDelegate, FavoriteViewControllerDelegate, CardViewControllerDelegate {
+extension HomeViewController: BasketViewControllerDelegate, FavoriteViewControllerDelegate, CardViewControllerDelegate, CreateViewControllerDelegate {
     func deinitController() {
         self.viewModel?.updateLabel()
+        self.viewModel?.updateCollection()
     }
 }
 

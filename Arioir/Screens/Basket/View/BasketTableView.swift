@@ -107,7 +107,7 @@ extension BasketTableView: UITableViewDelegate, UITableViewDataSource {
 
 extension BasketTableView: BasketTableViewCellDelegate {
     func onTrashButton(id: String) {
-        StorageManager.deleteBasketItem(id) { [weak self] in
+        BasketService.delete(id: id) { [weak self] in
             self?.reloadData(completion: { [weak self] in
                 self?.basketDelegate?.onReloadedData()
             })

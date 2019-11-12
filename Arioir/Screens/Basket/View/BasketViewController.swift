@@ -58,7 +58,17 @@ class BasketViewController: UIViewController, StoryboardInitializable {
 
 extension BasketViewController: BasketViewControlsDelegate {
     func refresh() {
-        print(#function)
+        
+        let alert = UIAlertController(title: "Вы действительно хотите все удалить с корзины?", message: "", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: { (_) in
+            BasketService.clearAll {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { (_) in }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func toOrder() {

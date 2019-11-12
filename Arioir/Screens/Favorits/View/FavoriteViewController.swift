@@ -27,9 +27,15 @@ class FavoriteViewController: UIViewController, StoryboardInitializable {
     
     fileprivate func setupUI() {
         view.backgroundColor = .white
+        
         viewModel?.onNavigation = { [weak self] type in
             self?.navigation(type)
         }
+        viewModel?.onActionSheet = { [weak self] alert in
+            self?.present(alert, animated: true, completion: nil)
+        }
+        
+        
         guard let viewModel = viewModel else { return }
         view.addSubview(viewModel.collectionView)
         viewModel.collectionView.fillSuperview()
@@ -58,6 +64,10 @@ class FavoriteViewController: UIViewController, StoryboardInitializable {
 //MARK - FavoriteCollectionViewDelegate
 
 extension FavoriteViewController: FavoriteCollectionViewDelegate {
+    func dismisController() {
+        self.navigation(.dissmis)
+    }
+    
     func selectItem() {
         print(#function)
     }

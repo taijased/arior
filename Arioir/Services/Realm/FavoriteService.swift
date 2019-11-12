@@ -11,9 +11,9 @@ import RealmSwift
 
 
 protocol FavoriteServiceType {
-    
+    static func isEmpty() -> Bool
     func favoritesToBasket(completion: @escaping () -> Void)
-    func clearFavorites(completion: @escaping () -> Void)
+    func clearAll(completion: @escaping () -> Void)
 }
 
 
@@ -40,21 +40,23 @@ class FavoriteService: FavoriteServiceType {
                 }
             }
         }
-        clearFavorites {
+        clearAll {
             completion()
         }
     }
     
     
-    func clearFavorites(completion: @escaping () -> Void) {
-        let favoriteObjects = realm.objects(FavoriteItem.self)
+    func clearAll(completion: @escaping () -> Void) {
+        let items = realm.objects(FavoriteItem.self)
         try! realm.write {
-            realm.delete(favoriteObjects)
+            realm.delete(items)
             completion()
         }
     }
     
-    
+    static func isEmpty() -> Bool {
+        return realm.objects(Output.self).count > 0 ? false : true
+    }
 }
 
 

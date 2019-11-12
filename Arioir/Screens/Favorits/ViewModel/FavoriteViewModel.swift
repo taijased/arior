@@ -6,7 +6,7 @@
 //  Copyright © 2019 Максим Спиридонов. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 
@@ -14,9 +14,13 @@ protocol FavoriteViewModelType {
     var collectionView: FavoriteCollectionView { get }
     var bottomControls: FavoriteBottomControls { get }
     var onNavigation: ((FavoriteNavigation) -> Void)? { get set }
+    func clearFavorites()
+    var onActionSheet: ((UIAlertController) -> Void)? { get set }
 }
 
 class FavoriteViewModel: FavoriteViewModelType {
+    
+    var onActionSheet: ((UIAlertController) -> Void)?
     
     var bottomControls: FavoriteBottomControls
     var onNavigation: ((FavoriteNavigation) -> Void)?
@@ -33,6 +37,12 @@ class FavoriteViewModel: FavoriteViewModelType {
         bottomControls.delegate = self
     }
     
+    func clearFavorites() {
+        guard let storageManager = storageManager else { return }
+        storageManager.clearAll { [weak self] in
+            self?.onNavigation?(.dissmis)
+        }
+    }
 }
 
 
@@ -40,10 +50,19 @@ class FavoriteViewModel: FavoriteViewModelType {
 
 extension FavoriteViewModel: FavoriteBottomControlsDelegate {
     func refresh() {
-        guard let storageManager = storageManager else { return }
-        storageManager.clearFavorites { [weak self] in
-            self?.onNavigation?(.dissmis)
-        }
+       
+        let alert = UIAlertController(title: "Хотите удалить все из избранного?", message: "", preferredStyle: .alert)
+
+        
+        alert.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: { (_) in
+            guard let storageManager = self.storageManager else { return }
+            storageManager.clearAll { [weak self] in
+                self?.onNavigation?(.dissmis)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { (_) in }))
+        self.onActionSheet?(alert)
     }
     
     func toOrder() {

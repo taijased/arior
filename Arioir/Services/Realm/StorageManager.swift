@@ -66,14 +66,7 @@ class StorageManager {
         }
     }
 
-    static func deleteBasketItem(_ id: String, completion: @escaping () -> Void ) {
-        
-        guard let basketItem = realm.object(ofType: BasketItem.self, forPrimaryKey: id) else { return }
-        try! realm.write {
-            realm.delete(basketItem)
-            completion()
-        }
-    }
+ 
     
     
     static func addDefaultProject(completion: @escaping () -> Void) {

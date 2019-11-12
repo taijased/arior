@@ -10,8 +10,9 @@ import RealmSwift
 
 
 protocol BasketServiceType {
-    
     static func favoritesToBasket(id: String, completion: @escaping () -> Void)
+    static func clearAll(completion: @escaping () -> Void)
+    static func isEmpty() -> Bool
 }
 
 class BasketService: BasketServiceType {
@@ -41,6 +42,18 @@ class BasketService: BasketServiceType {
                 completion()
             }
         }
+    }
+    
+    static func clearAll(completion: @escaping () -> Void) {
+        let items = realm.objects(BasketItem.self)
+        try! realm.write {
+            realm.delete(items)
+            completion()
+        }
+    }
+    
+    static func isEmpty() -> Bool {
+        return realm.objects(Output.self).count > 0 ? false : true
     }
 }
 
@@ -81,6 +94,10 @@ extension BasketService: RealmGRUDType {
     }
     
     static func delete(id: String, completion: @escaping () -> Void) {
-        print(#function)
+        guard let basketItem = realm.object(ofType: BasketItem.self, forPrimaryKey: id) else { return }
+        try! realm.write {
+            realm.delete(basketItem)
+            completion()
+        }
     }
 }
