@@ -51,7 +51,7 @@ class FavoriteViewModel: FavoriteViewModelType {
 extension FavoriteViewModel: FavoriteBottomControlsDelegate {
     func refresh() {
        
-        let alert = UIAlertController(title: "Хотите удалить все из избранного?", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Хотите удалить все из избранного?", message: "", preferredStyle: .actionSheet)
 
         
         alert.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: { (_) in

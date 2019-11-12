@@ -141,6 +141,7 @@ extension HomeCollectionView: UICollectionViewDelegateFlowLayout {
             as? HomeHeaderViewCell
         guard let header = cell else { return UICollectionReusableView() }
         header.delegate = self
+        header.viewModel?.collectionView.reloadData()
         return header
     }
     

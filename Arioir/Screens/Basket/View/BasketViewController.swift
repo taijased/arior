@@ -59,7 +59,7 @@ class BasketViewController: UIViewController, StoryboardInitializable {
 extension BasketViewController: BasketViewControlsDelegate {
     func refresh() {
         
-        let alert = UIAlertController(title: "Вы действительно хотите все удалить с корзины?", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Вы действительно хотите все удалить с корзины?", message: "", preferredStyle: .actionSheet)
 
         alert.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: { (_) in
             BasketService.clearAll {

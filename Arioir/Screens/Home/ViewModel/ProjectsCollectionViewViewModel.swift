@@ -19,18 +19,25 @@ protocol ProjectsCollectionViewViewModelType {
     func viewModelForSelectedRow() -> Project?
     func selectItem(atIndexPath indexPath: IndexPath)
     var onReloadData: (() -> Void)? { get set }
+    func contextMenuActions(type: ProjectsContextMenuEnum)
 }
 
 class ProjectsCollectionViewViewModel: ProjectsCollectionViewViewModelType {
+    
+    
     
     var onReloadData: (() -> Void)?
     private var selectedIndexPath: IndexPath?
     var minimumInteritemSpacingForSectionAt: CGFloat = 20.0
     var minimumLineSpacingForSectionAt: CGFloat = 20.0
     var cells: Results<Project>?
-
+    
     init() {
-        StorageManager.addDefaultProject { [weak self] in
+        updateItems()
+    }
+    
+    fileprivate func updateItems() {
+        ProjectsService.addDefaultProject { [weak self] in
             self?.cells = realm.objects(Project.self)
             self?.onReloadData?()
         }
@@ -40,7 +47,6 @@ class ProjectsCollectionViewViewModel: ProjectsCollectionViewViewModelType {
     func sizeForItemAt() -> CGSize {
         return CGSize(width: 160, height: 100)
     }
-    
     
     
     func numberOfRows() -> Int {
@@ -61,6 +67,25 @@ class ProjectsCollectionViewViewModel: ProjectsCollectionViewViewModelType {
     
     func selectItem(atIndexPath indexPath: IndexPath) {
         self.selectedIndexPath = indexPath
+    }
+    
+    
+    func contextMenuActions(type: ProjectsContextMenuEnum) {
+        guard
+            let selectedIndexPath = selectedIndexPath,
+            let cells = cells,
+            let id = cells[selectedIndexPath.row].id
+            else { return }
+        
+        print(id)
+        
+        switch type {
+            
+        case .delete:
+            ProjectsService.delete(id: id) { [weak self] in
+                self?.onReloadData?()
+            }
+        }
     }
     
     

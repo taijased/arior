@@ -25,10 +25,13 @@ class ProjectsCollectionView: UICollectionView {
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
         viewModel = ProjectsCollectionViewViewModel()
+        viewModel?.onReloadData = {
+            self.reloadData()
+        }
         setupCollectionSettings()
     }
     
-
+    
     private func setupCollectionSettings() {
         backgroundColor = .clear
         delegate = self
@@ -57,14 +60,14 @@ extension ProjectsCollectionView: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: ProjectsCollectionViewCell.reuseId, for: indexPath) as? ProjectsCollectionViewCell
-
+        
         
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
-               
+        
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
-       
+        
         collectionViewCell.viewModel = cellViewModel
-       
+        
         return collectionViewCell
     }
     
@@ -117,3 +120,29 @@ extension ProjectsCollectionView: UICollectionViewDelegateFlowLayout {
     
 }
 
+
+
+
+
+
+//MARK: - ProjectsContextViewMenu
+
+extension ProjectsCollectionView: ProjectsContextViewMenu {
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        guard let viewModel = viewModel else { return nil }
+        viewModel.selectItem(atIndexPath: indexPath)
+        guard let project = viewModel.viewModelForSelectedRow() else { return nil}
+        
+        let identifier = NSString(string: project.iconName!)
+        
+        // Create our configuration with an indentifier
+        return UIContextMenuConfiguration(identifier: identifier, previewProvider: {
+            return ProjectsPreviewViewController(imageName: project.iconName!)
+        }, actionProvider: { suggestedActions in
+            return self.makeDefaultDemoMenu { type in
+                viewModel.contextMenuActions(type: type)
+            }
+        })
+    }
+}

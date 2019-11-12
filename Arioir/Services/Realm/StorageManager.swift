@@ -60,26 +60,13 @@ class StorageManager {
     }
     
     
-    static func deleteObject(_ object: Goods) {
-        try! realm.write {
-            realm.delete(object)
-        }
-    }
+//    static func deleteObject(_ object: Goods) {
+//        try! realm.write {
+//            realm.delete(object)
+//        }
+//    }
 
  
-    
-    
-    static func addDefaultProject(completion: @escaping () -> Void) {
-        let exist = realm.object(ofType: Project.self, forPrimaryKey: "1") != nil
-        if exist {
-            completion()
-        } else {
-            try! realm.write {
-                realm.add(Project(id: "1", name: "Создать новый", iconName: "icon_1"))
-                completion()
-            }
-        }
-    }
 
 
     static func clearData() {

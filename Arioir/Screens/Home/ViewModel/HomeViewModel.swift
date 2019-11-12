@@ -69,16 +69,11 @@ extension HomeViewModel: HomeBottomControlsDelegate {
     }
     
     func onTappedCart() {
-        
-        
-        
         if BasketService.isEmpty() {
             self.onNavigation?(.basketEmpty(errorTitle: "В корзине пусто :("))
         } else {
             self.updateLabel()
             self.onNavigation?(.basket)
         }
-        
-
     }
 }
