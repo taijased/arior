@@ -1,8 +1,8 @@
 //
-//  ProjectsService.swift
+//  ProjectItemService.swift
 //  Arioir
 //
-//  Created by Максим Спиридонов on 12.11.2019.
+//  Created by Максим Спиридонов on 13.11.2019.
 //  Copyright © 2019 Максим Спиридонов. All rights reserved.
 //
 
@@ -10,33 +10,14 @@
 import RealmSwift
 
 
-protocol ProjectsServiceType {
+protocol ProjectItemServiceType {
     static func addDefaultProject(completion: @escaping () -> Void)
     static func clearAll(completion: @escaping () -> Void)
     static func isEmpty() -> Bool
-    static func addNewProjectItem(projectId: String, projectItem: Goods, completion: @escaping () -> Void)
 }
 
-class ProjectsService: ProjectsServiceType {
+class ProjectItemService: ProjectItemServiceType {
     
-    
-    static func addNewProjectItem(projectId: String, projectItem: Goods, completion: @escaping () -> Void) {
-        guard let item = realm.object(ofType: Project.self, forPrimaryKey: projectId) else { return }
-//        let newItem = Project(project: item)
-//        newItem.goods.append(projectItem)
-        
-        
-        try! realm.write {
-            
-            item.goods.append(projectItem)
-//            realm.add(newItem, update: .modified)
-            completion()
-        }
-        
-        
-        
-        
-    }
     
     static func clearAll(completion: @escaping () -> Void) {
         let items = realm.objects(Output.self)
@@ -67,34 +48,29 @@ class ProjectsService: ProjectsServiceType {
 
 //MARK: RealmGRUDServiseType
 
-extension ProjectsService: RealmGRUDType {
+extension ProjectItemService: RealmGRUDType {
     
     typealias Input = Goods
-    typealias Output = Project
+    typealias Output = ProjectItem
     
     static func create(object: Goods, completion: @escaping () -> Void) {
         try! realm.write {
-            realm.add(object)
+            realm.add(ProjectItem(goods: object))
             completion()
         }
     }
     
-    static func read(id: String, completion: @escaping (Project?) -> Void) {
+    static func read(id: String, completion: @escaping (ProjectItem?) -> Void) {
         guard let item = realm.object(ofType: Output.self, forPrimaryKey: id) else { return }
         completion(item)
     }
     
-    
-    //this is bullshit
-    static func update(object: Project, completion: @escaping () -> Void) {
+    static func update(object: ProjectItem, completion: @escaping () -> Void) {
         print(#function)
     }
     
     static func delete(id: String, completion: @escaping () -> Void) {
-        
-        
         guard let item = realm.object(ofType: Output.self, forPrimaryKey: id) else { return }
-        
         
         try! realm.write {
             realm.delete(item)

@@ -65,6 +65,10 @@ extension CardViewModel: CardVCBottomControlsDelegate {
     }
 
     func addProject() {
-        self.onNavigation?(CardModel.dismiss)
+        
+        guard let product = cardTableView.viewModel?.getItem() else { return }
+        ProjectItemService.create(object: product) { [weak self] in
+            self?.onNavigation?(CardModel.dismiss)
+        }
     }
 }

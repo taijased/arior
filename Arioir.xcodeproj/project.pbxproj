@@ -16,6 +16,8 @@
 		13106AE0237AC2F1006A2011 /* ProjectsPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106ADF237AC2F1006A2011 /* ProjectsPreviewViewController.swift */; };
 		13106AE2237AC3FD006A2011 /* ProjectsContextViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106AE1237AC3FD006A2011 /* ProjectsContextViewMenu.swift */; };
 		13106AE4237AC6C9006A2011 /* ProjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106AE3237AC6C9006A2011 /* ProjectsService.swift */; };
+		13106AE6237AD097006A2011 /* ProjectCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106AE5237AD097006A2011 /* ProjectCatalogViewController.swift */; };
+		13106AE8237AD297006A2011 /* PresentationCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106AE7237AD297006A2011 /* PresentationCatalogViewController.swift */; };
 		13375BB8235F0A6700F6CC0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BB7235F0A6700F6CC0D /* AppDelegate.swift */; };
 		13375BBA235F0A6700F6CC0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */; };
 		13375BBF235F0A6700F6CC0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13375BBD235F0A6700F6CC0D /* Main.storyboard */; };
@@ -112,6 +114,11 @@
 		1359DFEE2376FA79006BB135 /* CustomContextViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1359DFED2376FA79006BB135 /* CustomContextViewMenu.swift */; };
 		1359DFF023770138006BB135 /* FavoritePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1359DFEF23770138006BB135 /* FavoritePreviewViewController.swift */; };
 		1359DFF223770248006BB135 /* BasketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1359DFF123770248006BB135 /* BasketService.swift */; };
+		135F4456237B004C008969F4 /* CatalogCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F4455237B004C008969F4 /* CatalogCollectionView.swift */; };
+		135F4458237B006B008969F4 /* CatalogCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F4457237B006B008969F4 /* CatalogCollectionViewViewModel.swift */; };
+		135F445A237B0253008969F4 /* CatalogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F4459237B0253008969F4 /* CatalogCollectionViewCell.swift */; };
+		135F445C237B0268008969F4 /* CatalogHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F445B237B0268008969F4 /* CatalogHeaderViewCell.swift */; };
+		135F445E237B02A0008969F4 /* CatalogCollectionViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135F445D237B02A0008969F4 /* CatalogCollectionViewCellVM.swift */; };
 		1375515B23633BC000E29D5E /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375515A23633BC000E29D5E /* CreateViewController.swift */; };
 		1375515F2363400F00E29D5E /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375515E2363400F00E29D5E /* PresentationController.swift */; };
 		13755161236341B800E29D5E /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13755160236341B800E29D5E /* PresentationViewController.swift */; };
@@ -159,6 +166,15 @@
 		13974B04236743BC0032192A /* ProjectARViewControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974B03236743BC0032192A /* ProjectARViewControls.swift */; };
 		13974B0623674B270032192A /* ARFaced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974B0523674B270032192A /* ARFaced.swift */; };
 		13974B0A236752150032192A /* ViewModelUpdateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13974B09236752150032192A /* ViewModelUpdateProtocol.swift */; };
+		13A7B60F237AD90A00F1CDCB /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B60E237AD90A00F1CDCB /* ProjectsViewController.swift */; };
+		13A7B611237AD92100F1CDCB /* ProjectsViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B610237AD92100F1CDCB /* ProjectsViewControllerViewModel.swift */; };
+		13A7B613237ADA7000F1CDCB /* ProjectsBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7B612237ADA7000F1CDCB /* ProjectsBottomControls.swift */; };
+		13BC16D5237C179400F92FA5 /* CatalogHeaderViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16D4237C179400F92FA5 /* CatalogHeaderViewCellVM.swift */; };
+		13BC16D7237C1BF400F92FA5 /* ProjectGoodsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16D6237C1BF400F92FA5 /* ProjectGoodsCollectionView.swift */; };
+		13BC16D9237C1C0100F92FA5 /* ProjectGoodsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16D8237C1C0100F92FA5 /* ProjectGoodsCollectionViewCell.swift */; };
+		13BC16DB237C1C0D00F92FA5 /* ProjectGoodsCollectionViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16DA237C1C0D00F92FA5 /* ProjectGoodsCollectionViewVM.swift */; };
+		13BC16DD237C1C1700F92FA5 /* ProjectGoodsCollectionViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16DC237C1C1700F92FA5 /* ProjectGoodsCollectionViewCellVM.swift */; };
+		13BC16DF237C3F1100F92FA5 /* ProjectItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16DE237C3F1100F92FA5 /* ProjectItemService.swift */; };
 		4C48CA5B31BEB450323462DC /* Pods_Arioir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +188,8 @@
 		13106ADF237AC2F1006A2011 /* ProjectsPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsPreviewViewController.swift; sourceTree = "<group>"; };
 		13106AE1237AC3FD006A2011 /* ProjectsContextViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsContextViewMenu.swift; sourceTree = "<group>"; };
 		13106AE3237AC6C9006A2011 /* ProjectsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsService.swift; sourceTree = "<group>"; };
+		13106AE5237AD097006A2011 /* ProjectCatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCatalogViewController.swift; sourceTree = "<group>"; };
+		13106AE7237AD297006A2011 /* PresentationCatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationCatalogViewController.swift; sourceTree = "<group>"; };
 		13375BB4235F0A6700F6CC0D /* Arioir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arioir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13375BB7235F0A6700F6CC0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -270,6 +288,11 @@
 		1359DFED2376FA79006BB135 /* CustomContextViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContextViewMenu.swift; sourceTree = "<group>"; };
 		1359DFEF23770138006BB135 /* FavoritePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePreviewViewController.swift; sourceTree = "<group>"; };
 		1359DFF123770248006BB135 /* BasketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketService.swift; sourceTree = "<group>"; };
+		135F4455237B004C008969F4 /* CatalogCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionView.swift; sourceTree = "<group>"; };
+		135F4457237B006B008969F4 /* CatalogCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		135F4459237B0253008969F4 /* CatalogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewCell.swift; sourceTree = "<group>"; };
+		135F445B237B0268008969F4 /* CatalogHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogHeaderViewCell.swift; sourceTree = "<group>"; };
+		135F445D237B02A0008969F4 /* CatalogCollectionViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewCellVM.swift; sourceTree = "<group>"; };
 		1375515A23633BC000E29D5E /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		1375515E2363400F00E29D5E /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		13755160236341B800E29D5E /* PresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +340,15 @@
 		13974B03236743BC0032192A /* ProjectARViewControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectARViewControls.swift; sourceTree = "<group>"; };
 		13974B0523674B270032192A /* ARFaced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFaced.swift; sourceTree = "<group>"; };
 		13974B09236752150032192A /* ViewModelUpdateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelUpdateProtocol.swift; sourceTree = "<group>"; };
+		13A7B60E237AD90A00F1CDCB /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		13A7B610237AD92100F1CDCB /* ProjectsViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewControllerViewModel.swift; sourceTree = "<group>"; };
+		13A7B612237ADA7000F1CDCB /* ProjectsBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsBottomControls.swift; sourceTree = "<group>"; };
+		13BC16D4237C179400F92FA5 /* CatalogHeaderViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogHeaderViewCellVM.swift; sourceTree = "<group>"; };
+		13BC16D6237C1BF400F92FA5 /* ProjectGoodsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGoodsCollectionView.swift; sourceTree = "<group>"; };
+		13BC16D8237C1C0100F92FA5 /* ProjectGoodsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGoodsCollectionViewCell.swift; sourceTree = "<group>"; };
+		13BC16DA237C1C0D00F92FA5 /* ProjectGoodsCollectionViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGoodsCollectionViewVM.swift; sourceTree = "<group>"; };
+		13BC16DC237C1C1700F92FA5 /* ProjectGoodsCollectionViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGoodsCollectionViewCellVM.swift; sourceTree = "<group>"; };
+		13BC16DE237C3F1100F92FA5 /* ProjectItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectItemService.swift; sourceTree = "<group>"; };
 		24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.debug.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.debug.xcconfig"; sourceTree = "<group>"; };
 		586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arioir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.release.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.release.xcconfig"; sourceTree = "<group>"; };
@@ -448,6 +480,7 @@
 				13106AE3237AC6C9006A2011 /* ProjectsService.swift */,
 				1359DFE62376E11F006BB135 /* FavoriteService.swift */,
 				1359DFF123770248006BB135 /* BasketService.swift */,
+				13BC16DE237C3F1100F92FA5 /* ProjectItemService.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -866,6 +899,12 @@
 			isa = PBXGroup;
 			children = (
 				13974B01236742B20032192A /* ProjectARViewModel.swift */,
+				13A7B610237AD92100F1CDCB /* ProjectsViewControllerViewModel.swift */,
+				135F4457237B006B008969F4 /* CatalogCollectionViewViewModel.swift */,
+				135F445D237B02A0008969F4 /* CatalogCollectionViewCellVM.swift */,
+				13BC16D4237C179400F92FA5 /* CatalogHeaderViewCellVM.swift */,
+				13BC16DA237C1C0D00F92FA5 /* ProjectGoodsCollectionViewVM.swift */,
+				13BC16DC237C1C1700F92FA5 /* ProjectGoodsCollectionViewCellVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -875,6 +914,15 @@
 			children = (
 				13974AFF236742930032192A /* ProjectARViewController.swift */,
 				13974B03236743BC0032192A /* ProjectARViewControls.swift */,
+				13106AE5237AD097006A2011 /* ProjectCatalogViewController.swift */,
+				13106AE7237AD297006A2011 /* PresentationCatalogViewController.swift */,
+				13A7B60E237AD90A00F1CDCB /* ProjectsViewController.swift */,
+				13A7B612237ADA7000F1CDCB /* ProjectsBottomControls.swift */,
+				135F4455237B004C008969F4 /* CatalogCollectionView.swift */,
+				135F4459237B0253008969F4 /* CatalogCollectionViewCell.swift */,
+				135F445B237B0268008969F4 /* CatalogHeaderViewCell.swift */,
+				13BC16D6237C1BF400F92FA5 /* ProjectGoodsCollectionView.swift */,
+				13BC16D8237C1C0100F92FA5 /* ProjectGoodsCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1023,11 +1071,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				13974B0A236752150032192A /* ViewModelUpdateProtocol.swift in Sources */,
+				135F4456237B004C008969F4 /* CatalogCollectionView.swift in Sources */,
 				13375BE6235F0BB500F6CC0D /* NetworkDataFetcher.swift in Sources */,
 				1350C24C236094A1005030E7 /* WallPapersPreview.swift in Sources */,
 				1350C23E236094A1005030E7 /* Math.swift in Sources */,
 				1350C26323609CC0005030E7 /* BasketViewModel.swift in Sources */,
 				13974B02236742B20032192A /* ProjectARViewModel.swift in Sources */,
+				13A7B60F237AD90A00F1CDCB /* ProjectsViewController.swift in Sources */,
 				1350C256236094A1005030E7 /* ARFacade+ARSCNViewDelegate.swift in Sources */,
 				13375BF6235F0D4300F6CC0D /* HomeViewController.swift in Sources */,
 				138C4FED2361CAF400AB7757 /* FavoriteCollectionViewCellViewModel.swift in Sources */,
@@ -1036,7 +1086,9 @@
 				13004922235F2D3B006DA2C9 /* ProjectsCollectionViewCell.swift in Sources */,
 				1350C23C236094A1005030E7 /* ConnectingLinesProcessor.swift in Sources */,
 				13375BFD235F0E8D00F6CC0D /* HomeViewModel.swift in Sources */,
+				13BC16DD237C1C1700F92FA5 /* ProjectGoodsCollectionViewCellVM.swift in Sources */,
 				1350C1E123606854005030E7 /* CardViewModel.swift in Sources */,
+				13BC16DF237C3F1100F92FA5 /* ProjectItemService.swift in Sources */,
 				1350C1E923606944005030E7 /* CardTableViewCell.swift in Sources */,
 				138C4FE72361CA1E00AB7757 /* FavoriteCollectionView.swift in Sources */,
 				13974AB82365A13B0032192A /* IconCollectionViewCell.swift in Sources */,
@@ -1048,6 +1100,7 @@
 				1350C241236094A1005030E7 /* ConnectionLineConfigs.swift in Sources */,
 				1350C1E72360692F005030E7 /* CardTableHeaderCell.swift in Sources */,
 				1350C238236094A1005030E7 /* AreaLabelsProcessor.swift in Sources */,
+				13BC16D5237C179400F92FA5 /* CatalogHeaderViewCellVM.swift in Sources */,
 				1350C24E236094A1005030E7 /* WallSgment.swift in Sources */,
 				13106AE4237AC6C9006A2011 /* ProjectsService.swift in Sources */,
 				1350C240236094A1005030E7 /* LineParametricEquation.swift in Sources */,
@@ -1060,6 +1113,7 @@
 				1358865A236474F5003E13B1 /* CreateTableViewViewModel.swift in Sources */,
 				13974ABC2365A4460032192A /* IconCollectionViewCellViewModel.swift in Sources */,
 				13974AF02366DC800032192A /* OrderTableDeliveryViewCell.swift in Sources */,
+				13BC16D9237C1C0100F92FA5 /* ProjectGoodsCollectionViewCell.swift in Sources */,
 				13375C0E235F19CD00F6CC0D /* GoodsModel.swift in Sources */,
 				1350C231236094A1005030E7 /* ARSCNView+nodeAt.swift in Sources */,
 				1359DFEE2376FA79006BB135 /* CustomContextViewMenu.swift in Sources */,
@@ -1067,6 +1121,7 @@
 				1350C1E523606912005030E7 /* CardTableView.swift in Sources */,
 				1350C1EC23606EA5005030E7 /* CardModels.swift in Sources */,
 				13375C07235F117300F6CC0D /* HomeCollectionViewCellViewModel.swift in Sources */,
+				13106AE8237AD297006A2011 /* PresentationCatalogViewController.swift in Sources */,
 				13375BB8235F0A6700F6CC0D /* AppDelegate.swift in Sources */,
 				1350C244236094A1005030E7 /* SCNode+changeColor.swift in Sources */,
 				13755167236349DC00E29D5E /* CreateViewModel.swift in Sources */,
@@ -1082,6 +1137,7 @@
 				13375BD3235F0AD000F6CC0D /* UIColor + random.swift in Sources */,
 				1350C250236094A1005030E7 /* ConnectingLine.swift in Sources */,
 				13974ADA23660D970032192A /* OrderTableViewViewModel.swift in Sources */,
+				13BC16D7237C1BF400F92FA5 /* ProjectGoodsCollectionView.swift in Sources */,
 				13375BE8235F0BC700F6CC0D /* DataFetcherService.swift in Sources */,
 				1350C22F236094A1005030E7 /* ARPreviewFacade+ARCNViewDelegate.swift in Sources */,
 				1350C26523609CE6005030E7 /* BasketViewControls.swift in Sources */,
@@ -1094,7 +1150,9 @@
 				13974ACD236606A50032192A /* OrderViewModel.swift in Sources */,
 				13588658236474E3003E13B1 /* CreateTableView.swift in Sources */,
 				138C4FF12361CE7100AB7757 /* FavoriteNavigation.swift in Sources */,
+				13A7B613237ADA7000F1CDCB /* ProjectsBottomControls.swift in Sources */,
 				13375BCF235F0AAC00F6CC0D /* Constraints.swift in Sources */,
+				135F445C237B0268008969F4 /* CatalogHeaderViewCell.swift in Sources */,
 				13974AD8236608B00032192A /* OrderTableHeaderViewCell.swift in Sources */,
 				1350C22E236094A1005030E7 /* ARPreviewViewModel.swift in Sources */,
 				1350C237236094A1005030E7 /* PointerPositionProcessor.swift in Sources */,
@@ -1112,6 +1170,7 @@
 				1350C243236094A1005030E7 /* DirectingLineConfig.swift in Sources */,
 				1358865E23647B2B003E13B1 /* CreateModel.swift in Sources */,
 				1350C23B236094A1005030E7 /* LengthLabelsProcessor.swift in Sources */,
+				13BC16DB237C1C0D00F92FA5 /* ProjectGoodsCollectionViewVM.swift in Sources */,
 				1350C22D236094A1005030E7 /* ARPreviewFacade+ARSessionDelegate.swift in Sources */,
 				13755161236341B800E29D5E /* PresentationViewController.swift in Sources */,
 				1350C246236094A1005030E7 /* ARUtilis.swift in Sources */,
@@ -1122,17 +1181,21 @@
 				1375515F2363400F00E29D5E /* PresentationController.swift in Sources */,
 				13974ACB2366068E0032192A /* OrderViewController.swift in Sources */,
 				1350C22C236094A1005030E7 /* ARPreviewFacade.swift in Sources */,
+				13A7B611237AD92100F1CDCB /* ProjectsViewControllerViewModel.swift in Sources */,
 				1350C27223609EF8005030E7 /* HomeModel.swift in Sources */,
 				13974AF62366EABA0032192A /* OrderTablePrivacyPolicyViewCell.swift in Sources */,
 				1359DFF023770138006BB135 /* FavoritePreviewViewController.swift in Sources */,
+				13106AE6237AD097006A2011 /* ProjectCatalogViewController.swift in Sources */,
 				13974AEC236650310032192A /* UITextField+DoneCancelToolbar.swift in Sources */,
 				1350C23A236094A1005030E7 /* Raycaster.swift in Sources */,
 				13375BE4235F0B9F00F6CC0D /* NetworkService.swift in Sources */,
+				135F445E237B02A0008969F4 /* CatalogCollectionViewCellVM.swift in Sources */,
 				1350C248236094A1005030E7 /* SCNNode+glowing.swift in Sources */,
 				1350C251236094A1005030E7 /* VirtualObject.swift in Sources */,
 				13004924235F2D4E006DA2C9 /* ProjectsCollectionView.swift in Sources */,
 				1350C23D236094A1005030E7 /* PointersProcessor.swift in Sources */,
 				1359DFE72376E11F006BB135 /* FavoriteService.swift in Sources */,
+				135F4458237B006B008969F4 /* CatalogCollectionViewViewModel.swift in Sources */,
 				13974AE6236648840032192A /* String + PhoneValidate.swift in Sources */,
 				13974ACF236606B40032192A /* OrderModel.swift in Sources */,
 				1350C24A236094A1005030E7 /* WallBuilder.swift in Sources */,
@@ -1147,6 +1210,7 @@
 				13375BCD235F0A9B00F6CC0D /* Constants.swift in Sources */,
 				1300492D235F4290006DA2C9 /* HomeBottomControls.swift in Sources */,
 				1350C236236094A1005030E7 /* DirectingLinesProcessor.swift in Sources */,
+				135F445A237B0253008969F4 /* CatalogCollectionViewCell.swift in Sources */,
 				13974B0623674B270032192A /* ARFaced.swift in Sources */,
 				13974ADE23663F740032192A /* OrderTableEmailViewCell.swift in Sources */,
 				13375C01235F105700F6CC0D /* HomeHeaderViewCell.swift in Sources */,

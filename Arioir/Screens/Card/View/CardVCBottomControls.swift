@@ -43,7 +43,7 @@ class CardVCBottomControls: UIView {
     }()
     
     let toOrderButton: UIButton = {
-        let button = UIButton.getCustomButton(label: "Добавить в корзину")
+        var button = UIButton.getCustomButton(imageName: "cart")
         button.addTarget(self, action: #selector(toOrderButtonTapped), for: .touchUpInside)
         button.backgroundColor = primaryColor
         return button
@@ -95,21 +95,18 @@ class CardVCBottomControls: UIView {
         addProjectButton.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
         
         
-        addSubview(addFavorite)
-        addFavorite.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        addFavorite.leadingAnchor.constraint(equalTo: addProjectButton.trailingAnchor, constant: Constants.padding).isActive = true
-        addFavorite.widthAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
-        addFavorite.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
-        
-        
-        
-        
-        
         addSubview(toOrderButton)
         toOrderButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
         toOrderButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.padding).isActive = true
-        toOrderButton.leadingAnchor.constraint(equalTo: addFavorite.trailingAnchor, constant: Constants.padding).isActive = true
         toOrderButton.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+        toOrderButton.widthAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+        
+        addSubview(addFavorite)
+        addFavorite.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        addFavorite.trailingAnchor.constraint(equalTo: toOrderButton.leadingAnchor, constant: -Constants.padding).isActive = true
+        addFavorite.widthAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+        addFavorite.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+       
     }
     
     override var intrinsicContentSize: CGSize {

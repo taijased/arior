@@ -12,7 +12,7 @@ import ARKit
 import GameplayKit
 
 class ProjectARViewController: UIViewController, StoryboardInitializable {
-
+    
     
     
     
@@ -43,16 +43,7 @@ class ProjectARViewController: UIViewController, StoryboardInitializable {
         arFacade.runARSession()
         arFacade.delegate = UserCoaching(coachingLabel: viewModel.controls.coachingLabel, arFacade: arFacade)
         
-       
-        setupCatalog()
-    }
-    
-    
-    func setupCatalog() {
-        
-        
-    }
-    
+    }  
 }
 
 
@@ -63,15 +54,10 @@ extension ProjectARViewController: ProjectARViewControlsDelegate {
     
     func close() {
         print(#function)
-        self.dismiss(animated: true, completion: nil)
-        //        catalogViewController.view.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        //        let viewController = ProjectViewController.initFromStoryboard(name: "Main")
-        //        self.present(viewController, animated: true, completion: nil)
         
-        
-//        projectVC.view.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.bounds.width, height: projectVC.catalogHeight)
-        
-//         projectVC.view.frame  = CGRect(x: 0, y: projectVC.view.frame.size.height - 300, width: projectVC.view.bounds.width, height: 300)
+        let viewController = ProjectCatalogViewController()
+        viewController.delegate = self
+        self.present(viewController, animated: true, completion: nil)
     }
     
     func plus() {
@@ -102,4 +88,19 @@ extension ProjectARViewController: ARFacadeWallTapDelegate {
     
 }
 
+
+
+//MARK: - ProjectCatalogViewDelegate
+extension ProjectARViewController: ProjectCatalogViewDelegate {
+    func deinitController() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func showProjectsScreen() {
+        guard let viewModel = viewModel else { return }
+        let viewController = ProjectsViewController()
+        viewController.viewModel = ProjectsViewControllerViewModel(projectId: viewModel.getProjectId())
+        self.present(viewController, animated: true, completion: nil)
+    }
+}
 

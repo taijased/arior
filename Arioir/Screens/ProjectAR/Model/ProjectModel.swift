@@ -31,9 +31,33 @@ class Project: Object {
         self.iconName = iconName
         self.goods = goods
     }
+    convenience init(project: Project) {
+        self.init()
+        self.id = project.id
+        self.name = project.name
+        self.iconName = project.iconName
+        self.goods = project.goods
+    }
+       
     
     
-    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+}
+
+
+
+class ProjectItem: Object {
+    @objc dynamic var id: String?
+    @objc dynamic var goods: Goods?
+
+    convenience init(goods: Goods) {
+        self.init()
+        self.id = goods.id
+        self.goods = goods
+    }
+
     override class func primaryKey() -> String? {
         return "id"
     }

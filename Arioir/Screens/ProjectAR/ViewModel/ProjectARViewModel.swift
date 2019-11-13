@@ -12,6 +12,7 @@ import UIKit
 
 protocol ProjectARViewModelType {
     var controls: ProjectARViewControls { get }
+    func getProjectId() -> String
 }
 
 class ProjectARViewModel: ProjectARViewModelType {
@@ -26,6 +27,10 @@ class ProjectARViewModel: ProjectARViewModelType {
     init(project: Project) {
         self.controls = ProjectARViewControls()
         self.project = project
+    }
+    
+    func getProjectId() -> String {
+        return self.project.id!
     }
 }
 
