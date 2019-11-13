@@ -50,7 +50,7 @@ class ProjectGoodsCollectionViewVM: ProjectGoodsCollectionViewVMType {
     }
     
     func sizeForItemAt() -> CGSize {
-        return CGSize(width: 120, height: 120)
+        return CGSize(width: 160, height: 100)
     }
     
     

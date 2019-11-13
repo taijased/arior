@@ -57,7 +57,7 @@ class CatalogCollectionViewViewModel: CatalogCollectionViewViewModelType {
     
     func sizeForHeader() -> CGSize {
         
-        return CGSize(width: UIScreen.main.bounds.width, height: 275)
+        return CGSize(width: UIScreen.main.bounds.width, height: 250)
     }
 
     

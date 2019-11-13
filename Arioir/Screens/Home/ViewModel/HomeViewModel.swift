@@ -43,7 +43,6 @@ class HomeViewModel: HomeViewModelType {
             self.homeBottomControls.cartButton.updateLabel(newValue: basketCount)
             self.homeBottomControls.favoritesButton.updateLabel(newValue: favoriteCount)
         }
-      
     }
     
     func updateCollection() {

@@ -94,13 +94,17 @@ class FavoriteCollectionViewViewModel: FavoriteCollectionViewViewModelType {
         case .toOrder:
             BasketService.favoritesToBasket(id: id) { [weak self] in
                 self?.onReloadData?()
-                
                 completion(FavoriteService.isEmpty())
             }
             
             
         case .delete:
             FavoriteService.delete(id: id) { [weak self] in
+                self?.onReloadData?()
+                completion(FavoriteService.isEmpty())
+            }
+        case .toProject:
+            ProjectsService.create(id: id) { [weak self] in
                 self?.onReloadData?()
                 completion(FavoriteService.isEmpty())
             }

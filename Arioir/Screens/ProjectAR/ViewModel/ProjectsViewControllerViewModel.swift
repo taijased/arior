@@ -16,6 +16,7 @@ protocol ProjectsViewControllerViewModelType {
     var onNavigation: ((HomeNavigation) -> Void)? { get set }
     var projectId: String { get set }
     func updateCollection()
+    func updateLabel()
     
 }
 

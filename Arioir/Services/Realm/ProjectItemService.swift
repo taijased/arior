@@ -54,9 +54,14 @@ extension ProjectItemService: RealmGRUDType {
     typealias Output = ProjectItem
     
     static func create(object: Goods, completion: @escaping () -> Void) {
-        try! realm.write {
-            realm.add(ProjectItem(goods: object))
+        let exist = realm.object(ofType: Goods.self, forPrimaryKey: object.id) != nil
+        if exist {
             completion()
+        } else {
+            try! realm.write {
+                realm.add(FavoriteItem(goods: object))
+                completion()
+            }
         }
     }
     

@@ -68,11 +68,12 @@ class ProjectsViewController: UIViewController, StoryboardInitializable {
     }
 }
 
-//MARK: - BasketViewControllerDelegate, FavoriteViewControllerDelegate, CardViewControllerDelegate
+//MARK: - BasketViewControllerDelegate, FavoriteViewControllerDelegate
 
 extension ProjectsViewController: FavoriteViewControllerDelegate {
     func deinitController() {
-//        self.viewModel?.updateLabel()
+        self.viewModel?.updateLabel()
+        self.viewModel?.updateCollection()
     }
 }
 

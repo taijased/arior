@@ -190,8 +190,8 @@
             filePath = "Arioir/Services/Realm/FavoriteService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "delete(id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -631,102 +631,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6F6EBD04-F28B-4F12-BAE0-5DCE904BBC5B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arioir/Services/Realm/ProjectsService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "addNewProjectItem(projectId:projectItem:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C5D68137-25A4-46C4-9A8A-DC2781757FC2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arioir/Services/Realm/ProjectsService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "addNewProjectItem(projectId:projectItem:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "41414D89-5995-4402-B029-80CCFC6F0DD9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arioir/Services/Realm/ProjectsService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "addNewProjectItem(projectId:projectItem:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9B26E5DB-01B4-440C-A1F8-6CC50B2303A7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Arioir/Services/Realm/ProjectsService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "addNewProjectItem(projectId:projectItem:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9B26E5DB-01B4-440C-A1F8-6CC50B2303A7 - 4a2c9e510d0bb402"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Arioir.ProjectsService.addNewProjectItem(projectId: Swift.String, projectItem: Arioir.Goods, completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "Arioir"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maksimspiridonov/Documents/Arior/ios/Arioir/Arioir/Services/Realm/ProjectsService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "369">
-               </Location>
-               <Location
-                  uuid = "9B26E5DB-01B4-440C-A1F8-6CC50B2303A7 - afe44b22491fd574"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in static Arioir.ProjectsService.addNewProjectItem(projectId: Swift.String, projectItem: Arioir.Goods, completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "Arioir"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maksimspiridonov/Documents/Arior/ios/Arioir/Arioir/Services/Realm/ProjectsService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "49">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4113C1C8-0F7E-41D3-BF3F-C5F448EFADEB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -734,8 +638,8 @@
             filePath = "Arioir/Services/Realm/ProjectsService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "addNewProjectItem(projectId:projectItem:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -766,8 +670,8 @@
             filePath = "Arioir/Screens/ProjectAR/ViewModel/ProjectsViewControllerViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "onTappedFavorites()"
             landmarkType = "7">
          </BreakpointContent>

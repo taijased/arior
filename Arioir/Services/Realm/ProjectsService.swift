@@ -20,22 +20,23 @@ protocol ProjectsServiceType {
 class ProjectsService: ProjectsServiceType {
     
     
+    
+    
+    
+    
+    
     static func addNewProjectItem(projectId: String, projectItem: Goods, completion: @escaping () -> Void) {
         guard let item = realm.object(ofType: Project.self, forPrimaryKey: projectId) else { return }
-//        let newItem = Project(project: item)
-//        newItem.goods.append(projectItem)
-        
-        
-        try! realm.write {
-            
-            item.goods.append(projectItem)
-//            realm.add(newItem, update: .modified)
+     
+        let exist = item.goods.contains(projectItem)
+        if exist {
             completion()
+        } else {
+            try! realm.write {
+                item.goods.append(projectItem)
+                completion()
+            }
         }
-        
-        
-        
-        
     }
     
     static func clearAll(completion: @escaping () -> Void) {
@@ -76,6 +77,20 @@ extension ProjectsService: RealmGRUDType {
         try! realm.write {
             realm.add(object)
             completion()
+        }
+    }
+    
+    static func create(id: String, completion: @escaping () -> Void) {
+        
+        let exist = realm.object(ofType: ProjectItem.self, forPrimaryKey: id) != nil
+        guard let item = realm.object(ofType: Goods.self, forPrimaryKey: id) else { return }
+        if exist {
+            completion()
+        } else {
+            try! realm.write {
+                realm.add(ProjectItem(goods: item))
+                completion()
+            }
         }
     }
     

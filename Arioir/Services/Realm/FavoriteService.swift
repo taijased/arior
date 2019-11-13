@@ -73,13 +73,6 @@ extension FavoriteService: RealmGRUDType {
         print(#function)
         let exist = realm.object(ofType: FavoriteItem.self, forPrimaryKey: object.id) != nil
         if exist {
-            guard let count = realm.object(ofType: FavoriteItem.self, forPrimaryKey: object.id)?.count else { return }
-            let currenCount = Int(count)! + 1
-            let updatingFavoriteItem = FavoriteItem(goods: object)
-            updatingFavoriteItem.count = "\(currenCount)"
-            try! realm.write {
-                realm.add(updatingFavoriteItem, update: .modified)
-            }
             completion()
         } else {
             try! realm.write {
