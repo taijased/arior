@@ -66,19 +66,14 @@ class ProjectGoodsCollectionViewCell: UICollectionViewCell {
     
     private func setupLayers() {
         
-        backgroundColor = .random()
+        backgroundColor = .clear
         addSubview(cardView)
         cardView.fillSuperview()
         
         cardView.addSubview(myImageView)
         myImageView.fillSuperview()
         
-        
-//        addSubview(label)
-//        label.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-//        label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
-//        label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -11).isActive = true
-//        
+           
         addSubview(label)
         label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 30).isActive = true
         label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true

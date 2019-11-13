@@ -68,7 +68,7 @@ class ProjectsViewController: UIViewController, StoryboardInitializable {
     }
 }
 
-//MARK: - BasketViewControllerDelegate, FavoriteViewControllerDelegate
+//MARK: - FavoriteViewControllerDelegate
 
 extension ProjectsViewController: FavoriteViewControllerDelegate {
     func deinitController() {
@@ -81,18 +81,15 @@ extension ProjectsViewController: FavoriteViewControllerDelegate {
 
 
 
-//MARK: - HomeCollectionViewDelegate
+//MARK: - CatalogCollectionViewDelegate
 
 extension ProjectsViewController: CatalogCollectionViewDelegate {
     func selectItem() {
         
-        
         guard let viewModel = viewModel, let goods = viewModel.collectionView.viewModel?.viewModelForSelectedRow()?.goods else { return }
-        
-        ProjectsService.addNewProjectItem(projectId: viewModel.projectId, projectItem: goods) {
-            print("zaebis")
+        ProjectsService.addNewProjectItem(projectId: viewModel.projectId, projectItem: goods) { [weak self] in
+            self?.viewModel?.updateCollection()
         }
-
     }
     
     func selectProject(project: Project) {

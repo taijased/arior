@@ -32,10 +32,10 @@ class CatalogHeaderViewCellVM: CatalogHeaderViewCellVMlType {
     }
     
     fileprivate func getCells() {
-        ProjectsService.read(id: projectId) { [weak self] (project) in
+        ProjectsService.read(id: projectId) { (project) in
             guard let cells = project?.goods else { return }
-            self?.collectionView.viewModel = ProjectGoodsCollectionViewVM(cells: cells)
-            self?.projectName = project!.name!
+            self.collectionView.viewModel = ProjectGoodsCollectionViewVM(cells: cells, projectId: self.projectId)
+            self.projectName = project!.name!
         }
     }
     

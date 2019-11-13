@@ -175,6 +175,8 @@
 		13BC16DB237C1C0D00F92FA5 /* ProjectGoodsCollectionViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16DA237C1C0D00F92FA5 /* ProjectGoodsCollectionViewVM.swift */; };
 		13BC16DD237C1C1700F92FA5 /* ProjectGoodsCollectionViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16DC237C1C1700F92FA5 /* ProjectGoodsCollectionViewCellVM.swift */; };
 		13BC16DF237C3F1100F92FA5 /* ProjectItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16DE237C3F1100F92FA5 /* ProjectItemService.swift */; };
+		13BC16E1237C782300F92FA5 /* CatalogSettingsPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16E0237C782300F92FA5 /* CatalogSettingsPreviewVC.swift */; };
+		13BC16E3237C783A00F92FA5 /* CatalogSettingsContextViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16E2237C783A00F92FA5 /* CatalogSettingsContextViewMenu.swift */; };
 		4C48CA5B31BEB450323462DC /* Pods_Arioir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */; };
 /* End PBXBuildFile section */
 
@@ -349,6 +351,8 @@
 		13BC16DA237C1C0D00F92FA5 /* ProjectGoodsCollectionViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGoodsCollectionViewVM.swift; sourceTree = "<group>"; };
 		13BC16DC237C1C1700F92FA5 /* ProjectGoodsCollectionViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectGoodsCollectionViewCellVM.swift; sourceTree = "<group>"; };
 		13BC16DE237C3F1100F92FA5 /* ProjectItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectItemService.swift; sourceTree = "<group>"; };
+		13BC16E0237C782300F92FA5 /* CatalogSettingsPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSettingsPreviewVC.swift; sourceTree = "<group>"; };
+		13BC16E2237C783A00F92FA5 /* CatalogSettingsContextViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSettingsContextViewMenu.swift; sourceTree = "<group>"; };
 		24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.debug.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.debug.xcconfig"; sourceTree = "<group>"; };
 		586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arioir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.release.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.release.xcconfig"; sourceTree = "<group>"; };
@@ -723,6 +727,8 @@
 				1359DFEF23770138006BB135 /* FavoritePreviewViewController.swift */,
 				13106ADF237AC2F1006A2011 /* ProjectsPreviewViewController.swift */,
 				13106AE1237AC3FD006A2011 /* ProjectsContextViewMenu.swift */,
+				13BC16E0237C782300F92FA5 /* CatalogSettingsPreviewVC.swift */,
+				13BC16E2237C783A00F92FA5 /* CatalogSettingsContextViewMenu.swift */,
 			);
 			path = ContextMenu;
 			sourceTree = "<group>";
@@ -1111,6 +1117,7 @@
 				13974AB423659F830032192A /* CreateTableIconsCell.swift in Sources */,
 				1350C24F236094A1005030E7 /* DirectingLine.swift in Sources */,
 				1358865A236474F5003E13B1 /* CreateTableViewViewModel.swift in Sources */,
+				13BC16E3237C783A00F92FA5 /* CatalogSettingsContextViewMenu.swift in Sources */,
 				13974ABC2365A4460032192A /* IconCollectionViewCellViewModel.swift in Sources */,
 				13974AF02366DC800032192A /* OrderTableDeliveryViewCell.swift in Sources */,
 				13BC16D9237C1C0100F92FA5 /* ProjectGoodsCollectionViewCell.swift in Sources */,
@@ -1214,6 +1221,7 @@
 				13974B0623674B270032192A /* ARFaced.swift in Sources */,
 				13974ADE23663F740032192A /* OrderTableEmailViewCell.swift in Sources */,
 				13375C01235F105700F6CC0D /* HomeHeaderViewCell.swift in Sources */,
+				13BC16E1237C782300F92FA5 /* CatalogSettingsPreviewVC.swift in Sources */,
 				13974AEA23664E320032192A /* PhoneTextField.swift in Sources */,
 				13375C0B235F197D00F6CC0D /* HomeHeaderViewCellViewModel.swift in Sources */,
 				138C4FE12361C95F00AB7757 /* FavoriteModel.swift in Sources */,

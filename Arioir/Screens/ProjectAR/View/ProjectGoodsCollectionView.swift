@@ -26,7 +26,6 @@ class ProjectGoodsCollectionView: UICollectionView {
         super.init(frame: .zero, collectionViewLayout: layout)
         
         viewModel?.onReloadData = {
-            print("reloadData")
             self.reloadData()
         }
         
@@ -129,23 +128,24 @@ extension ProjectGoodsCollectionView: UICollectionViewDelegateFlowLayout {
 
 
 //MARK: - ProjectsContextViewMenu
-//
-//extension ProjectGoodsCollectionView: ProjectsContextViewMenu {
-//    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-//
-//        guard let viewModel = viewModel else { return nil }
-//        viewModel.selectItem(atIndexPath: indexPath)
-//        guard let project = viewModel.viewModelForSelectedRow() else { return nil}
-//
-//        let identifier = NSString(string: project.iconName!)
-//
-//        // Create our configuration with an indentifier
-//        return UIContextMenuConfiguration(identifier: identifier, previewProvider: {
-//            return ProjectsPreviewViewController(imageName: project.iconName!)
-//        }, actionProvider: { suggestedActions in
-//            return self.makeDefaultDemoMenu { type in
-//                viewModel.contextMenuActions(type: type)
-//            }
-//        })
-//    }
-//}
+
+extension ProjectGoodsCollectionView: CatalogSettingsContextViewMenu {
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+
+        guard let viewModel = viewModel else { return nil }
+        viewModel.selectItem(atIndexPath: indexPath)
+        guard let goods = viewModel.viewModelForSelectedRow() else { return nil}
+
+        let identifier = NSString(string: goods.picture!)
+
+        // Create our configuration with an indentifier
+        return UIContextMenuConfiguration(identifier: identifier, previewProvider: {
+            return CatalogSettingsPreviewVC(imageName: goods.picture!)
+        }, actionProvider: { suggestedActions in
+            return self.makeDefaultDemoMenu { type in
+                
+                viewModel.contextMenuActions(type: type, projectId: viewModel.projectId)
+            }
+        })
+    }
+}

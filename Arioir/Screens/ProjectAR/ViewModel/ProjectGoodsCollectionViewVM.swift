@@ -26,8 +26,9 @@ protocol ProjectGoodsCollectionViewVMType {
     func viewModelForSelectedRow() -> Goods?
     func selectItem(atIndexPath indexPath: IndexPath)
     var onReloadData: (() -> Void)? { get set }
-    func contextMenuActions(type: ProjectsContextMenuEnum)
+    func contextMenuActions(type: CatalogSettingsContextViewMenuEnum, projectId: String)
     func isEmpty() -> Bool
+    var projectId: String { get set }
 }
 
 class ProjectGoodsCollectionViewVM: ProjectGoodsCollectionViewVMType {
@@ -38,8 +39,10 @@ class ProjectGoodsCollectionViewVM: ProjectGoodsCollectionViewVMType {
     var minimumInteritemSpacingForSectionAt: CGFloat = 20.0
     var minimumLineSpacingForSectionAt: CGFloat = 20.0
     var cells: List<Goods>
+    var projectId: String
     
-    init(cells: List<Goods>) {
+    init(cells: List<Goods>, projectId: String) {
+        self.projectId = projectId
         self.cells = cells
         self.onReloadData?()
     }
@@ -74,18 +77,21 @@ class ProjectGoodsCollectionViewVM: ProjectGoodsCollectionViewVMType {
     }
     
     
-    func contextMenuActions(type: ProjectsContextMenuEnum) {
+    func contextMenuActions(type: CatalogSettingsContextViewMenuEnum, projectId: String) {
+        
         guard
             let selectedIndexPath = selectedIndexPath,
             let id = cells[selectedIndexPath.row].id
             else { return }
-        
         switch type {
-            
+
         case .delete:
-            ProjectsService.delete(id: id) { [weak self] in
+            
+            ProjectsService.deleteProjectItem(projectId: projectId, elementId: id) { [weak self] in
                 self?.onReloadData?()
+                
             }
+
         }
     }
     

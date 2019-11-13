@@ -27,7 +27,8 @@ class ProjectsService: ProjectsServiceType {
     
     static func addNewProjectItem(projectId: String, projectItem: Goods, completion: @escaping () -> Void) {
         guard let item = realm.object(ofType: Project.self, forPrimaryKey: projectId) else { return }
-     
+        
+        
         let exist = item.goods.contains(projectItem)
         if exist {
             completion()
@@ -38,6 +39,23 @@ class ProjectsService: ProjectsServiceType {
             }
         }
     }
+    
+    static func deleteProjectItem(projectId: String, elementId: String, completion: @escaping () -> Void) {
+        guard
+            let item = realm.object(ofType: Project.self, forPrimaryKey: projectId),
+            let element = realm.object(ofType: Goods.self, forPrimaryKey: elementId)
+        else { return }
+        
+        try! realm.write {
+            if let index = item.goods.index(of: element) {
+                item.goods.remove(at: index)
+            }
+            completion()
+        }
+
+    }
+    
+    
     
     static func clearAll(completion: @escaping () -> Void) {
         let items = realm.objects(Output.self)
