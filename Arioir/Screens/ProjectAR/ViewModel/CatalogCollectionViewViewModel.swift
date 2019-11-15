@@ -18,10 +18,12 @@ protocol CatalogCollectionViewViewModelType {
     func sizeForItemAt() -> CGSize
     func numberOfRows() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> CatalogCollectionViewCellVMType?
+    func cellHeaderViewModel() -> CatalogHeaderViewCellVMlType?
     func viewModelForSelectedRow() -> ProjectItem?
     func selectItem(atIndexPath indexPath: IndexPath)
     var onReloadData: (() -> Void)? { get set }
     var projectId: String { get set }
+    
 }
 
 
@@ -70,6 +72,9 @@ class CatalogCollectionViewViewModel: CatalogCollectionViewViewModelType {
         guard let cells = cells else { return nil }
         let cell = cells[indexPath.row]
         return CatalogCollectionViewCellVM(cell: cell)
+    }
+    func cellHeaderViewModel() -> CatalogHeaderViewCellVMlType? {
+        return CatalogHeaderViewCellVM(projectId: projectId)
     }
     
     func viewModelForSelectedRow() -> ProjectItem? {

@@ -13,6 +13,7 @@ import UIKit
 
 protocol CatalogHeaderViewCellDelegate: class {
     func didSelectItemAt(project: Project)
+    func updateData()
 }
 
 class CatalogHeaderViewCell: UICollectionReusableView {
@@ -20,8 +21,17 @@ class CatalogHeaderViewCell: UICollectionReusableView {
     static let reuseId = "CatalogHeaderViewCell"
     weak var delegate: CatalogHeaderViewCellDelegate?
     
-    var viewModel: CatalogHeaderViewCellVMlType?
     
+    weak var viewModel: CatalogHeaderViewCellVMlType? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else { return }
+            projectLabel.text = viewModel.projectName
+            collectionView.viewModel = viewModel.collectionView.viewModel
+            collectionView.reloadData()
+        }
+    }
+    
+    let collectionView = ProjectGoodsCollectionView()
     
     let lineView: UIView = {
         let view = UIView()
@@ -37,10 +47,6 @@ class CatalogHeaderViewCell: UICollectionReusableView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    
-    
-    
     let projectLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -50,7 +56,6 @@ class CatalogHeaderViewCell: UICollectionReusableView {
         label.text = "Название проекта"
         return label
     }()
-    
     
     
     let catalogLabel: UILabel = {
@@ -75,6 +80,12 @@ class CatalogHeaderViewCell: UICollectionReusableView {
         label.text = "Начните добавлять товары ниже из каталога"
         return label
     }()
+    let tempView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .random()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     
     override init(frame: CGRect) {
@@ -86,26 +97,6 @@ class CatalogHeaderViewCell: UICollectionReusableView {
         backgroundColor = .white
         addConstrints()
     }
-    
-    func set(id: String) {
-        
-        
-        viewModel = CatalogHeaderViewCellVM(projectId: id)
-        DispatchQueue.main.async {
-            self.projectLabel.text = self.viewModel?.projectName
-        }
-       
-        guard let collectionView = viewModel?.collectionView else { return }
-        addSubview(collectionView)
-        collectionView.collectionDelegate = self
-        collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        collectionView.topAnchor.constraint(equalTo: projectLabel.bottomAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: catalogLabel.topAnchor).isActive = true
-        collectionView.collectionDelegate = self
-        collectionView.reloadData()
-    }
-    
     
     fileprivate func addConstrints() {
         
@@ -134,8 +125,14 @@ class CatalogHeaderViewCell: UICollectionReusableView {
         emptyLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         emptyLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         emptyLabel.bottomAnchor.constraint(equalTo: catalogLabel.topAnchor).isActive = true
-
         
+        
+        addSubview(collectionView)
+        collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: projectLabel.bottomAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: catalogLabel.topAnchor).isActive = true
+        collectionView.collectionDelegate = self
         
     }
     
@@ -151,11 +148,20 @@ class CatalogHeaderViewCell: UICollectionReusableView {
 
 
 
-//MARK: - ProjectsCollectionViewDelegate
+//MARK: - ProjectGoodsCollectionViewDelegate
 extension CatalogHeaderViewCell: ProjectGoodsCollectionViewDelegate {
+    func updateData() {
+        print(#function)
+        delegate?.updateData()
+    }
+    
     func didSelectItemAt() {
-//        guard let project = viewModel?.collectionView.viewModel?.viewModelForSelectedRow() else { return }
-//        self.delegate?.didSelectItemAt(project: project)
+        
+        
+        
+        print(#function)
+        //        guard let project = viewModel?.collectionView.viewModel?.viewModelForSelectedRow() else { return }
+        //        self.delegate?.didSelectItemAt(project: project)
     }
     
     

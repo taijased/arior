@@ -10,11 +10,10 @@ import Foundation
 
 
 
-protocol CatalogHeaderViewCellVMlType {
+protocol CatalogHeaderViewCellVMlType: class {
     var collectionView: ProjectGoodsCollectionView { get }
     var projectId: String { get set }
     var projectName: String? { get set }
-
 }
 
 
@@ -23,20 +22,11 @@ class CatalogHeaderViewCellVM: CatalogHeaderViewCellVMlType {
     var projectId: String
     var projectName: String?
     var collectionView: ProjectGoodsCollectionView
-
+    
     init(projectId: String) {
         
         self.projectId = projectId
-        collectionView = ProjectGoodsCollectionView()
-        getCells()
+        collectionView = ProjectGoodsCollectionView(projectId: projectId)
+        projectName = collectionView.viewModel?.projectName
     }
-    
-    fileprivate func getCells() {
-        ProjectsService.read(id: projectId) { (project) in
-            guard let cells = project?.goods else { return }
-            self.collectionView.viewModel = ProjectGoodsCollectionViewVM(cells: cells, projectId: self.projectId)
-            self.projectName = project!.name!
-        }
-    }
-    
 }

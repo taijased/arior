@@ -18,7 +18,7 @@ protocol ProjectCatalogViewDelegate: class {
 class ProjectCatalogViewController: UIViewController {
     
     weak var delegate: ProjectCatalogViewDelegate?
-//    var viewModel: CreateViewModelType?
+    var viewModel: CatalogHeaderViewCellVMlType?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -35,17 +35,17 @@ class ProjectCatalogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewModel = CreateViewModel()
         setupUI()
-        
     }
     
     fileprivate func setupUI() {
         
         
         view.backgroundColor = .random()
-     
-
+//        guard let collectionView = viewModel?.collectionView else { return }
+//        view.addSubview(collectionView)
+//        collectionView.fillSuperview()
+            
     }
    
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,7 +78,6 @@ extension ProjectCatalogViewController: PresentationCatalogViewControllerDelegat
         case .up:
             self.dismiss(animated: true, completion: nil)
             delegate?.showProjectsScreen()
-
         case .left: break
         case .right: break
         default:
@@ -86,16 +85,4 @@ extension ProjectCatalogViewController: PresentationCatalogViewControllerDelegat
         }
     }
 
-}
-
-
-
-
-extension UINavigationController {
-
-    func removeViewController(_ controller: UIViewController.Type) {
-        if let viewController = viewControllers.first(where: { $0.isKind(of: controller.self) }) {
-            viewController.removeFromParent()
-        }
-    }
 }

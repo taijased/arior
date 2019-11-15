@@ -83,7 +83,7 @@ extension BasketService: RealmGRUDType {
                 completion()
             }
         }
-    }
+    } 
     
     static func read(id: String, completion: @escaping (BasketItem?) -> Void) {
         print(#function)

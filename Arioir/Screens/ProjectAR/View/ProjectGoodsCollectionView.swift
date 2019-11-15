@@ -11,6 +11,7 @@ import UIKit
 
 protocol ProjectGoodsCollectionViewDelegate: class {
     func didSelectItemAt()
+    func updateData()
 }
 
 
@@ -18,21 +19,55 @@ class ProjectGoodsCollectionView: UICollectionView {
     
     weak var collectionDelegate: ProjectGoodsCollectionViewDelegate?
     
+    
     var viewModel: ProjectGoodsCollectionViewVMType?
+    var updateDate: (() -> Void)?
+    
+    
+    
+    init(projectId: String) {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        super.init(frame: .zero, collectionViewLayout: layout)
+        viewModel = ProjectGoodsCollectionViewVM(projectId: projectId)
+
+        setupCollectionSettings()
+        updateBackground()
+        self.reloadData {
+            self.updateBackground()
+        }
+
+        viewModel?.onReloadData = {
+            self.updateDate?()
+            self.collectionDelegate?.updateData()
+            self.updateBackground()
+        }
+    }
     
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
-        
-        viewModel?.onReloadData = {
-            self.reloadData()
-        }
-        
-        
         setupCollectionSettings()
+        updateBackground()
+        self.reloadData {
+            self.updateBackground()
+        }
+
+        viewModel?.onReloadData = {
+            self.updateDate?()
+            self.collectionDelegate?.updateData()
+            self.updateBackground()
+        }
     }
     
+    func updateBackground() {
+        if viewModel?.isEmpty() ?? true {
+            self.alpha = 0
+        } else {
+            self.alpha = 1
+        }
+    }
     
     private func setupCollectionSettings() {
         backgroundColor = .white
@@ -127,7 +162,7 @@ extension ProjectGoodsCollectionView: UICollectionViewDelegateFlowLayout {
 
 
 
-//MARK: - ProjectsContextViewMenu
+////MARK: - ProjectsContextViewMenu
 
 extension ProjectGoodsCollectionView: CatalogSettingsContextViewMenu {
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
@@ -143,7 +178,6 @@ extension ProjectGoodsCollectionView: CatalogSettingsContextViewMenu {
             return CatalogSettingsPreviewVC(imageName: goods.picture!)
         }, actionProvider: { suggestedActions in
             return self.makeDefaultDemoMenu { type in
-                
                 viewModel.contextMenuActions(type: type, projectId: viewModel.projectId)
             }
         })

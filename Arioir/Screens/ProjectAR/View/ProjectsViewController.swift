@@ -38,9 +38,6 @@ class ProjectsViewController: UIViewController, StoryboardInitializable {
         viewModel.homeBottomControls.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42).isActive = true
         viewModel.homeBottomControls.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
         
-        
-        
-        
     }
     
     fileprivate func navigation(_ type: HomeNavigation) {
@@ -84,8 +81,12 @@ extension ProjectsViewController: FavoriteViewControllerDelegate {
 //MARK: - CatalogCollectionViewDelegate
 
 extension ProjectsViewController: CatalogCollectionViewDelegate {
+//    func updateData() {
+//        self.viewModel?.updateCollection()
+//    }
+//    
     func selectItem() {
-        
+
         guard let viewModel = viewModel, let goods = viewModel.collectionView.viewModel?.viewModelForSelectedRow()?.goods else { return }
         ProjectsService.addNewProjectItem(projectId: viewModel.projectId, projectItem: goods) { [weak self] in
             self?.viewModel?.updateCollection()

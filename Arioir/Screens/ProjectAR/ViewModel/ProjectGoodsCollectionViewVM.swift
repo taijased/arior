@@ -25,10 +25,11 @@ protocol ProjectGoodsCollectionViewVMType {
     func cellViewModel(forIndexPath indexPath: IndexPath) -> ProjectGoodsCollectionViewCellVMType?
     func viewModelForSelectedRow() -> Goods?
     func selectItem(atIndexPath indexPath: IndexPath)
-    var onReloadData: (() -> Void)? { get set }
     func contextMenuActions(type: CatalogSettingsContextViewMenuEnum, projectId: String)
     func isEmpty() -> Bool
     var projectId: String { get set }
+    var projectName: String { get set }
+    var onReloadData: (() -> Void)? { get set }
 }
 
 class ProjectGoodsCollectionViewVM: ProjectGoodsCollectionViewVMType {
@@ -38,18 +39,33 @@ class ProjectGoodsCollectionViewVM: ProjectGoodsCollectionViewVMType {
     private var selectedIndexPath: IndexPath?
     var minimumInteritemSpacingForSectionAt: CGFloat = 20.0
     var minimumLineSpacingForSectionAt: CGFloat = 20.0
-    var cells: List<Goods>
+    var cells: List<Goods>?
     var projectId: String
+    var projectName: String
     
-    init(cells: List<Goods>, projectId: String) {
+    init(projectId: String) {
         self.projectId = projectId
-        self.cells = cells
-        self.onReloadData?()
+        self.projectName = "Название проекта"
+        fetchData()
     }
 
+    fileprivate func fetchData() {
+
+        ProjectsService.read(id: projectId) { [weak self] (project) in
+            guard
+                let cells = project?.goods
+            else {
+ 
+                return
+            }
+            self?.cells = cells
+            self?.projectName = project!.name!
+            self?.onReloadData?()
+        }
+    }
     
     func isEmpty() -> Bool {
-        return cells.isEmpty
+        return cells?.isEmpty ?? true
     }
     
     func sizeForItemAt() -> CGSize {
@@ -58,16 +74,17 @@ class ProjectGoodsCollectionViewVM: ProjectGoodsCollectionViewVMType {
     
     
     func numberOfRows() -> Int {
-        return cells.count
+        return cells?.count ?? 0
     }
     
     func cellViewModel(forIndexPath indexPath: IndexPath) -> ProjectGoodsCollectionViewCellVMType? {
+        guard let cells = cells else { return nil }
         let cell = cells[indexPath.row]
         return ProjectGoodsCollectionViewCellVM(goods: cell)
     }
     
     func viewModelForSelectedRow() -> Goods? {
-        guard let selectedIndexPath = selectedIndexPath else { return nil }
+        guard let selectedIndexPath = selectedIndexPath, let cells = cells  else { return nil }
         return cells[selectedIndexPath.row]
     }
     
@@ -78,20 +95,20 @@ class ProjectGoodsCollectionViewVM: ProjectGoodsCollectionViewVMType {
     
     
     func contextMenuActions(type: CatalogSettingsContextViewMenuEnum, projectId: String) {
-        
+
         guard
             let selectedIndexPath = selectedIndexPath,
+            let cells = cells,
             let id = cells[selectedIndexPath.row].id
             else { return }
         switch type {
 
         case .delete:
-            
-            ProjectsService.deleteProjectItem(projectId: projectId, elementId: id) { [weak self] in
-                self?.onReloadData?()
-                
+            ProjectsService.deleteProjectItem(projectId: projectId, elementId: id) {
+                DispatchQueue.main.async {
+                    self.onReloadData?()
+                }
             }
-
         }
     }
     

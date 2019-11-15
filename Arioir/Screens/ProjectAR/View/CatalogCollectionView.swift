@@ -17,6 +17,7 @@ import SkeletonView
 protocol CatalogCollectionViewDelegate: class {
     func selectItem()
     func selectProject(project: Project)
+//    func updateData()
 }
 
 class CatalogCollectionView: UICollectionView {
@@ -30,7 +31,7 @@ class CatalogCollectionView: UICollectionView {
         super.init(frame: .zero, collectionViewLayout: layout)
         setupUI()
         
-//        viewModel = CatalogCollectionViewViewModel()
+        //        viewModel = CatalogCollectionViewViewModel()
         
         viewModel?.onReloadData = { [weak self] in
             print("ikol")
@@ -88,11 +89,11 @@ extension CatalogCollectionView: UICollectionViewDelegate, UICollectionViewDataS
         let cell = dequeueReusableCell(withReuseIdentifier: CatalogCollectionViewCell.reuseId, for: indexPath) as? CatalogCollectionViewCell
         
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
-
+        
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
-
+        
         collectionViewCell.viewModel = cellViewModel 
-      
+        
         return collectionViewCell
     }
     
@@ -106,7 +107,7 @@ extension CatalogCollectionView: UICollectionViewDelegate, UICollectionViewDataS
         viewModel.selectItem(atIndexPath: indexPath)
         collectionDelegate?.selectItem()
     }
-
+    
 }
 
 
@@ -141,11 +142,11 @@ extension CatalogCollectionView: UICollectionViewDelegateFlowLayout {
         let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CatalogHeaderViewCell.reuseId, for: indexPath)
             as? CatalogHeaderViewCell
         
-        
-        guard let header = cell, let projectId =  viewModel?.projectId else { return UICollectionReusableView() }
-        header.set(id: projectId)
-        header.delegate = self
-        return header
+        guard let headerViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
+        let headerCellViewModel = viewModel.cellHeaderViewModel()
+        headerViewCell.viewModel = headerCellViewModel
+        headerViewCell.delegate = self
+        return headerViewCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -157,6 +158,12 @@ extension CatalogCollectionView: UICollectionViewDelegateFlowLayout {
 //MARK: - ProjectsCollectionViewDelegate
 
 extension CatalogCollectionView: CatalogHeaderViewCellDelegate {
+    //Hueta
+    func updateData() {
+//        collectionDelegate?.updateData()
+        self.reloadData()
+    }
+
     func didSelectItemAt(project: Project) {
         self.collectionDelegate?.selectProject(project: project)
     }
