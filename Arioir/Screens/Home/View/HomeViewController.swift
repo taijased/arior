@@ -79,7 +79,8 @@ class HomeViewController: UIViewController, StoryboardInitializable {
         switch type {
             
         case .filtres:
-            self.dismiss(animated: true, completion: nil)
+            let viewController = FiltersViewController()
+            self.present(viewController, animated: true, completion: nil)
         case .favorites:
             let viewController = FavoriteViewController.initFromStoryboard(name: "Main")
             viewController.delegate = self

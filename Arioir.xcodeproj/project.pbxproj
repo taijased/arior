@@ -13,11 +13,19 @@
 		1300492B235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300492A235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift */; };
 		1300492D235F4290006DA2C9 /* HomeBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300492C235F4290006DA2C9 /* HomeBottomControls.swift */; };
 		13004930235F42BD006DA2C9 /* ButtonWithBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300492F235F42BD006DA2C9 /* ButtonWithBadge.swift */; };
+		13080737237EAA26006F9828 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13080736237EAA26006F9828 /* FiltersViewController.swift */; };
+		13080739237EAA3E006F9828 /* FiltersViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13080738237EAA3D006F9828 /* FiltersViewControllerVM.swift */; };
+		1308073B237EAA6A006F9828 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308073A237EAA6A006F9828 /* FilterModel.swift */; };
 		13106AE0237AC2F1006A2011 /* ProjectsPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106ADF237AC2F1006A2011 /* ProjectsPreviewViewController.swift */; };
 		13106AE2237AC3FD006A2011 /* ProjectsContextViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106AE1237AC3FD006A2011 /* ProjectsContextViewMenu.swift */; };
 		13106AE4237AC6C9006A2011 /* ProjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106AE3237AC6C9006A2011 /* ProjectsService.swift */; };
 		13106AE6237AD097006A2011 /* ProjectCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106AE5237AD097006A2011 /* ProjectCatalogViewController.swift */; };
 		13106AE8237AD297006A2011 /* PresentationCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106AE7237AD297006A2011 /* PresentationCatalogViewController.swift */; };
+		13238925237ED68000F603BF /* FiltersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13238924237ED68000F603BF /* FiltersTableView.swift */; };
+		13238927237ED68800F603BF /* FiltersTableViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13238926237ED68800F603BF /* FiltersTableViewVM.swift */; };
+		13238929237ED73A00F603BF /* FiltersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13238928237ED73A00F603BF /* FiltersTableViewCell.swift */; };
+		1323892B237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323892A237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift */; };
+		1323892F237EECE900F603BF /* FiltersTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323892E237EECE900F603BF /* FiltersTableViewCellVM.swift */; };
 		13375BB8235F0A6700F6CC0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BB7235F0A6700F6CC0D /* AppDelegate.swift */; };
 		13375BBA235F0A6700F6CC0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */; };
 		13375BBF235F0A6700F6CC0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13375BBD235F0A6700F6CC0D /* Main.storyboard */; };
@@ -187,11 +195,19 @@
 		1300492A235F3010006DA2C9 /* ProjectsCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		1300492C235F4290006DA2C9 /* HomeBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomControls.swift; sourceTree = "<group>"; };
 		1300492F235F42BD006DA2C9 /* ButtonWithBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithBadge.swift; sourceTree = "<group>"; };
+		13080736237EAA26006F9828 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		13080738237EAA3D006F9828 /* FiltersViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewControllerVM.swift; sourceTree = "<group>"; };
+		1308073A237EAA6A006F9828 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		13106ADF237AC2F1006A2011 /* ProjectsPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsPreviewViewController.swift; sourceTree = "<group>"; };
 		13106AE1237AC3FD006A2011 /* ProjectsContextViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsContextViewMenu.swift; sourceTree = "<group>"; };
 		13106AE3237AC6C9006A2011 /* ProjectsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsService.swift; sourceTree = "<group>"; };
 		13106AE5237AD097006A2011 /* ProjectCatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCatalogViewController.swift; sourceTree = "<group>"; };
 		13106AE7237AD297006A2011 /* PresentationCatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationCatalogViewController.swift; sourceTree = "<group>"; };
+		13238924237ED68000F603BF /* FiltersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableView.swift; sourceTree = "<group>"; };
+		13238926237ED68800F603BF /* FiltersTableViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewVM.swift; sourceTree = "<group>"; };
+		13238928237ED73A00F603BF /* FiltersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewCell.swift; sourceTree = "<group>"; };
+		1323892A237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewSectionHeader.swift; sourceTree = "<group>"; };
+		1323892E237EECE900F603BF /* FiltersTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewCellVM.swift; sourceTree = "<group>"; };
 		13375BB4235F0A6700F6CC0D /* Arioir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arioir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13375BB7235F0A6700F6CC0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -382,6 +398,45 @@
 			path = ControlsViews;
 			sourceTree = "<group>";
 		};
+		13080732237EA9E1006F9828 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				13080735237EAA0D006F9828 /* Model */,
+				13080734237EAA07006F9828 /* View */,
+				13080733237EA9FC006F9828 /* ViewModel */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		13080733237EA9FC006F9828 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				13080738237EAA3D006F9828 /* FiltersViewControllerVM.swift */,
+				13238926237ED68800F603BF /* FiltersTableViewVM.swift */,
+				1323892E237EECE900F603BF /* FiltersTableViewCellVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		13080734237EAA07006F9828 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13080736237EAA26006F9828 /* FiltersViewController.swift */,
+				13238924237ED68000F603BF /* FiltersTableView.swift */,
+				13238928237ED73A00F603BF /* FiltersTableViewCell.swift */,
+				1323892A237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13080735237EAA0D006F9828 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1308073A237EAA6A006F9828 /* FilterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		13375BAB235F0A6700F6CC0D = {
 			isa = PBXGroup;
 			children = (
@@ -438,6 +493,7 @@
 		13375BD8235F0B0F00F6CC0D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				13080732237EA9E1006F9828 /* Filters */,
 				13974AF923673BC40032192A /* ProjectAR */,
 				13974AC4236606160032192A /* OrderInformation */,
 				1375515923633BA900E29D5E /* Create */,
@@ -1080,6 +1136,7 @@
 				135F4456237B004C008969F4 /* CatalogCollectionView.swift in Sources */,
 				13375BE6235F0BB500F6CC0D /* NetworkDataFetcher.swift in Sources */,
 				1350C24C236094A1005030E7 /* WallPapersPreview.swift in Sources */,
+				1323892F237EECE900F603BF /* FiltersTableViewCellVM.swift in Sources */,
 				1350C23E236094A1005030E7 /* Math.swift in Sources */,
 				1350C26323609CC0005030E7 /* BasketViewModel.swift in Sources */,
 				13974B02236742B20032192A /* ProjectARViewModel.swift in Sources */,
@@ -1100,8 +1157,10 @@
 				13974AB82365A13B0032192A /* IconCollectionViewCell.swift in Sources */,
 				1350C23F236094A1005030E7 /* ARSCNView+addToSceneView.swift in Sources */,
 				1350C24D236094A1005030E7 /* WallPaperPreviewPointer.swift in Sources */,
+				13080737237EAA26006F9828 /* FiltersViewController.swift in Sources */,
 				13375BD5235F0AE500F6CC0D /* WebImageView.swift in Sources */,
 				13106AE0237AC2F1006A2011 /* ProjectsPreviewViewController.swift in Sources */,
+				1308073B237EAA6A006F9828 /* FilterModel.swift in Sources */,
 				13974AF42366E8BD0032192A /* OrderTablePaymentViewCell.swift in Sources */,
 				1350C241236094A1005030E7 /* ConnectionLineConfigs.swift in Sources */,
 				1350C1E72360692F005030E7 /* CardTableHeaderCell.swift in Sources */,
@@ -1156,6 +1215,7 @@
 				13375BE2235F0B8A00F6CC0D /* DemmoksiCatalogModel.swift in Sources */,
 				13974ACD236606A50032192A /* OrderViewModel.swift in Sources */,
 				13588658236474E3003E13B1 /* CreateTableView.swift in Sources */,
+				13238925237ED68000F603BF /* FiltersTableView.swift in Sources */,
 				138C4FF12361CE7100AB7757 /* FavoriteNavigation.swift in Sources */,
 				13A7B613237ADA7000F1CDCB /* ProjectsBottomControls.swift in Sources */,
 				13375BCF235F0AAC00F6CC0D /* Constraints.swift in Sources */,
@@ -1179,6 +1239,7 @@
 				1350C23B236094A1005030E7 /* LengthLabelsProcessor.swift in Sources */,
 				13BC16DB237C1C0D00F92FA5 /* ProjectGoodsCollectionViewVM.swift in Sources */,
 				1350C22D236094A1005030E7 /* ARPreviewFacade+ARSessionDelegate.swift in Sources */,
+				13080739237EAA3E006F9828 /* FiltersViewControllerVM.swift in Sources */,
 				13755161236341B800E29D5E /* PresentationViewController.swift in Sources */,
 				1350C246236094A1005030E7 /* ARUtilis.swift in Sources */,
 				1350C26923609D37005030E7 /* BasketTableView.swift in Sources */,
@@ -1188,6 +1249,7 @@
 				1375515F2363400F00E29D5E /* PresentationController.swift in Sources */,
 				13974ACB2366068E0032192A /* OrderViewController.swift in Sources */,
 				1350C22C236094A1005030E7 /* ARPreviewFacade.swift in Sources */,
+				1323892B237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift in Sources */,
 				13A7B611237AD92100F1CDCB /* ProjectsViewControllerViewModel.swift in Sources */,
 				1350C27223609EF8005030E7 /* HomeModel.swift in Sources */,
 				13974AF62366EABA0032192A /* OrderTablePrivacyPolicyViewCell.swift in Sources */,
@@ -1204,12 +1266,14 @@
 				1359DFE72376E11F006BB135 /* FavoriteService.swift in Sources */,
 				135F4458237B006B008969F4 /* CatalogCollectionViewViewModel.swift in Sources */,
 				13974AE6236648840032192A /* String + PhoneValidate.swift in Sources */,
+				13238929237ED73A00F603BF /* FiltersTableViewCell.swift in Sources */,
 				13974ACF236606B40032192A /* OrderModel.swift in Sources */,
 				1350C24A236094A1005030E7 /* WallBuilder.swift in Sources */,
 				1350C26123609CA6005030E7 /* BasketViewController.swift in Sources */,
 				13974ADC2366138E0032192A /* CustomTextField.swift in Sources */,
 				1350C247236094A1005030E7 /* WallSigmentConfigs.swift in Sources */,
 				13375C03235F106100F6CC0D /* HomeCollectionViewCell.swift in Sources */,
+				13238927237ED68800F603BF /* FiltersTableViewVM.swift in Sources */,
 				1358865C23647732003E13B1 /* CreateTableTextfieldCell.swift in Sources */,
 				13974ABA2365A1850032192A /* IconCollectionViewViewModel.swift in Sources */,
 				138C4FE32361C99A00AB7757 /* FavoriteViewController.swift in Sources */,
