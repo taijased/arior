@@ -19,7 +19,7 @@ struct ExpandableNames {
 
 class FiltersTableView: UITableView {
     
-
+    
     
     
     var viewModel: FiltersTableViewVMType?
@@ -51,6 +51,7 @@ class FiltersTableView: UITableView {
         dataSource = self
         translatesAutoresizingMaskIntoConstraints = false
         register(FiltersTableViewCell.self, forCellReuseIdentifier: FiltersTableViewCell.reuseId)
+        tableHeaderView = viewModel?.headerView
         tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 1))
     }
     
@@ -80,7 +81,7 @@ class FiltersTableView: UITableView {
                 button.setImage(UIImage(named: "arrow-top"), for: .normal)
             }
         }
-
+        
     }
     
 }
@@ -97,7 +98,6 @@ extension FiltersTableView: UITableViewDelegate, UITableViewDataSource {
         return sectionView
     }
     
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return viewModel?.heightForHeaderInSection ?? 0
     }
@@ -111,12 +111,16 @@ extension FiltersTableView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            
+        
         let cell = dequeueReusableCell(withIdentifier: FiltersTableViewCell.reuseId, for: indexPath) as? FiltersTableViewCell
         guard let viewCell = cell, let viewModel = viewModel else { return UITableViewCell() }
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
         viewCell.viewModel = cellViewModel
         return viewCell
+        
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return viewModel?.heightForRowAt(indexPath: indexPath) ?? 0
+    }
 }

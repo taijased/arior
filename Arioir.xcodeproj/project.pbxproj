@@ -26,6 +26,7 @@
 		13238929237ED73A00F603BF /* FiltersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13238928237ED73A00F603BF /* FiltersTableViewCell.swift */; };
 		1323892B237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323892A237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift */; };
 		1323892F237EECE900F603BF /* FiltersTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323892E237EECE900F603BF /* FiltersTableViewCellVM.swift */; };
+		13238931237EFDE100F603BF /* FiltersTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13238930237EFDE100F603BF /* FiltersTableHeaderView.swift */; };
 		13375BB8235F0A6700F6CC0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BB7235F0A6700F6CC0D /* AppDelegate.swift */; };
 		13375BBA235F0A6700F6CC0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */; };
 		13375BBF235F0A6700F6CC0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13375BBD235F0A6700F6CC0D /* Main.storyboard */; };
@@ -208,6 +209,7 @@
 		13238928237ED73A00F603BF /* FiltersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewCell.swift; sourceTree = "<group>"; };
 		1323892A237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewSectionHeader.swift; sourceTree = "<group>"; };
 		1323892E237EECE900F603BF /* FiltersTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewCellVM.swift; sourceTree = "<group>"; };
+		13238930237EFDE100F603BF /* FiltersTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableHeaderView.swift; sourceTree = "<group>"; };
 		13375BB4235F0A6700F6CC0D /* Arioir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arioir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13375BB7235F0A6700F6CC0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 			children = (
 				13080736237EAA26006F9828 /* FiltersViewController.swift */,
 				13238924237ED68000F603BF /* FiltersTableView.swift */,
+				13238930237EFDE100F603BF /* FiltersTableHeaderView.swift */,
 				13238928237ED73A00F603BF /* FiltersTableViewCell.swift */,
 				1323892A237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift */,
 			);
@@ -1270,6 +1273,7 @@
 				13974ACF236606B40032192A /* OrderModel.swift in Sources */,
 				1350C24A236094A1005030E7 /* WallBuilder.swift in Sources */,
 				1350C26123609CA6005030E7 /* BasketViewController.swift in Sources */,
+				13238931237EFDE100F603BF /* FiltersTableHeaderView.swift in Sources */,
 				13974ADC2366138E0032192A /* CustomTextField.swift in Sources */,
 				1350C247236094A1005030E7 /* WallSigmentConfigs.swift in Sources */,
 				13375C03235F106100F6CC0D /* HomeCollectionViewCell.swift in Sources */,

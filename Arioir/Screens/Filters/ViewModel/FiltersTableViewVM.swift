@@ -21,7 +21,7 @@ protocol FiltersTableViewVMType {
     func isExpanded(_ section: Int) -> Bool
     func expandSection(_ section: Int)
     func generateSectionView(_ section: Int) -> FiltersTableViewSectionHeader
-//    func updateSectionView(expandStatus: Bool)
+    var headerView: FiltersTableHeaderView { get set }
 }
 
 
@@ -30,9 +30,8 @@ class FiltersTableViewVM: FiltersTableViewVMType {
     
     var heightForHeaderInSection: CGFloat = 36
     var cells = [
-        ExpandableNames(isExpanded: true, names: ["Amy"]),
         ExpandableNames(isExpanded: true, names: ["Carl", "Chris", "Christina", "Cameron"]),
-        ExpandableNames(isExpanded: true, names: ["David", "Dan"]),
+        ExpandableNames(isExpanded: false, names: ["David", "Dan"]),
         ExpandableNames(isExpanded: true, names: ["Patrick", "Patty"]),
     ]
     
@@ -40,10 +39,11 @@ class FiltersTableViewVM: FiltersTableViewVMType {
     var onReloadData: (() -> Void)?
     var onDeleteRows: (([IndexPath]) -> Void)?
     var onInsertRows: (([IndexPath]) -> Void)?
-    
+    var headerView: FiltersTableHeaderView
     
     
     init() {
+        headerView = FiltersTableHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: FiltersTableHeaderView.height))
         self.onReloadData?()
     }
     
@@ -85,9 +85,11 @@ class FiltersTableViewVM: FiltersTableViewVMType {
         return cells[section].names.count
     }
     
+
     func heightForRowAt(indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? CardTableHeaderCell.height : 35.0
+        return 35.0
     }
+    
     
     
     func cellViewModel(forIndexPath indexPath: IndexPath) -> FiltersTableViewCellVMType? {
