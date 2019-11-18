@@ -27,6 +27,11 @@
 		1323892B237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323892A237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift */; };
 		1323892F237EECE900F603BF /* FiltersTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323892E237EECE900F603BF /* FiltersTableViewCellVM.swift */; };
 		13238931237EFDE100F603BF /* FiltersTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13238930237EFDE100F603BF /* FiltersTableHeaderView.swift */; };
+		132CF8DE2381886F00AE9648 /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132CF8DD2381886F00AE9648 /* TagCollectionView.swift */; };
+		132CF8E02381887900AE9648 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132CF8DF2381887900AE9648 /* TagCollectionViewCell.swift */; };
+		132CF8E22381888100AE9648 /* TagCollectionViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132CF8E12381888100AE9648 /* TagCollectionViewVM.swift */; };
+		132CF8E42381888900AE9648 /* TagCollectionViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132CF8E32381888900AE9648 /* TagCollectionViewCellVM.swift */; };
+		132CF8E62381891500AE9648 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132CF8E52381891500AE9648 /* TagModel.swift */; };
 		13375BB8235F0A6700F6CC0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BB7235F0A6700F6CC0D /* AppDelegate.swift */; };
 		13375BBA235F0A6700F6CC0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */; };
 		13375BBF235F0A6700F6CC0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13375BBD235F0A6700F6CC0D /* Main.storyboard */; };
@@ -210,6 +215,11 @@
 		1323892A237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewSectionHeader.swift; sourceTree = "<group>"; };
 		1323892E237EECE900F603BF /* FiltersTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewCellVM.swift; sourceTree = "<group>"; };
 		13238930237EFDE100F603BF /* FiltersTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableHeaderView.swift; sourceTree = "<group>"; };
+		132CF8DD2381886F00AE9648 /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
+		132CF8DF2381887900AE9648 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		132CF8E12381888100AE9648 /* TagCollectionViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewVM.swift; sourceTree = "<group>"; };
+		132CF8E32381888900AE9648 /* TagCollectionViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCellVM.swift; sourceTree = "<group>"; };
+		132CF8E52381891500AE9648 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
 		13375BB4235F0A6700F6CC0D /* Arioir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arioir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13375BB7235F0A6700F6CC0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13375BB9235F0A6700F6CC0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -416,6 +426,8 @@
 				13080738237EAA3D006F9828 /* FiltersViewControllerVM.swift */,
 				13238926237ED68800F603BF /* FiltersTableViewVM.swift */,
 				1323892E237EECE900F603BF /* FiltersTableViewCellVM.swift */,
+				132CF8E12381888100AE9648 /* TagCollectionViewVM.swift */,
+				132CF8E32381888900AE9648 /* TagCollectionViewCellVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -426,8 +438,10 @@
 				13080736237EAA26006F9828 /* FiltersViewController.swift */,
 				13238924237ED68000F603BF /* FiltersTableView.swift */,
 				13238930237EFDE100F603BF /* FiltersTableHeaderView.swift */,
-				13238928237ED73A00F603BF /* FiltersTableViewCell.swift */,
 				1323892A237EDE3B00F603BF /* FiltersTableViewSectionHeader.swift */,
+				13238928237ED73A00F603BF /* FiltersTableViewCell.swift */,
+				132CF8DD2381886F00AE9648 /* TagCollectionView.swift */,
+				132CF8DF2381887900AE9648 /* TagCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -436,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				1308073A237EAA6A006F9828 /* FilterModel.swift */,
+				132CF8E52381891500AE9648 /* TagModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1137,6 +1152,7 @@
 			files = (
 				13974B0A236752150032192A /* ViewModelUpdateProtocol.swift in Sources */,
 				135F4456237B004C008969F4 /* CatalogCollectionView.swift in Sources */,
+				132CF8E42381888900AE9648 /* TagCollectionViewCellVM.swift in Sources */,
 				13375BE6235F0BB500F6CC0D /* NetworkDataFetcher.swift in Sources */,
 				1350C24C236094A1005030E7 /* WallPapersPreview.swift in Sources */,
 				1323892F237EECE900F603BF /* FiltersTableViewCellVM.swift in Sources */,
@@ -1196,7 +1212,9 @@
 				13755167236349DC00E29D5E /* CreateViewModel.swift in Sources */,
 				1350C26723609CF4005030E7 /* BasketCellControls.swift in Sources */,
 				13974AD62366089E0032192A /* OrderTableFIOViewCell.swift in Sources */,
+				132CF8E22381888100AE9648 /* TagCollectionViewVM.swift in Sources */,
 				1350C233236094A1005030E7 /* VirtualObjectInteractionProtocol.swift in Sources */,
+				132CF8E62381891500AE9648 /* TagModel.swift in Sources */,
 				1350C24B236094A1005030E7 /* Pointer.swift in Sources */,
 				13974AB62365A12C0032192A /* IconCollectionView.swift in Sources */,
 				1350C242236094A1005030E7 /* Time.swift in Sources */,
@@ -1288,6 +1306,7 @@
 				135F445A237B0253008969F4 /* CatalogCollectionViewCell.swift in Sources */,
 				13974B0623674B270032192A /* ARFaced.swift in Sources */,
 				13974ADE23663F740032192A /* OrderTableEmailViewCell.swift in Sources */,
+				132CF8E02381887900AE9648 /* TagCollectionViewCell.swift in Sources */,
 				13375C01235F105700F6CC0D /* HomeHeaderViewCell.swift in Sources */,
 				13BC16E1237C782300F92FA5 /* CatalogSettingsPreviewVC.swift in Sources */,
 				13974AEA23664E320032192A /* PhoneTextField.swift in Sources */,
@@ -1307,6 +1326,7 @@
 				1350C234236094A1005030E7 /* ARInteractionsProtocol.swift in Sources */,
 				1350C249236094A1005030E7 /* NodeRender.metal in Sources */,
 				13974AE823664B160032192A /* OrderTableCommentsViewCell.swift in Sources */,
+				132CF8DE2381886F00AE9648 /* TagCollectionView.swift in Sources */,
 				1350C26D23609D55005030E7 /* BasketTableViewHeaderCell.swift in Sources */,
 				13974B04236743BC0032192A /* ProjectARViewControls.swift in Sources */,
 			);

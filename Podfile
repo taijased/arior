@@ -9,6 +9,7 @@ target 'Arioir' do
   pod 'XMLCoder'
   pod 'RealmSwift'
   pod 'SkeletonView' 
+  pod 'AlignedCollectionViewFlowLayout'
 
 
 

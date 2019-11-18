@@ -11,7 +11,8 @@ import UIKit
 
 protocol FiltersTableViewVMType {
     var heightForHeaderInSection: CGFloat { get set }
-    func heightForRowAt(indexPath: IndexPath) -> CGFloat
+    func setHeightForRowAt(_ value: CGFloat)
+    func heightForRowAt(_ indexPath: IndexPath) -> CGFloat
     func numberOfSections() -> Int
     func numberOfRowsInSection(_ section: Int) -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> FiltersTableViewCellVMType?
@@ -29,10 +30,13 @@ class FiltersTableViewVM: FiltersTableViewVMType {
     
     
     var heightForHeaderInSection: CGFloat = 36
+    var heightRow: CGFloat = 0
+    
+      
     var cells = [
-        ExpandableNames(isExpanded: true, names: ["Carl", "Chris", "Christina", "Cameron"]),
-        ExpandableNames(isExpanded: false, names: ["David", "Dan"]),
-        ExpandableNames(isExpanded: true, names: ["Patrick", "Patty"]),
+        ExpandableNames(isExpanded: true, sectionLabel: "Цена (₽)", names: ["Carl"]),
+        ExpandableNames(isExpanded: true, sectionLabel: "Длина (м)", names: ["David"]),
+        ExpandableNames(isExpanded: true, sectionLabel: "Ширина (м)", names: ["Patrick"]),
     ]
     
     
@@ -70,8 +74,14 @@ class FiltersTableViewVM: FiltersTableViewVMType {
         }
     }
 
+    func setHeightForRowAt(_ value: CGFloat) {
+        self.heightRow = value
+    }
     
-    
+    func heightForRowAt(_ indexPath: IndexPath) -> CGFloat {
+        return self.heightRow
+    }
+
     func numberOfSections() -> Int {
         return cells.count
     }
@@ -86,14 +96,10 @@ class FiltersTableViewVM: FiltersTableViewVMType {
     }
     
 
-    func heightForRowAt(indexPath: IndexPath) -> CGFloat {
-        return 35.0
-    }
-    
-    
+  
     
     func cellViewModel(forIndexPath indexPath: IndexPath) -> FiltersTableViewCellVMType? {
-        let name = cells[indexPath.section].names[0]
+        let name = cells[indexPath.section].sectionLabel
         return FiltersTableViewCellVM(name: name)
     }
     
@@ -102,6 +108,7 @@ class FiltersTableViewVM: FiltersTableViewVMType {
         let sectionView = FiltersTableViewSectionHeader()
         sectionView.expandButton.tag = section
         sectionView.updateButton(expandStatus: isExpanded(section))
+        sectionView.label.text = cells[section].sectionLabel
         return sectionView
     }
     

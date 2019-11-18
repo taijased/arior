@@ -16,6 +16,7 @@ class FiltersViewController: UIViewController, StoryboardInitializable {
         super.viewDidLoad()
         viewModel = FiltersViewControllerVM()
         setupUI()
+
     }
     
     fileprivate func setupUI() {
@@ -23,7 +24,6 @@ class FiltersViewController: UIViewController, StoryboardInitializable {
         view.addSubview(viewModel.tableView)
         viewModel.tableView.fillSuperview()
     }
-    
 }
 
 

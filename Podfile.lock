@@ -1,4 +1,5 @@
 PODS:
+  - AlignedCollectionViewFlowLayout (1.1.2)
   - Realm (3.19.0):
     - Realm/Headers (= 3.19.0)
   - Realm/Headers (3.19.0)
@@ -8,23 +9,26 @@ PODS:
   - XMLCoder (0.8.0)
 
 DEPENDENCIES:
+  - AlignedCollectionViewFlowLayout
   - RealmSwift
   - SkeletonView
   - XMLCoder
 
 SPEC REPOS:
   trunk:
+    - AlignedCollectionViewFlowLayout
     - Realm
     - RealmSwift
     - SkeletonView
     - XMLCoder
 
 SPEC CHECKSUMS:
+  AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
   Realm: 995d585bcf699aaff226715886c849a29dd3d07f
   RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
   SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
   XMLCoder: fd2998fcc6195f613e570597d18d789b95a19297
 
-PODFILE CHECKSUM: d37de8db451577869ab04ff24cdb41cab10f7a15
+PODFILE CHECKSUM: 56708f9f4f3cd27b3d96f5de0a98fe8353e4322a
 
 COCOAPODS: 1.8.3

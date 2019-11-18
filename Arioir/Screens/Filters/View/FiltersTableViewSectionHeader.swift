@@ -12,7 +12,7 @@ import UIKit
 class FiltersTableViewSectionHeader: UIView {
     
     
-    fileprivate let label: UILabel = {
+    let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)

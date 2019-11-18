@@ -12,6 +12,7 @@ import UIKit
 
 struct ExpandableNames {
     var isExpanded: Bool
+    let sectionLabel: String
     let names: [String]
 }
 
@@ -23,6 +24,7 @@ class FiltersTableView: UITableView {
     
     
     var viewModel: FiltersTableViewVMType?
+    
     
     
     
@@ -53,7 +55,10 @@ class FiltersTableView: UITableView {
         register(FiltersTableViewCell.self, forCellReuseIdentifier: FiltersTableViewCell.reuseId)
         tableHeaderView = viewModel?.headerView
         tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 1))
+     
     }
+    
+    
     
     
     
@@ -116,11 +121,15 @@ extension FiltersTableView: UITableViewDelegate, UITableViewDataSource {
         guard let viewCell = cell, let viewModel = viewModel else { return UITableViewCell() }
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
         viewCell.viewModel = cellViewModel
+
+        let cellHeight = viewCell.viewModel?.collectionView.viewModel?.getHeightCell()
+        viewModel.setHeightForRowAt(cellHeight!)
         return viewCell
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return viewModel?.heightForRowAt(indexPath: indexPath) ?? 0
+        
+        return viewModel?.heightForRowAt(indexPath) ?? 0
     }
+
 }
