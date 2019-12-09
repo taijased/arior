@@ -34,6 +34,10 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    
+    
+    
+    
     fileprivate let cardView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
@@ -87,6 +91,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         button.setImage(UIImage(named: "cart"), for: .normal)
         return button
     }()
+
     
     
     override init(frame: CGRect) {

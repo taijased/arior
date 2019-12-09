@@ -21,6 +21,7 @@ protocol HomeCollectionViewViewModelType {
     func viewModelForSelectedRow() -> Goods?
     func selectItem(atIndexPath indexPath: IndexPath)
     var onReloadData: (() -> Void)? { get set }
+//    func updateFavoriteStatus()
 }
 
 
@@ -84,7 +85,5 @@ class HomeCollectionViewViewModel: HomeCollectionViewViewModelType {
     func selectItem(atIndexPath indexPath: IndexPath) {
         self.selectedIndexPath = indexPath
     }
-    
-    
     
 }

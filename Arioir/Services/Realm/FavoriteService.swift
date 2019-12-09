@@ -83,8 +83,8 @@ extension FavoriteService: RealmGRUDType {
     }
     
     static func read(id: String, completion: @escaping (FavoriteItem?) -> Void) {
-        print(#function)
-        completion(nil)
+        guard let item = realm.object(ofType: Output.self, forPrimaryKey: id) else { return }
+        completion(item)
     }
     
     static func update(object: FavoriteItem, completion: @escaping () -> Void) {

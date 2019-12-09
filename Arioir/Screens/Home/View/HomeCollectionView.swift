@@ -85,20 +85,14 @@ extension HomeCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseId, for: indexPath) as? HomeCollectionViewCell
-        
+        cell?.onReloadCell = { [weak self] in
+            self?.reloadItems(at: [indexPath])
+        }
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
-
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
-
         collectionViewCell.viewModel = cellViewModel
-      
         return collectionViewCell
     }
-    
-    @objc func connected(sender: UIButton){
-        print(#function)
-    }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }

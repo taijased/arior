@@ -11,15 +11,18 @@ import UIKit
 protocol HomeCollectionViewCellViewModelType: class {
     var label: String { get }
     var imageURL: String { get }
-    var onSelectFavorites: (() -> Void)? { get set}
+    var isFavorites: Bool { get }
+    func updateFavoriteStatus()
 }
 
 
 
 class HomeCollectionViewCellViewModel: HomeCollectionViewCellViewModelType {
+ 
     
-    var onSelectFavorites: (() -> Void)?
+    var isFavorites: Bool = false
     private var cell: Goods
+    
     
     var label: String {
         guard let name = cell.name else { return ""}
@@ -33,5 +36,30 @@ class HomeCollectionViewCellViewModel: HomeCollectionViewCellViewModelType {
     
     init(cell: Goods) {
         self.cell = cell
+        checkIsFavorites()
     }
+    
+    fileprivate func checkIsFavorites() {
+        guard let id = cell.id else { return }
+        FavoriteService.read(id: id) { [weak self] (item) in
+            self?.isFavorites = true
+        }
+    }
+    
+    // хз
+    func updateFavoriteStatus() {
+        print(#function)
+        guard let id = cell.id else { return }
+        if isFavorites {
+            FavoriteService.delete(id: id) { [weak self] in
+                
+            }
+            
+        } else {
+            FavoriteService.create(object: cell) { [weak self] in
+
+            }
+        }
+    }
+     
 }

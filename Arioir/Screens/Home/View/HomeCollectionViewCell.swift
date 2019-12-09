@@ -15,25 +15,27 @@ import UIKit
 class HomeCollectionViewCell: UICollectionViewCell {
     
     
-    var onFavoriteTapped: (() -> Void)?
     
+    var onReloadCell: (() -> Void)?
     static let reuseId = "HomeCollectionViewCell"
     
     private var gradientLayer: CAGradientLayer?
     
     
-    weak var viewModel: HomeCollectionViewCellViewModelType? {
+    // weak должно быть но че то хуета
+    var viewModel: HomeCollectionViewCellViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
             myImageView.set(imageURL: viewModel.imageURL)
             label.text = viewModel.label
             buttonFavorite.addTarget(self, action: #selector(buttonFavoriteTapped), for: .touchUpInside)
+            if viewModel.isFavorites {
+                buttonFavorite.setImage(UIImage(named: "favorites-fill"), for: .normal)
+            } else {
+                buttonFavorite.setImage(UIImage(named: "favorites"), for: .normal)
+            }
         }
     }
-    
-    
-    
-    
     
     fileprivate let cardView: UIView = {
         let view = UIView()
@@ -75,19 +77,20 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }()
     
     
-    var buttonFavorite: UIButton = {
+    fileprivate let buttonFavorite: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "favorites"), for: .normal)
         return button
     }()
     
-    @objc func buttonFavoriteTapped(_ sender: UIButton) {
+    @objc fileprivate func buttonFavoriteTapped(_ sender: UIButton) {
         sender.flash()
-        print(#function)
-        self.onFavoriteTapped?()
-//        self.viewModel?.onSelectFavorites?()
+        //ToDO Почему то viewModel nil хуй знает
+        
+        viewModel?.updateFavoriteStatus()
+        onReloadCell?()
     }
+
     
     
     
@@ -107,32 +110,31 @@ class HomeCollectionViewCell: UICollectionViewCell {
         myImageView.fillSuperview()
         
 //        
-//        // second layer
-//        myImageView.addSubview(viewGradientMask)
-//        viewGradientMask.bottomAnchor.constraint(equalTo: myImageView.bottomAnchor).isActive = true
-//        viewGradientMask.leadingAnchor.constraint(equalTo: myImageView.leadingAnchor).isActive = true
-//        viewGradientMask.trailingAnchor.constraint(equalTo: myImageView.trailingAnchor).isActive = true
-//        viewGradientMask.heightAnchor.constraint(equalToConstant: 42).isActive = true
-//        // thrid layer
-//        
-//        // add gradient
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor,
-//                                UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor]
-//        
-//        gradientLayer.locations = [0.0, 0.3]
-//        gradientLayer.frame = bounds
-//        viewGradientMask.layer.insertSublayer(gradientLayer, at: 0)
-//        
-//        
-//        
-//        viewGradientMask.addSubview(buttonFavorite)
-//     
-//        buttonFavorite.centerYAnchor.constraint(equalTo: viewGradientMask.centerYAnchor).isActive = true
-//        buttonFavorite.leadingAnchor.constraint(equalTo: viewGradientMask.leadingAnchor, constant: 12).isActive = true
-//        buttonFavorite.heightAnchor.constraint(equalToConstant: 22).isActive = true
-//        buttonFavorite.widthAnchor.constraint(equalToConstant: 22).isActive = true
-//        
+        // second layer
+        myImageView.addSubview(viewGradientMask)
+        viewGradientMask.bottomAnchor.constraint(equalTo: myImageView.bottomAnchor).isActive = true
+        viewGradientMask.leadingAnchor.constraint(equalTo: myImageView.leadingAnchor).isActive = true
+        viewGradientMask.trailingAnchor.constraint(equalTo: myImageView.trailingAnchor).isActive = true
+        viewGradientMask.heightAnchor.constraint(equalToConstant: 42).isActive = true
+        // thrid layer
+        
+        // add gradient
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor,
+                                UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor]
+        
+        gradientLayer.locations = [0.0, 0.3]
+        gradientLayer.frame = bounds
+        viewGradientMask.layer.insertSublayer(gradientLayer, at: 0)
+        
+        
+        addSubview(buttonFavorite)
+        buttonFavorite.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        buttonFavorite.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
+        buttonFavorite.heightAnchor.constraint(equalToConstant: 22).isActive = true
+        buttonFavorite.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        
+        
     
         addSubview(label)
         label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 30).isActive = true
@@ -142,6 +144,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         
         
         
+            
         
         
     }

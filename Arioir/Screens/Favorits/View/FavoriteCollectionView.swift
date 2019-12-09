@@ -109,7 +109,7 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
             if hidden {
                 self?.collectionDelegate?.dismisController()
             } else {
-                self?.collectionDelegate?.showAlert(.alert(title: "Товар удален из избранного!"))
+//                self?.collectionDelegate?.showAlert(.alert(title: "Товар удален из избранного!"))
             }
         }
     }
@@ -123,7 +123,7 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
             if hidden {
                 self?.collectionDelegate?.dismisController()
             } else {
-                self?.collectionDelegate?.showAlert(.alert(title: "Мы положили его в корзину!"))
+//                self?.collectionDelegate?.showAlert(.alert(title: "Мы положили его в корзину!"))
             }
         }
     }
