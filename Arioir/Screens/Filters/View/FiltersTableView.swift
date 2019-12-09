@@ -12,8 +12,7 @@ import UIKit
 
 struct ExpandableNames {
     var isExpanded: Bool
-    let sectionLabel: String
-    let names: [String]
+    let cellVM: FiltersTableViewCellVM
 }
 
 
@@ -42,11 +41,16 @@ class FiltersTableView: UITableView {
         }
         
         viewModel?.onDeleteRows = { indexPaths in
-            self.deleteRows(at: indexPaths, with: .fade)
+            let cell = self.cellForRow(at: indexPaths.first!) as! FiltersTableViewCell
+            cell.collectionView.viewModel?.clearData {
+                self.deleteRows(at: indexPaths, with: .fade)
+                self.reloadData()
+            }
         }
         
         viewModel?.onInsertRows = { indexPaths in
             self.insertRows(at: indexPaths, with: .fade)
+            self.reloadData()
         }
         
         delegate = self

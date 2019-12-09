@@ -19,14 +19,19 @@ protocol TagCollectionViewVMType {
     func cellViewModel(forIndexPath indexPath: IndexPath) -> TagCollectionViewCellVMType?
     func selectItem(atIndexPath indexPath: IndexPath)
     var onReloadData: (() -> Void)? { get set }
+//    var onDeleteItem: (() -> Void)? { get set }
+    func clearData(completion: @escaping () -> Void)
     func getHeightCell() -> CGFloat
 }
 
 class TagCollectionViewVM: TagCollectionViewVMType {
+    var onDeleteItem: (() -> Void)?
+    
     
     
     
     var onReloadData: (() -> Void)?
+//    var onDeleteItem: ((IndexPath) -> Void)?
     var minimumInteritemSpacingForSectionAt: CGFloat = 12.0
     var minimumLineSpacingForSectionAt: CGFloat = 12.0
     var cells: [TagModel]
@@ -50,7 +55,11 @@ class TagCollectionViewVM: TagCollectionViewVMType {
             let cWidth = label.intrinsicContentSize.width + 24
             sum += cWidth
         }
-        return ((sum + CGFloat((n-1)*12))/w) * 36 + CGFloat((n-1)*12)
+        let countCn = ((sum + CGFloat((n-1)*12))/w).rounded(.up)
+        
+        
+        
+        return  countCn * 36 + CGFloat((countCn)*12)
         
     }
     
@@ -81,4 +90,11 @@ class TagCollectionViewVM: TagCollectionViewVMType {
         self.onReloadData?()
     }
     
+    func clearData(completion: @escaping () -> Void) {
+        for (index, element) in cells.enumerated() {
+            let indexPath = IndexPath(row: index, section: 0)
+//            self.onDeleteItem?(indexPath)
+        }
+        completion()
+    }
 }

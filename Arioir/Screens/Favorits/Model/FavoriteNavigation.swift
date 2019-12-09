@@ -10,6 +10,7 @@
 
 enum FavoriteNavigation {
     case dissmis
+    case alert(title: String)
 }
 
 

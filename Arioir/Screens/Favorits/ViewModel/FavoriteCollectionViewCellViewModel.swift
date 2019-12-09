@@ -17,7 +17,6 @@ protocol FavoriteCollectionViewCellViewModelType: class {
 class FavoriteCollectionViewCellViewModel: FavoriteCollectionViewCellViewModelType {
     
     
-    
     private var cell: FavoriteItem
     
     var label: String {

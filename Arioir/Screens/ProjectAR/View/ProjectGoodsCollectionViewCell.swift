@@ -25,7 +25,7 @@ class ProjectGoodsCollectionViewCell: UICollectionViewCell {
     
     fileprivate let cardView: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.shadowRadius = 7
         view.layer.shadowOpacity = 1
@@ -40,7 +40,7 @@ class ProjectGoodsCollectionViewCell: UICollectionViewCell {
         let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = #colorLiteral(red: 0.8882605433, green: 0.8981810212, blue: 0.9109882712, alpha: 1)
+        imageView.backgroundColor = .white
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 10
         return imageView
@@ -88,11 +88,6 @@ class ProjectGoodsCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = 10
-        layer.shadowRadius = 7
-        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
-        layer.shadowOpacity = 1
-        layer.shadowOffset = CGSize(width: 0, height: 2)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -31,7 +31,6 @@ class FavoriteViewModel: FavoriteViewModelType {
     
     init() {
         storageManager = FavoriteService()
-        
         collectionView = FavoriteCollectionView()
         bottomControls = FavoriteBottomControls()
         bottomControls.delegate = self

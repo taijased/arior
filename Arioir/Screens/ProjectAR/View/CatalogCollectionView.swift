@@ -34,7 +34,7 @@ class CatalogCollectionView: UICollectionView {
         //        viewModel = CatalogCollectionViewViewModel()
         
         viewModel?.onReloadData = { [weak self] in
-            print("ikol")
+
             self?.reloadData()
         }
         

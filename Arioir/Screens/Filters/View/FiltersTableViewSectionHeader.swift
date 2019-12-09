@@ -20,7 +20,6 @@ class FiltersTableViewSectionHeader: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 14.0)
         label.textAlignment = .left
         label.text = "Цена (₽)"
-        
         return label
     }()
     

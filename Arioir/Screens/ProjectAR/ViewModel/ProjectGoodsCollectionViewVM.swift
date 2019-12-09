@@ -30,12 +30,14 @@ protocol ProjectGoodsCollectionViewVMType {
     var projectId: String { get set }
     var projectName: String { get set }
     var onReloadData: (() -> Void)? { get set }
+    var onDeleteCell: ((IndexPath) -> Void)? { get set }
 }
 
 class ProjectGoodsCollectionViewVM: ProjectGoodsCollectionViewVMType {
     
     
     var onReloadData: (() -> Void)?
+    var onDeleteCell: ((IndexPath) -> Void)?
     private var selectedIndexPath: IndexPath?
     var minimumInteritemSpacingForSectionAt: CGFloat = 20.0
     var minimumLineSpacingForSectionAt: CGFloat = 20.0
@@ -105,9 +107,7 @@ class ProjectGoodsCollectionViewVM: ProjectGoodsCollectionViewVMType {
 
         case .delete:
             ProjectsService.deleteProjectItem(projectId: projectId, elementId: id) {
-                DispatchQueue.main.async {
-                    self.onReloadData?()
-                }
+                self.onDeleteCell?(selectedIndexPath)
             }
         }
     }

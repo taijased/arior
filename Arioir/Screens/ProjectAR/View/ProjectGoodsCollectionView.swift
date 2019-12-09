@@ -30,6 +30,11 @@ class ProjectGoodsCollectionView: UICollectionView {
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
         viewModel = ProjectGoodsCollectionViewVM(projectId: projectId)
+        viewModel?.onDeleteCell = { indexPath in
+//            self.deleteItems(at: [indexPath])
+//            self.reloadData()
+            print(indexPath)
+        }
 
         setupCollectionSettings()
         updateBackground()

@@ -42,6 +42,7 @@ class TagCollectionView: UICollectionView {
         setupCollectionSettings()
     }
     
+
     private func setupCollectionSettings() {
         backgroundColor = .clear
         delegate = self
@@ -51,6 +52,7 @@ class TagCollectionView: UICollectionView {
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         contentInset = UIEdgeInsets(top: 0, left: Constants.padding, bottom: 20, right: Constants.padding)
+        isScrollEnabled = false
     }
     
     required init?(coder aDecoder: NSCoder) {

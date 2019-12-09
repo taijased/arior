@@ -48,10 +48,20 @@ class FavoriteViewController: UIViewController, StoryboardInitializable {
         viewModel.bottomControls.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
     }
     
+    fileprivate func showToast(_ title: String) {
+        let toast = ToastViewController(title: title)
+        self.present(toast, animated: true)
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+            toast.dismiss(animated: true)
+        }
+    }
+    
     fileprivate func navigation(_ type: FavoriteNavigation) {
         switch type {
         case .dissmis:
             self.dismiss(animated: true, completion: nil)
+        case .alert(let title):
+            self.showToast(title)
         }
     }
     
@@ -64,6 +74,10 @@ class FavoriteViewController: UIViewController, StoryboardInitializable {
 //MARK - FavoriteCollectionViewDelegate
 
 extension FavoriteViewController: FavoriteCollectionViewDelegate {
+    func showAlert(_ type: FavoriteNavigation) {
+        self.navigation(type)
+    }
+    
     func dismisController() {
         self.navigation(.dissmis)
     }

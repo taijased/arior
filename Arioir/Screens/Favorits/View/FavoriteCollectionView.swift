@@ -16,6 +16,7 @@ protocol FavoriteCollectionViewDelegate: class {
     func selectItem()
     func selectProject(project: Project)
     func dismisController()
+    func showAlert(_ type: FavoriteNavigation)
 }
 
 class FavoriteCollectionView: UICollectionView {
@@ -86,9 +87,9 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
         let cell = dequeueReusableCell(withReuseIdentifier: FavoriteCollectionViewCell.reuseId, for: indexPath) as? FavoriteCollectionViewCell
         
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
-        
+        collectionViewCell.buttonFavorite.addTarget(self, action: #selector(buttonFavoriteTapped), for: .touchUpInside)
+        collectionViewCell.cartFavorite.addTarget(self, action: #selector(buttonCartTapped), for: .touchUpInside)
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
-        
         collectionViewCell.viewModel = cellViewModel
         
         return collectionViewCell
@@ -96,15 +97,35 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
         
     }
     
-    @objc func connected(sender: UIButton){
-        print(#function)
+    //MARK: - cell target Selectors
+    
+    @objc func buttonFavoriteTapped(_ sender: UIButton) {
+        sender.flash()
+        let buttonPosition: CGPoint = sender.convert(CGPoint.zero, to: self)
+        guard let indexPath = indexPathForItem(at: buttonPosition), let viewModel = viewModel  else { return }
+        viewModel.selectItem(atIndexPath: indexPath)
+        viewModel.actionsMenu(type: .delete) { [weak self] (hidden) in
+            
+            if hidden {
+                self?.collectionDelegate?.dismisController()
+            } else {
+                self?.collectionDelegate?.showAlert(.alert(title: "Товар удален из избранного!"))
+            }
+        }
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let viewModel = viewModel else { return }
+    @objc func buttonCartTapped(_ sender: UIButton) {
+        sender.flash()
+        let buttonPosition: CGPoint = sender.convert(CGPoint.zero, to: self)
+        guard let indexPath = indexPathForItem(at: buttonPosition), let viewModel = viewModel  else { return }
         viewModel.selectItem(atIndexPath: indexPath)
-        //        collectionDelegate?.selectItem()
+        viewModel.actionsMenu(type: .toOrder) { [weak self] (hidden) in
+            if hidden {
+                self?.collectionDelegate?.dismisController()
+            } else {
+                self?.collectionDelegate?.showAlert(.alert(title: "Мы положили его в корзину!"))
+            }
+        }
     }
     
     // MARK: - Add HomeHeaderViewCell
@@ -120,6 +141,7 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
         return CGSize(width: UIScreen.main.bounds.width, height: 60)
     }
 }
+
 
 
 
@@ -168,7 +190,7 @@ extension FavoriteCollectionView: CustomContextViewMenu {
             return FavoritePreviewViewController(imageName: favoriteItem.picture!)
         }, actionProvider: { suggestedActions in
             return self.makeDefaultDemoMenu { type in
-                viewModel.contextMenuActions(type: type) { [weak self] hidden in
+                viewModel.actionsMenu(type: type) { [weak self] hidden in
                     if hidden {
                         self?.collectionDelegate?.dismisController()
                     }
