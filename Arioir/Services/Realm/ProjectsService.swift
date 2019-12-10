@@ -124,11 +124,8 @@ extension ProjectsService: RealmGRUDType {
     }
     
     static func delete(id: String, completion: @escaping () -> Void) {
-        
-        
-        guard let item = realm.object(ofType: Output.self, forPrimaryKey: id) else { return }
-        
-        
+
+        guard let item = realm.object(ofType: ProjectItem.self, forPrimaryKey: id) else { return }
         try! realm.write {
             realm.delete(item)
             completion()

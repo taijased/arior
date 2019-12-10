@@ -18,20 +18,14 @@ class OrderTableHeaderViewCell: UITableViewCell {
 
     
     let labelName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(26)
-        label.font = UIFont.boldSystemFont(ofSize: 26)
+        let label = UILabel.H1.bold
         label.text = "Итого: "
         label.alpha = 0.3
         return label
     }()
     
     let labelPrice: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(26)
-        label.font = UIFont.boldSystemFont(ofSize: 26)
+        let label = UILabel.H1.bold
         label.textAlignment = .right
         return label
     }()

@@ -16,10 +16,7 @@ class BasketTableViewHeaderCell: UITableViewCell {
     
     
     let countLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(26)
-        label.font = UIFont.boldSystemFont(ofSize: 26)
+        let label = UILabel.H1.bold
         label.text = "5 позиций в корзине"
         return label
     }()
@@ -34,21 +31,13 @@ class BasketTableViewHeaderCell: UITableViewCell {
     }()
     
     let labelName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        //        label.font = UIFont(name: "TTNorms-Medium", size: 16)
-        label.font = label.font.withSize(16)
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        let label = UILabel.H3.medium
         label.text = "Доставка ARI"
         return label
     }()
     
     let labelPrice: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        //        label.font = UIFont(name: "TTNorms-Medium", size: 16)
-        label.font = label.font.withSize(16)
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        let label = UILabel.H3.medium
         label.textAlignment = .right
         label.text = "2 000 ₽"
         return label

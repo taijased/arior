@@ -24,14 +24,12 @@ class ToastViewController: UIViewController {
         modalPresentationStyle = .custom
         view.backgroundColor = .black
         
-        let label = UILabel()
+        let label = UILabel.H3.medium
         label.text = title
-        label.font = .systemFont(ofSize: 17, weight: .medium)
         label.textColor = .white
         label.numberOfLines = 0
         
         view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: view.topAnchor, constant: 16),
             label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),

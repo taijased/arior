@@ -50,9 +50,7 @@ class CustomTextField: UIView {
     }()
     
     final fileprivate let labelName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(16)
+        let label = UILabel.H3.medium
         return label
     }()
     final fileprivate let underlineView: UIView = {

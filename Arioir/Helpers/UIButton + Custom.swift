@@ -16,7 +16,7 @@ extension UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: imageName), for: .normal)
-        button.backgroundColor = UIColor(hexValue: "#E27F5D", alpha: 1)
+        button.backgroundColor = UIColor.Yellow.primary
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         button.layer.shadowRadius = 1.0
@@ -38,7 +38,7 @@ extension UIButton {
         button.layer.masksToBounds = false
         button.setTitle(label, for: UIControl.State.normal)
         button.titleLabel?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        button.titleLabel!.font = UIFont(name: "TTNorms-Medium", size: 14)
+        button.titleLabel!.font = UIFont.getTTNormsFont(type: TTNorms.medium, size: 14)
         return button
     }
     

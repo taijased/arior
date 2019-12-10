@@ -21,6 +21,7 @@ protocol HomeCollectionViewDelegate: class {
 
 class HomeCollectionView: UICollectionView {
     
+    var onReloadCell: (() -> Void)?
     var viewModel: HomeCollectionViewViewModelType?
     weak var collectionDelegate: HomeCollectionViewDelegate?
     
@@ -29,9 +30,7 @@ class HomeCollectionView: UICollectionView {
         layout.scrollDirection = .vertical
         super.init(frame: .zero, collectionViewLayout: layout)
         setupUI()
-        
         viewModel = HomeCollectionViewViewModel()
-        
         viewModel?.onReloadData = { [weak self] in
             self?.reloadData()
         }
@@ -87,6 +86,7 @@ extension HomeCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseId, for: indexPath) as? HomeCollectionViewCell
         cell?.onReloadCell = { [weak self] in
             self?.reloadItems(at: [indexPath])
+            self?.onReloadCell?()
         }
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
@@ -99,12 +99,7 @@ extension HomeCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
         viewModel.selectItem(atIndexPath: indexPath)
         collectionDelegate?.selectItem()
     }
-
 }
-
-
-
-
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeCollectionView: UICollectionViewDelegateFlowLayout {

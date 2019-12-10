@@ -15,7 +15,7 @@ class TagCollectionViewCell: UICollectionViewCell {
     weak var viewModel: TagCollectionViewCellVMType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
-            tagView.backgroundColor = viewModel.status ? primaryColor : UIColor.init(hexValue: "#19191B", alpha: 0.29)
+            tagView.backgroundColor = viewModel.status ? UIColor.Yellow.primary : UIColor.Black.light
             label.text = viewModel.label
         }
     }
@@ -30,11 +30,8 @@ class TagCollectionViewCell: UICollectionViewCell {
     }()
     
     let label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = UILabel.H4.regular
         label.textColor = .white
-        label.font = label.font.withSize(14)
-        label.font = UIFont.boldSystemFont(ofSize: 14.0)
         return label
     }()
     

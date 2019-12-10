@@ -18,9 +18,9 @@ class CreateTableButtonCell: UITableViewCell {
     
     let button: UIButton = {
         let button = UIButton.getCustomButton(label: "Создать проект")
-        button.backgroundColor = primaryColor
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(16)
+        button.backgroundColor = UIColor.Yellow.primary
+        button.titleLabel?.font = UIFont.getTTNormsFont(type: TTNorms.medium, size: 16)
+//        button.titleLabel?.font = button.titleLabel?.font.withSize(16)
         return button
     }()
 

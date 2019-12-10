@@ -15,14 +15,11 @@ class OrderTablePrivacyPolicyViewCell: UITableViewCell {
 
     
     let label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-
+        let label = UILabel.H5.regular
 //        textView.isEditable = false
 //        textView.dataDetectorTypes = .link
 //
 //
-        label.font = label.font.withSize(14)
         label.numberOfLines = 0
         label.text = "Отправляя форму вы соглашаетесь на обработку персональных данных, а также подтверждаете, что ознакомлены с условиями возврата товара"
         return label
@@ -47,6 +44,7 @@ class OrderTablePrivacyPolicyViewCell: UITableViewCell {
         let text = label.text ?? ""
         let firstString = NSAttributedString.makeHyperlink(for: link, in: text, as: "возврата товара")
         label.attributedText = firstString
+    
     }
     
     required init?(coder aDecoder: NSCoder) {

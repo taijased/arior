@@ -23,7 +23,7 @@ class OrderBottomControl: UIView {
         let button = UIButton.getCustomButton(label: "Оформить заказ")
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(toOrderButtonTapped), for: .touchUpInside)
-        button.backgroundColor = primaryColor
+        button.backgroundColor = UIColor.Yellow.primary
         return button
     }()
     

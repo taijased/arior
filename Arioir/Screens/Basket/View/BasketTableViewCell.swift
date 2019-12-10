@@ -57,32 +57,22 @@ class BasketTableViewCell: UITableViewCell {
     
     
     let labelName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = UILabel.H3.medium
         label.textAlignment = .left
-        label.font = label.font.withSize(16)
-        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.text = "Rasch Kids & Teens II 247619"
         return label
     }()
     
     let labelPrice: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = primaryColorGray
-        label.font = label.font.withSize(16)
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        let label = UILabel.H3.medium
+        label.textColor = UIColor.Black.gray
         label.textAlignment = .right
-        label.text = "2 790,00 ₽/шт."
         return label
     }()
     
     let labelAllPrice: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = primaryColorGray
-        label.font = label.font.withSize(16)
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        let label = UILabel.H3.medium
+        label.textColor = UIColor.Black.gray
         label.textAlignment = .left
         label.text = "16 740,00 ₽"
         return label

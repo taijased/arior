@@ -18,7 +18,7 @@ class ButtonWithBadge: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        button.backgroundColor = primaryColor
+        button.backgroundColor = UIColor.Yellow.primary
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         button.layer.shadowRadius = 1.0
@@ -42,7 +42,7 @@ class ButtonWithBadge: UIView {
     fileprivate let badgeView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.init(hexValue: "#CB4949", alpha: 1.0)
+        view.backgroundColor = UIColor.Red.primary
         view.layer.cornerRadius = 7.5
         return view
     }()

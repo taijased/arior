@@ -10,8 +10,8 @@ import UIKit
 
 
 
-let primaryColor = UIColor(hexValue: "#FFBF00", alpha: 1.0)
-let primaryColorGray = UIColor(hexValue: "#212128", alpha: 0.6)
+//let primaryColor = UIColor(hexValue: "#FFBF00", alpha: 1.0)
+//let primaryColorGray = UIColor(hexValue: "#212128", alpha: 0.6)
 
 
 struct Constants {

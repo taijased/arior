@@ -33,28 +33,22 @@ class BasketViewControls: UIView {
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset = CGSize(width: 0, height: 2)
         view.layer.cornerRadius = 20
-        view.backgroundColor = primaryColor
+        view.backgroundColor = UIColor.Yellow.primary
         return view
     }()
     
     
     let labelOrder: UILabel = {
-        let label = UILabel()
+        let label = UILabel.H3.medium
         label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.font = label.font.withSize(16)
-        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.text = "Оформить заказ"
         return label
     }()
     
     let labelAllPrice: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = UILabel.H3.medium
         label.textColor = .white
-        label.font = label.font.withSize(16)
-        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textAlignment = .right
         label.text = "0,00 ₽"
         return label

@@ -31,11 +31,7 @@ class HomeHeaderViewCell: UICollectionReusableView {
     
     
     let projectLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(red: 0.13, green: 0.13, blue: 0.16, alpha: 1)
-        label.font = label.font.withSize(26)
-        label.font = UIFont.boldSystemFont(ofSize: 26.0)
+        let label = UILabel.H1.bold
         label.text = "Проекты"
         return label
     }()
@@ -43,11 +39,7 @@ class HomeHeaderViewCell: UICollectionReusableView {
     
     
     let catalogLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(red: 0.13, green: 0.13, blue: 0.16, alpha: 1)
-        label.font = label.font.withSize(26)
-        label.font = UIFont.boldSystemFont(ofSize: 26.0)
+        let label = UILabel.H1.bold
         label.text = "Каталог"
         return label
     }()

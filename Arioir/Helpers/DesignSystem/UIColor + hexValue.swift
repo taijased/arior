@@ -1,18 +1,20 @@
 //
-//  UIColor + random.swift
+//  UIColor + hexValue.swift
 //  Arioir
 //
-//  Created by Максим Спиридонов on 22.10.2019.
+//  Created by Максим Спиридонов on 10.12.2019.
 //  Copyright © 2019 Максим Спиридонов. All rights reserved.
+//
 
-import UIKit
+import UIKit.UIColor
 
-
+//MARK: - UIColor random function and hexValue
 extension UIColor {
     convenience init? (hexValue: String, alpha: CGFloat) {
         if hexValue.hasPrefix("#") {
             let scanner = Scanner(string: hexValue)
-            scanner.scanLocation = 1
+//            scanner.currentIndex = 1
+            scanner.currentIndex = scanner.string.index(after: scanner.currentIndex)
             
             var hexInt32: UInt32 = 0
             if hexValue.count == 7 {

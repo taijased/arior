@@ -22,7 +22,7 @@ class HomeBottomControls: UIView {
     let filterButton: UIButton = {
         var button = UIButton.getCustomButton(imageName: "filter")
         button.addTarget(self, action: #selector(filterTapped), for: .touchUpInside)
-        button.backgroundColor = primaryColor
+        button.backgroundColor = UIColor.Yellow.primary
         return button
     }()
     

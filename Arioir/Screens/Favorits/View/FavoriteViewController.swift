@@ -46,6 +46,9 @@ class FavoriteViewController: UIViewController, StoryboardInitializable {
         viewModel.bottomControls.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         viewModel.bottomControls.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42).isActive = true
         viewModel.bottomControls.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+        
+        
+        
     }
     
     fileprivate func showToast(_ title: String) {

@@ -27,6 +27,15 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     
     
     fileprivate func setupUI() {
+        
+        //MARK: - is Connect to Network
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+        } else {
+            self.navigation(.disconnect)
+        }
+        
+        
         view.backgroundColor = .random()
         viewModel?.onNavigation = { [weak self] type in
             self?.navigation(type)
@@ -97,6 +106,8 @@ class HomeViewController: UIViewController, StoryboardInitializable {
             self.dismiss(animated: true, completion: nil)
         case .dissmis:
             self.dismiss(animated: true, completion: nil)
+        case .disconnect:
+            self.showToast("Отсутсвует соединение с интернетом!")
         }
     }
 }

@@ -61,12 +61,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }()
     
     fileprivate let label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        //        label.font = UIFont(name: "TTNorms-Medium", size: 12)
-        label.font = label.font.withSize(12)
-        label.text = "Кровати"
+        let label = UILabel.H5.regular
         return label
     }()
     
@@ -85,7 +80,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     @objc fileprivate func buttonFavoriteTapped(_ sender: UIButton) {
         sender.flash()
-        //ToDO Почему то viewModel nil хуй знает
+        Vibration.success.vibrate()
         
         viewModel?.updateFavoriteStatus()
         onReloadCell?()
@@ -129,10 +124,10 @@ class HomeCollectionViewCell: UICollectionViewCell {
         
         
         addSubview(buttonFavorite)
-        buttonFavorite.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
-        buttonFavorite.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
-        buttonFavorite.heightAnchor.constraint(equalToConstant: 22).isActive = true
-        buttonFavorite.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        buttonFavorite.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 5).isActive = true
+        buttonFavorite.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        buttonFavorite.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        buttonFavorite.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
         
     

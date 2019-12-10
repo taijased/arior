@@ -25,10 +25,7 @@ class CreateTableIconsCell: UITableViewCell {
     let collectionView = IconCollectionView()
     
     let headerLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(26)
-        label.font = UIFont.boldSystemFont(ofSize: 26.0)
+        let label = UILabel.H1.bold
         label.text = "Выберите иконку проекта"
         label.textAlignment = .left
         return label

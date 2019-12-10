@@ -35,12 +35,8 @@ class CardTableHeaderCell: UITableViewCell {
     
     
     let headerLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        //        label.font = UIFont(name: "TTNorms-Bold", size: 24)
-        label.font = label.font.withSize(26)
-        label.font = UIFont.boldSystemFont(ofSize: 26.0)
-        label.text = "Rasch Kids & Teens II 291407"
+        let label = UILabel.H1.bold
+        label.text = "H1 Label"
         label.textAlignment = .left
         return label
     }()

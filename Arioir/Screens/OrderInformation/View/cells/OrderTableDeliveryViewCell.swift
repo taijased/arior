@@ -23,9 +23,7 @@ class OrderTableDeliveryViewCell: UITableViewCell {
     weak var delegate: OrderTableDeliveryViewCellDelegate?
     
     let labelName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(16)
+        let label = UILabel.H3.medium
         label.textAlignment = .left
         label.text = "Доставка"
         return label
@@ -34,7 +32,7 @@ class OrderTableDeliveryViewCell: UITableViewCell {
     let segmentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = primaryColor
+        view.backgroundColor = UIColor.Yellow.primary
         view.layer.cornerRadius = 5.0
         return view
     }()
@@ -48,9 +46,9 @@ class OrderTableDeliveryViewCell: UITableViewCell {
         segmentedControl.addTarget(self, action: #selector(segmentControlChenge(_:)), for: .valueChanged)
         segmentedControl.layer.cornerRadius = 5.0
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.selectedSegmentTintColor = primaryColor
+        segmentedControl.selectedSegmentTintColor = UIColor.Yellow.primary
         //        segmentedControl.backgroundColor = UIColor.init(hexValue: "#fff", alpha: 1.0)
-        segmentedControl.layer.borderColor = primaryColor!.cgColor
+        segmentedControl.layer.borderColor = UIColor.Yellow.primary.cgColor
         
         //        segmentedControl.layer.borderWidth = 1
         //

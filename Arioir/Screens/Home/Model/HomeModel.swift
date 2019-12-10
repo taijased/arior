@@ -17,5 +17,6 @@ enum HomeNavigation {
     case basket
     case basketEmpty(errorTitle: String)
     case arScene
+    case disconnect
     case dissmis
 }

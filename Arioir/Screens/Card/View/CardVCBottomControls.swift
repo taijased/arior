@@ -38,14 +38,14 @@ class CardVCBottomControls: UIView {
     let addFavorite: UIButton = {
         var button = UIButton.getCustomButton(imageName: "favorites")
         button.addTarget(self, action: #selector(addFavoriteTapped), for: .touchUpInside)
-        button.backgroundColor = primaryColor
+        button.backgroundColor = UIColor.Yellow.primary
         return button
     }()
     
     let toOrderButton: UIButton = {
         var button = UIButton.getCustomButton(imageName: "cart")
         button.addTarget(self, action: #selector(toOrderButtonTapped), for: .touchUpInside)
-        button.backgroundColor = primaryColor
+        button.backgroundColor = UIColor.Yellow.primary
         return button
     }()
     

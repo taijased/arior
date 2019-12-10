@@ -85,10 +85,19 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: FavoriteCollectionViewCell.reuseId, for: indexPath) as? FavoriteCollectionViewCell
+
+        cell?.onReloadCell = { [weak self] reloadCell in
+            if reloadCell {
+                self?.reloadItems(at: [indexPath])
+            } else {
+                self?.reloadData()
+            }
+        }
+        cell?.onNavigation = { [weak self] _ in
+             self?.collectionDelegate?.dismisController()
+        }
         
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
-        collectionViewCell.buttonFavorite.addTarget(self, action: #selector(buttonFavoriteTapped), for: .touchUpInside)
-        collectionViewCell.cartFavorite.addTarget(self, action: #selector(buttonCartTapped), for: .touchUpInside)
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
         collectionViewCell.viewModel = cellViewModel
         
@@ -97,36 +106,36 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
         
     }
     
-    //MARK: - cell target Selectors
-    
-    @objc func buttonFavoriteTapped(_ sender: UIButton) {
-        sender.flash()
-        let buttonPosition: CGPoint = sender.convert(CGPoint.zero, to: self)
-        guard let indexPath = indexPathForItem(at: buttonPosition), let viewModel = viewModel  else { return }
-        viewModel.selectItem(atIndexPath: indexPath)
-        viewModel.actionsMenu(type: .delete) { [weak self] (hidden) in
-            
-            if hidden {
-                self?.collectionDelegate?.dismisController()
-            } else {
-//                self?.collectionDelegate?.showAlert(.alert(title: "Товар удален из избранного!"))
-            }
-        }
-    }
-    
-    @objc func buttonCartTapped(_ sender: UIButton) {
-        sender.flash()
-        let buttonPosition: CGPoint = sender.convert(CGPoint.zero, to: self)
-        guard let indexPath = indexPathForItem(at: buttonPosition), let viewModel = viewModel  else { return }
-        viewModel.selectItem(atIndexPath: indexPath)
-        viewModel.actionsMenu(type: .toOrder) { [weak self] (hidden) in
-            if hidden {
-                self?.collectionDelegate?.dismisController()
-            } else {
-//                self?.collectionDelegate?.showAlert(.alert(title: "Мы положили его в корзину!"))
-            }
-        }
-    }
+//    //MARK: - cell target Selectors
+//
+//    @objc func buttonFavoriteTapped(_ sender: UIButton) {
+//        sender.flash()
+//        let buttonPosition: CGPoint = sender.convert(CGPoint.zero, to: self)
+//        guard let indexPath = indexPathForItem(at: buttonPosition), let viewModel = viewModel  else { return }
+//        viewModel.selectItem(atIndexPath: indexPath)
+//        viewModel.actionsMenu(type: .delete) { [weak self] (hidden) in
+//
+//            if hidden {
+//                self?.collectionDelegate?.dismisController()
+//            } else {
+////                self?.collectionDelegate?.showAlert(.alert(title: "Товар удален из избранного!"))
+//            }
+//        }
+//    }
+//
+//    @objc func buttonCartTapped(_ sender: UIButton) {
+//        sender.flash()
+//        let buttonPosition: CGPoint = sender.convert(CGPoint.zero, to: self)
+//        guard let indexPath = indexPathForItem(at: buttonPosition), let viewModel = viewModel  else { return }
+//        viewModel.selectItem(atIndexPath: indexPath)
+//        viewModel.actionsMenu(type: .toOrder) { [weak self] (hidden) in
+//            if hidden {
+//                self?.collectionDelegate?.dismisController()
+//            } else {
+////                self?.collectionDelegate?.showAlert(.alert(title: "Мы положили его в корзину!"))
+//            }
+//        }
+//    }
     
     // MARK: - Add HomeHeaderViewCell
     

@@ -22,9 +22,7 @@ class OrderTablePaymentViewCell: UITableViewCell {
     weak var delegate: OrderTablePaymentViewCellDelegate?
     
     let labelName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(16)
+        let label = UILabel.H3.medium
         label.textAlignment = .left
         label.text = "Оплата"
         return label
@@ -33,7 +31,7 @@ class OrderTablePaymentViewCell: UITableViewCell {
     let segmentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = primaryColor
+        view.backgroundColor = UIColor.Yellow.primary
         view.layer.cornerRadius = 5.0
         return view
     }()
@@ -47,8 +45,8 @@ class OrderTablePaymentViewCell: UITableViewCell {
         segmentedControl.addTarget(self, action: #selector(segmentControlChenge(_:)), for: .valueChanged)
         segmentedControl.layer.cornerRadius = 5.0
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.selectedSegmentTintColor = primaryColor
-        segmentedControl.layer.borderColor = primaryColor!.cgColor
+        segmentedControl.selectedSegmentTintColor = UIColor.Yellow.primary
+        segmentedControl.layer.borderColor = UIColor.Yellow.primary.cgColor
         return segmentedControl
     }()
     

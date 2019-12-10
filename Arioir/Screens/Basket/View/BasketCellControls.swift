@@ -27,7 +27,7 @@ class BasketCellControls: UIView {
     
     let plusButton: UIButton = {
         var button = UIButton()
-        button.backgroundColor = primaryColor
+        button.backgroundColor = UIColor.Yellow.primary
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "cell-plus"), for: .normal)
         button.layer.cornerRadius = 5.0
@@ -38,7 +38,7 @@ class BasketCellControls: UIView {
     
     let minusButton: UIButton = {
         var button = UIButton()
-        button.backgroundColor = primaryColor
+        button.backgroundColor = UIColor.Yellow.primary
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "cell-minus"), for: .normal)
         button.layer.cornerRadius = 5.0
@@ -49,7 +49,7 @@ class BasketCellControls: UIView {
     
     let deleteButton: UIButton = {
         var button = UIButton()
-        button.backgroundColor = UIColor.init(hexValue: "#CC4848", alpha: 1.0)
+        button.backgroundColor = UIColor.Red.primary
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "cell-trush"), for: .normal)
         button.layer.cornerRadius = 5.0
@@ -61,10 +61,7 @@ class BasketCellControls: UIView {
     
     
     let countLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(14)
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        let label = UILabel.H4.medium
         label.text = "0"
         label.textAlignment = .center
         return label

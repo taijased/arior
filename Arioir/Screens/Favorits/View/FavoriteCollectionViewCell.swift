@@ -11,31 +11,62 @@ import UIKit
 
 
 
-
-
-
-
-
 class FavoriteCollectionViewCell: UICollectionViewCell {
     
     
-    var onFavoriteTapped: (() -> Void)?
+    var onReloadCell: ((Bool) -> Void)?
+    var onNavigation: ((FavoriteNavigation) -> Void)?
     
     static let reuseId = "FavoriteCollectionViewCell"
     
     private var gradientLayer: CAGradientLayer?
     
-    
-    weak var viewModel: FavoriteCollectionViewCellViewModelType? {
+    //weak maybe?
+    var viewModel: FavoriteCollectionViewCellViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
             myImageView.set(imageURL: viewModel.imageURL)
             label.text = viewModel.label
+            let imageName = viewModel.isFromProject ? "project-done" : "project-empty"
+            buttonProject.setImage(UIImage(named: imageName), for: .normal)
+            buttonFavorite.addTarget(self, action: #selector(buttonFavoriteTapped), for: .touchUpInside)
+            cartFavorite.addTarget(self, action: #selector(buttonCartTapped), for: .touchUpInside)
+            buttonProject.addTarget(self, action: #selector(buttonProjectTapped), for: .touchUpInside)
         }
     }
     
     
+    //MARK: - cell target Selectors
     
+    @objc func buttonFavoriteTapped(_ sender: UIButton) {
+        sender.flash()
+        viewModel?.controlsAction(.favorite) { [weak self] hidden in
+            if hidden {
+                self?.onNavigation?(.dissmis)
+            } else {
+                self?.onReloadCell?(false)
+            }
+        }
+    }
+    
+    @objc func buttonCartTapped(_ sender: UIButton) {
+        sender.flash()
+        viewModel?.controlsAction(.cart, completion: { [weak self] hidden in
+            if hidden {
+                self?.onNavigation?(.dissmis)
+            } else {
+                self?.onReloadCell?(false)
+            }
+        })
+    }
+    
+    @objc func buttonProjectTapped(_ sender: UIButton) {
+        sender.flash()
+        viewModel?.controlsAction(.project, completion: { [weak self] _ in
+            self?.onReloadCell?(true)
+        })
+        
+    }
     
     
     fileprivate let cardView: UIView = {
@@ -62,11 +93,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     }()
     
     fileprivate let label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        //        label.font = UIFont(name: "TTNorms-Medium", size: 12)
-        label.font = label.font.withSize(12)
+        let label = UILabel.H4.medium
         label.text = "Кровати"
         return label
     }()
@@ -84,14 +111,20 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         button.setImage(UIImage(named: "favorites-fill"), for: .normal)
         return button
     }()
-
+    
     let cartFavorite: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "cart"), for: .normal)
         return button
     }()
-
+    
+    let buttonProject: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     
     
     override init(frame: CGRect) {
@@ -142,7 +175,13 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         cartFavorite.leadingAnchor.constraint(equalTo: buttonFavorite.trailingAnchor, constant: 8).isActive = true
         cartFavorite.heightAnchor.constraint(equalToConstant: 22).isActive = true
         cartFavorite.widthAnchor.constraint(equalToConstant: 22).isActive = true
-
+        
+        addSubview(buttonProject)
+        buttonProject.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        buttonProject.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+        buttonProject.heightAnchor.constraint(equalToConstant: 22).isActive = true
+        buttonProject.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        
     }
     
     

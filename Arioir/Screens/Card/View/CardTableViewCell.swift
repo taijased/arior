@@ -24,18 +24,13 @@ class CardTableViewCell: UITableViewCell {
     
     
     let labelName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "TTNorms-Medium", size: 16)
-        
+        let label = UILabel.H3.medium
         return label
     }()
     
     let labelDescription: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = primaryColorGray
-        label.font = UIFont(name: "TTNorms-Medium", size: 14)
+        let label = UILabel.H3.medium
+        label.textColor = UIColor.Black.gray
         label.textAlignment = .right
         return label
     }()

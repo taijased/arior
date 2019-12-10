@@ -39,12 +39,7 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
     }()
     
     let label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(hexValue: "#4A4A4A", alpha: 1.0)
-//        label.font = UIFont(name: "TTNorms-Bold", size: 22)
-        label.font = label.font.withSize(14)
-        label.font = UIFont.boldSystemFont(ofSize: 14.0)
+        let label = UILabel.H4.medium
         return label
     }()
     

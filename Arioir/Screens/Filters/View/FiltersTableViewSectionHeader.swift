@@ -13,11 +13,7 @@ class FiltersTableViewSectionHeader: UIView {
     
     
     let label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        label.font = label.font.withSize(14.0)
-        label.font = UIFont.boldSystemFont(ofSize: 14.0)
+        let label = UILabel.H4.medium
         label.textAlignment = .left
         label.text = "Цена (₽)"
         return label

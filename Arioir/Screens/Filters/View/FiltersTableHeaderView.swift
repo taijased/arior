@@ -19,11 +19,7 @@ class FiltersTableHeaderView: UIView {
     
     
     let headerLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        //        label.font = UIFont(name: "TTNorms-Bold", size: 24)
-        label.font = label.font.withSize(26)
-        label.font = UIFont.boldSystemFont(ofSize: 26.0)
+        let label = UILabel.H1.bold
         label.text = "Фильтр"
         label.textAlignment = .left
         return label
@@ -32,7 +28,7 @@ class FiltersTableHeaderView: UIView {
     
     let lineView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.init(hexValue: "#19191B", alpha: 0.5)
+        view.backgroundColor = UIColor.Black.gray
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 1.5
         return view

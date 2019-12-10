@@ -31,7 +31,9 @@ class HomeViewModel: HomeViewModelType {
         collectionView = HomeCollectionView()
         homeBottomControls = HomeBottomControls()
         homeBottomControls.delegate = self
-       
+        collectionView.onReloadCell = { [weak self] in
+            self?.updateLabel()
+        }
         
         updateLabel()
     }

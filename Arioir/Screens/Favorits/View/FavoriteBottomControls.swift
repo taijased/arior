@@ -30,7 +30,7 @@ class FavoriteBottomControls: UIView {
     let toOrderButton: UIButton = {
         let button = UIButton.getCustomButton(label: "Сформировать корзину")
         button.addTarget(self, action: #selector(toOrderButtonTapped), for: .touchUpInside)
-        button.backgroundColor = primaryColor
+        button.backgroundColor = UIColor.Yellow.primary
         return button
     }()
     

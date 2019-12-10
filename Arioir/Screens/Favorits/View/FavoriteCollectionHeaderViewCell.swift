@@ -32,11 +32,7 @@ class FavoriteCollectionHeaderViewCell: UICollectionViewCell {
     }()
   
     fileprivate let label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        label.font = label.font.withSize(26)
-        label.font = UIFont.boldSystemFont(ofSize: 26.0)
+        let label = UILabel.H1.bold
         label.text = "Избранное"
         label.textAlignment = .left
         return label
