@@ -72,6 +72,7 @@ class CatalogHeaderViewCell: UICollectionReusableView {
         label.text = "Начните добавлять товары ниже из каталога"
         return label
     }()
+    
     let tempView: UIView = {
         let view = UIView()
         view.backgroundColor = .random()

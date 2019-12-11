@@ -30,7 +30,7 @@ class PresentationCatalogViewController: PresentationController {
 
         containerView.addGestureRecognizer(swipeUp)
         return containerView.bounds
-              .inset(by: UIEdgeInsets(top: containerView.bounds.height * 0.75, left: 0, bottom: 0, right: 0))
+              .inset(by: UIEdgeInsets(top: containerView.bounds.height * 0.7, left: 0, bottom: 0, right: 0))
 
     }
 

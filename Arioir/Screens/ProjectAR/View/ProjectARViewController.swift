@@ -53,10 +53,9 @@ class ProjectARViewController: UIViewController, StoryboardInitializable {
 extension ProjectARViewController: ProjectARViewControlsDelegate {
     
     func close() {
-        print(#function)
         guard let viewModel = viewModel else { return }
         let viewController = ProjectCatalogViewController()
-        viewController.viewModel = CatalogHeaderViewCellVM(projectId: viewModel.getProjectId())
+        viewController.viewModel = ProjectCatalogViewControllerVM(projectId: viewModel.getProjectId())
         viewController.delegate = self
         self.present(viewController, animated: true, completion: nil)
     }

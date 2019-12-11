@@ -17,19 +17,24 @@ protocol ProjectCatalogViewDelegate: class {
 
 class ProjectCatalogViewController: UIViewController {
     
+    
+    
+    
     weak var delegate: ProjectCatalogViewDelegate?
-    var viewModel: CatalogHeaderViewCellVMlType?
+    var viewModel: ProjectCatalogViewControllerVMType?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         transitioningDelegate = self
         modalPresentationStyle = .custom
-       
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
     
     
@@ -40,14 +45,49 @@ class ProjectCatalogViewController: UIViewController {
     
     fileprivate func setupUI() {
         
-        
         view.backgroundColor = .random()
-//        guard let collectionView = viewModel?.collectionView else { return }
-//        view.addSubview(collectionView)
-//        collectionView.fillSuperview()
-            
+        
+        
+        
+        
+        
+        
+        guard let viewModel = viewModel else { return }
+        
+        
+        
+        
+        view.addSubview(viewModel.lineView)
+        viewModel.lineView.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
+        viewModel.lineView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        viewModel.lineView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        viewModel.lineView.heightAnchor.constraint(equalToConstant: 3).isActive = true
+        
+        view.addSubview(viewModel.projectLabel)
+        viewModel.projectLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding).isActive = true
+        viewModel.projectLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        viewModel.projectLabel.topAnchor.constraint(equalTo: viewModel.lineView.bottomAnchor, constant: 22).isActive = true
+        viewModel.projectLabel.heightAnchor.constraint(equalToConstant: 26).isActive = true
+        
+        view.addSubview(viewModel.emptyLabel)
+        viewModel.emptyLabel.topAnchor.constraint(equalTo: viewModel.projectLabel.bottomAnchor).isActive = true
+        viewModel.emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        viewModel.emptyLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        viewModel.emptyLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        
+        
+        view.addSubview(viewModel.collectionView)
+        viewModel.collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        viewModel.collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        viewModel.collectionView.topAnchor.constraint(equalTo: viewModel.projectLabel.bottomAnchor).isActive = true
+        viewModel.collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        
+        
+        
     }
-   
+    
     override func viewWillDisappear(_ animated: Bool) {
         delegate?.deinitController()
     }
@@ -84,5 +124,5 @@ extension ProjectCatalogViewController: PresentationCatalogViewControllerDelegat
             self.dismiss(animated: true, completion: nil)
         }
     }
-
+    
 }

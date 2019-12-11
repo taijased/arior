@@ -214,6 +214,7 @@
 		13BC16E1237C782300F92FA5 /* CatalogSettingsPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16E0237C782300F92FA5 /* CatalogSettingsPreviewVC.swift */; };
 		13BC16E3237C783A00F92FA5 /* CatalogSettingsContextViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16E2237C783A00F92FA5 /* CatalogSettingsContextViewMenu.swift */; };
 		13E7EDE523A0F257004BD93C /* CatalogCellActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E7EDE423A0F257004BD93C /* CatalogCellActionModel.swift */; };
+		13E7EDEB23A121B1004BD93C /* ProjectCatalogViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E7EDEA23A121B1004BD93C /* ProjectCatalogViewControllerVM.swift */; };
 		4C48CA5B31BEB450323462DC /* Pods_Arioir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */; };
 /* End PBXBuildFile section */
 
@@ -427,6 +428,7 @@
 		13BC16E0237C782300F92FA5 /* CatalogSettingsPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSettingsPreviewVC.swift; sourceTree = "<group>"; };
 		13BC16E2237C783A00F92FA5 /* CatalogSettingsContextViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSettingsContextViewMenu.swift; sourceTree = "<group>"; };
 		13E7EDE423A0F257004BD93C /* CatalogCellActionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCellActionModel.swift; sourceTree = "<group>"; };
+		13E7EDEA23A121B1004BD93C /* ProjectCatalogViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCatalogViewControllerVM.swift; sourceTree = "<group>"; };
 		24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.debug.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.debug.xcconfig"; sourceTree = "<group>"; };
 		586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arioir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.release.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.release.xcconfig"; sourceTree = "<group>"; };
@@ -1071,6 +1073,7 @@
 			isa = PBXGroup;
 			children = (
 				13974B01236742B20032192A /* ProjectARViewModel.swift */,
+				13E7EDEA23A121B1004BD93C /* ProjectCatalogViewControllerVM.swift */,
 				13A7B610237AD92100F1CDCB /* ProjectsViewControllerViewModel.swift */,
 				135F4457237B006B008969F4 /* CatalogCollectionViewViewModel.swift */,
 				135F445D237B02A0008969F4 /* CatalogCollectionViewCellVM.swift */,
@@ -1321,6 +1324,7 @@
 				1350C244236094A1005030E7 /* SCNode+changeColor.swift in Sources */,
 				13755167236349DC00E29D5E /* CreateViewModel.swift in Sources */,
 				1350C26723609CF4005030E7 /* BasketCellControls.swift in Sources */,
+				13E7EDEB23A121B1004BD93C /* ProjectCatalogViewControllerVM.swift in Sources */,
 				13974AD62366089E0032192A /* OrderTableFIOViewCell.swift in Sources */,
 				132CF8E22381888100AE9648 /* TagCollectionViewVM.swift in Sources */,
 				1350C233236094A1005030E7 /* VirtualObjectInteractionProtocol.swift in Sources */,

@@ -77,8 +77,9 @@ extension ProjectGoodsCollectionView: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: ProjectGoodsCollectionViewCell.reuseId, for: indexPath) as? ProjectGoodsCollectionViewCell
-        
         cell?.onReloadData = { [weak self] _ in
+            self?.updateBackground()
+            self?.reloadData()
             self?.onReloadData?()
         }
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
