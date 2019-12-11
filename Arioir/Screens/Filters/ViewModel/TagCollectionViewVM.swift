@@ -20,11 +20,12 @@ protocol TagCollectionViewVMType {
     func selectItem(atIndexPath indexPath: IndexPath)
     var onReloadData: (() -> Void)? { get set }
     func getHeightCell() -> CGFloat
+    func getActiveIndex() -> [String]
 }
 
 class TagCollectionViewVM: TagCollectionViewVMType {
     
-
+    
     var onReloadData: (() -> Void)?
     
     var minimumInteritemSpacingForSectionAt: CGFloat = 12.0
@@ -66,7 +67,7 @@ class TagCollectionViewVM: TagCollectionViewVMType {
         label.text = cells[indexPath.row].label
         label.font = UIFont.boldSystemFont(ofSize: 14.0)
         let labelWidth = label.intrinsicContentSize.width + 24
-
+        
         return CGSize(width: labelWidth, height: 36)
     }
     
@@ -83,6 +84,16 @@ class TagCollectionViewVM: TagCollectionViewVMType {
     func selectItem(atIndexPath indexPath: IndexPath) {
         cells[indexPath.row].status = !cells[indexPath.row].status
         self.onReloadData?()
+    }
+    
+    func getActiveIndex() -> [String] {
+        var result: [String] = []
+        for element in cells{
+            if element.status == true {
+                result.append(element.label)
+            }
+        }
+        return result
     }
     
 }

@@ -30,7 +30,7 @@ class PresentationCatalogViewController: PresentationController {
 
         containerView.addGestureRecognizer(swipeUp)
         return containerView.bounds
-              .inset(by: UIEdgeInsets(top: containerView.bounds.height * 0.7, left: 0, bottom: 0, right: 0))
+              .inset(by: UIEdgeInsets(top: containerView.bounds.height * 0.70, left: 0, bottom: 0, right: 0))
 
     }
 
@@ -43,7 +43,6 @@ class PresentationCatalogViewController: PresentationController {
         super.presentationTransitionWillBegin()
         presentedView?.layer.cornerRadius = 10
         containerView?.backgroundColor = .clear
-        
 
         if let coordinator = presentingViewController.transitionCoordinator {
             coordinator.animate(alongsideTransition: { [weak self] _ in

@@ -58,13 +58,6 @@ class StorageManager {
             completion()
         }
     }
-    
-    
-//    static func deleteObject(_ object: Goods) {
-//        try! realm.write {
-//            realm.delete(object)
-//        }
-//    }
 
  
 
@@ -86,5 +79,21 @@ class StorageManager {
         }
     }
     
+    
+    
+    
+    
+    
+    
+    //MARK: - Хуета сервис но нужно сделать быстро
+    
+    static func filter(_ tags: [String: [String]], completion: @escaping ([Goods]) -> Void) {
+
+        
+        var goods: [Goods] = []
+
+        completion(goods)
+        
+    }
     
 }

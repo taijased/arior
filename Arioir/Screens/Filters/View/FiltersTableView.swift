@@ -56,12 +56,9 @@ class FiltersTableView: UITableView {
         register(FiltersTableViewCell.self, forCellReuseIdentifier: FiltersTableViewCell.reuseId)
         tableHeaderView = viewModel?.headerView
         tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 1))
+        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 200, right: 0)
      
     }
-    
-    
-    
-    
     
     override func layoutSubviews() {
         super.layoutSubviews()

@@ -54,6 +54,7 @@ class FavoriteCollectionView: UICollectionView {
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
+        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         
     }
     

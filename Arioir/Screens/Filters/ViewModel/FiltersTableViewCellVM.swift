@@ -17,12 +17,17 @@ protocol FiltersTableViewCellVMType: class {
 
 class FiltersTableViewCellVM: FiltersTableViewCellVMType {
     
+    
+    
     var name: String
     var collectionView: TagCollectionView
+    var cells: [TagModel]
+    
     
     init(name: String, cells: [TagModel]) {
         self.name = name
+        self.cells = cells
         collectionView = TagCollectionView(cells: cells)
+        
     }
-    
 }

@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol ProjectCatalogViewDelegate: class {
-    func deinitController()
+    func didSelectItemAt(_ item: Goods)
     func showProjectsScreen()
 }
 
@@ -45,8 +45,7 @@ class ProjectCatalogViewController: UIViewController {
     
     fileprivate func setupUI() {
         
-        view.backgroundColor = .random()
-        
+        view.backgroundColor = .white
         
         
         
@@ -63,35 +62,31 @@ class ProjectCatalogViewController: UIViewController {
         viewModel.lineView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         viewModel.lineView.heightAnchor.constraint(equalToConstant: 3).isActive = true
         
-        view.addSubview(viewModel.projectLabel)
-        viewModel.projectLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding).isActive = true
-        viewModel.projectLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        viewModel.projectLabel.topAnchor.constraint(equalTo: viewModel.lineView.bottomAnchor, constant: 22).isActive = true
-        viewModel.projectLabel.heightAnchor.constraint(equalToConstant: 26).isActive = true
-        
         view.addSubview(viewModel.emptyLabel)
-        viewModel.emptyLabel.topAnchor.constraint(equalTo: viewModel.projectLabel.bottomAnchor).isActive = true
+        viewModel.emptyLabel.topAnchor.constraint(equalTo: viewModel.lineView.bottomAnchor).isActive = true
         viewModel.emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         viewModel.emptyLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         viewModel.emptyLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         
-        
+         
         view.addSubview(viewModel.collectionView)
         viewModel.collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         viewModel.collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        viewModel.collectionView.topAnchor.constraint(equalTo: viewModel.projectLabel.bottomAnchor).isActive = true
-        viewModel.collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        viewModel.collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+        viewModel.collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
+        viewModel.collectionView.collectionDelegate = self
         
         
+        view.addSubview(viewModel.projectLabel)
+        viewModel.projectLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding).isActive = true
+        viewModel.projectLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        viewModel.projectLabel.topAnchor.constraint(equalTo: viewModel.lineView.bottomAnchor, constant: 22).isActive = true
+        viewModel.projectLabel.heightAnchor.constraint(equalToConstant: 29).isActive = true
         
         
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        delegate?.deinitController()
-    }
-    
+
 }
 
 
@@ -126,3 +121,19 @@ extension ProjectCatalogViewController: PresentationCatalogViewControllerDelegat
     }
     
 }
+
+
+//MARK: - ProjectGoodsCollectionViewDelegate
+extension ProjectCatalogViewController: ProjectGoodsCollectionViewDelegate{
+    
+    func didSelectItemAt() {
+        guard let item = viewModel?.collectionView.viewModel?.viewModelForSelectedRow() else { return }
+        delegate?.didSelectItemAt(item)
+    }
+    
+    func updateData() {
+        viewModel?.collectionView.reloadData()
+    }
+      
+}
+

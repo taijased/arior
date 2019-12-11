@@ -13,7 +13,8 @@ import GameplayKit
 
 class ProjectARViewController: UIViewController, StoryboardInitializable {
     
-    
+    var catalogViewController: ProjectCatalogViewController?
+    var projectViewController: ProjectsViewController?
     
     
     
@@ -53,11 +54,7 @@ class ProjectARViewController: UIViewController, StoryboardInitializable {
 extension ProjectARViewController: ProjectARViewControlsDelegate {
     
     func close() {
-        guard let viewModel = viewModel else { return }
-        let viewController = ProjectCatalogViewController()
-        viewController.viewModel = ProjectCatalogViewControllerVM(projectId: viewModel.getProjectId())
-        viewController.delegate = self
-        self.present(viewController, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func plus() {
@@ -81,9 +78,12 @@ extension ProjectARViewController: ProjectARViewControlsDelegate {
 //MARK: - ARFacadeWallTapDelegate
 extension ProjectARViewController: ARFacadeWallTapDelegate {
     func onTap() {
-        print("tapped")
-        //        let viewController = CreateViewController()
-        //        self.present(viewController, animated: true, completion: nil)
+   
+        catalogViewController = ProjectCatalogViewController()
+        guard let viewController = catalogViewController, let viewModel = viewModel else { return }
+        viewController.viewModel = ProjectCatalogViewControllerVM(projectId: viewModel.getProjectId())
+        viewController.delegate = self
+        self.present(viewController, animated: true, completion: nil)
     }
     
 }
@@ -92,17 +92,34 @@ extension ProjectARViewController: ARFacadeWallTapDelegate {
 
 //MARK: - ProjectCatalogViewDelegate
 extension ProjectARViewController: ProjectCatalogViewDelegate {
-    func deinitController() {
-        self.dismiss(animated: true, completion: nil)
-    }
+   
     
     func showProjectsScreen() {
         
-        
+    
+
         guard let viewModel = viewModel else { return }
         let viewController = ProjectsViewController()
         viewController.viewModel = ProjectsViewControllerViewModel(projectId: viewModel.getProjectId())
         self.present(viewController, animated: true, completion: nil)
     }
+    
+    func didSelectItemAt(_ item: Goods) {
+        
+        
+        catalogViewController?.dismiss(animated: true, completion: { [weak self] in
+            guard let picture = item.picture else { return }
+            let image = WebImageView()
+            image.set(imageURL: picture)
+            self?.arFacade?.wallBuilder.testureSegments(textureLength: 0.4625, textureWidth: 1, textureImage: image.image!)
+        })
+        
+        
+        
+        
+        
+    }
 }
+
+
 

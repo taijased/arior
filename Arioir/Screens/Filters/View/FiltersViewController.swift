@@ -24,7 +24,6 @@ class FiltersViewController: UIViewController, StoryboardInitializable {
         view.addSubview(viewModel.tableView)
         viewModel.tableView.fillSuperview()
         
-        
         view.addSubview(viewModel.controls)
         
         viewModel.controls.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -42,10 +41,15 @@ class FiltersViewController: UIViewController, StoryboardInitializable {
 extension FiltersViewController: FilterBottomControlsDelegate {
     func refresh() {
         print(#function)
+        
     }
     
     func toShow() {
-        print(#function)
+        guard let tags = viewModel?.tableView.viewModel?.getTappedTag() else { return }
+        StorageManager.filter(tags) { (goods) in
+            print(goods)
+        }
+        
     }
 }
 

@@ -41,6 +41,7 @@ class BasketTableView: UITableView {
         register(BasketTableViewCell.self, forCellReuseIdentifier: BasketTableViewCell.reuseId)
         register(BasketTableViewHeaderCell.self, forCellReuseIdentifier: BasketTableViewHeaderCell.reuseId)
         tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 1))
+        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 200, right: 0)
     }
     
     

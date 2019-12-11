@@ -91,8 +91,6 @@ extension ProjectGoodsCollectionView: UICollectionViewDelegate, UICollectionView
         return collectionViewCell
     }
     
-    
-    
     // скороллинг по одной карточке ???
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         targetContentOffset.pointee = scrollView.contentOffset
@@ -139,10 +137,6 @@ extension ProjectGoodsCollectionView: UICollectionViewDelegateFlowLayout {
     }
     
 }
-
-
-
-
 
 
 ////MARK: - ProjectsContextViewMenu
