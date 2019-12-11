@@ -17,7 +17,7 @@ import SkeletonView
 protocol CatalogCollectionViewDelegate: class {
     func selectItem()
     func selectProject(project: Project)
-//    func updateData()
+    //    func updateData()
 }
 
 class CatalogCollectionView: UICollectionView {
@@ -30,15 +30,10 @@ class CatalogCollectionView: UICollectionView {
         layout.scrollDirection = .vertical
         super.init(frame: .zero, collectionViewLayout: layout)
         setupUI()
-        
-        //        viewModel = CatalogCollectionViewViewModel()
-        
-        viewModel?.onReloadData = { [weak self] in
-
-            self?.reloadData()
-        }
-        
     }
+    
+    
+    
     
     
     fileprivate func setupUI() {
@@ -46,6 +41,15 @@ class CatalogCollectionView: UICollectionView {
         setupCollectionSettings()
         setupCollectionHeader()
         setupCollectionViewLayout()
+//        updateBackground()
+    }
+    
+    func updateBackground() {
+        if viewModel?.isEmpty() ?? true {
+            self.alpha = 0
+        } else {
+            self.alpha = 1
+        }
     }
     
     fileprivate func setupCollectionSettings() {
@@ -87,7 +91,12 @@ extension CatalogCollectionView: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: CatalogCollectionViewCell.reuseId, for: indexPath) as? CatalogCollectionViewCell
-        
+        cell?.onReloadCell = { [weak self] reloadCell in
+            self?.viewModel?.updateLabel()
+            
+            self?.reloadData()
+            //            self?.reloadItems(at: [indexPath])
+        }
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
         
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
@@ -105,7 +114,12 @@ extension CatalogCollectionView: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
         viewModel.selectItem(atIndexPath: indexPath)
-        collectionDelegate?.selectItem()
+        
+        
+        //        collectionDelegate?.selectItem()
+        
+        
+        
     }
     
 }
@@ -158,12 +172,10 @@ extension CatalogCollectionView: UICollectionViewDelegateFlowLayout {
 //MARK: - ProjectsCollectionViewDelegate
 
 extension CatalogCollectionView: CatalogHeaderViewCellDelegate {
-    //Hueta
     func updateData() {
-//        collectionDelegate?.updateData()
         self.reloadData()
     }
-
+    
     func didSelectItemAt(project: Project) {
         self.collectionDelegate?.selectProject(project: project)
     }

@@ -17,6 +17,9 @@ protocol ProjectGoodsCollectionViewDelegate: class {
 
 class ProjectGoodsCollectionView: UICollectionView {
     
+    var onReloadData: (() -> Void)?
+    
+    
     weak var collectionDelegate: ProjectGoodsCollectionViewDelegate?
     
     
@@ -24,41 +27,14 @@ class ProjectGoodsCollectionView: UICollectionView {
     var updateDate: (() -> Void)?
     
     
-    
-    init(projectId: String) {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        super.init(frame: .zero, collectionViewLayout: layout)
-        viewModel = ProjectGoodsCollectionViewVM(projectId: projectId)
-        viewModel?.onDeleteCell = { indexPath in
-//            self.deleteItems(at: [indexPath])
-//            self.reloadData()
-            print(indexPath)
-        }
 
-        setupCollectionSettings()
-        updateBackground()
-        self.reloadData {
-            self.updateBackground()
-        }
-
-        viewModel?.onReloadData = {
-            self.updateDate?()
-            self.collectionDelegate?.updateData()
-            self.updateBackground()
-        }
-    }
-    
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
+  
         setupCollectionSettings()
         updateBackground()
-        self.reloadData {
-            self.updateBackground()
-        }
-
         viewModel?.onReloadData = {
             self.updateDate?()
             self.collectionDelegate?.updateData()
@@ -85,7 +61,6 @@ class ProjectGoodsCollectionView: UICollectionView {
         contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         isPagingEnabled = true
         decelerationRate = .fast
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -103,7 +78,9 @@ extension ProjectGoodsCollectionView: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: ProjectGoodsCollectionViewCell.reuseId, for: indexPath) as? ProjectGoodsCollectionViewCell
         
-        
+        cell?.onReloadData = { [weak self] _ in
+            self?.onReloadData?()
+        }
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
         
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
@@ -168,23 +145,23 @@ extension ProjectGoodsCollectionView: UICollectionViewDelegateFlowLayout {
 
 
 ////MARK: - ProjectsContextViewMenu
-
-extension ProjectGoodsCollectionView: CatalogSettingsContextViewMenu {
-    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-
-        guard let viewModel = viewModel else { return nil }
-        viewModel.selectItem(atIndexPath: indexPath)
-        guard let goods = viewModel.viewModelForSelectedRow() else { return nil}
-
-        let identifier = NSString(string: goods.picture!)
-
-        // Create our configuration with an indentifier
-        return UIContextMenuConfiguration(identifier: identifier, previewProvider: {
-            return CatalogSettingsPreviewVC(imageName: goods.picture!)
-        }, actionProvider: { suggestedActions in
-            return self.makeDefaultDemoMenu { type in
-                viewModel.contextMenuActions(type: type, projectId: viewModel.projectId)
-            }
-        })
-    }
-}
+//
+//extension ProjectGoodsCollectionView: CatalogSettingsContextViewMenu {
+//    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+//
+//        guard let viewModel = viewModel else { return nil }
+//        viewModel.selectItem(atIndexPath: indexPath)
+//        guard let goods = viewModel.viewModelForSelectedRow() else { return nil}
+//
+//        let identifier = NSString(string: goods.picture!)
+//
+//        // Create our configuration with an indentifier
+//        return UIContextMenuConfiguration(identifier: identifier, previewProvider: {
+//            return CatalogSettingsPreviewVC(imageName: goods.picture!)
+//        }, actionProvider: { suggestedActions in
+//            return self.makeDefaultDemoMenu { type in
+//                viewModel.contextMenuActions(type: type, projectId: viewModel.projectId)
+//            }
+//        })
+//    }
+//}

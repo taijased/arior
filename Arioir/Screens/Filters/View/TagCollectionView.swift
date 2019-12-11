@@ -30,6 +30,8 @@ class TagCollectionView: UICollectionView {
         viewModel?.onReloadData = {
             self.reloadData()
         }
+        
+        
         setupCollectionSettings()
     }
     
@@ -70,7 +72,6 @@ extension TagCollectionView: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.reuseId, for: indexPath) as? TagCollectionViewCell
         
-        
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
         
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
@@ -85,6 +86,7 @@ extension TagCollectionView: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
         viewModel.selectItem(atIndexPath: indexPath)
+        Vibration.success.vibrate()
     }
     
 }

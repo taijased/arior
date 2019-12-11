@@ -182,7 +182,7 @@ class FiltersTableViewVM: FiltersTableViewVMType {
         let sectionView = FiltersTableViewSectionHeader()
         sectionView.expandButton.tag = section
         sectionView.updateButton(expandStatus: isExpanded(section))
-        sectionView.label.text = "test"
+        sectionView.label.text = cells[section].cellVM.name
         return sectionView
     }
     

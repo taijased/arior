@@ -51,14 +51,9 @@ class HomeCollectionViewCellViewModel: HomeCollectionViewCellViewModelType {
         print(#function)
         guard let id = cell.id else { return }
         if isFavorites {
-            FavoriteService.delete(id: id) { [weak self] in
-                
-            }
-            
+            FavoriteService.delete(id: id) {}
         } else {
-            FavoriteService.create(object: cell) { [weak self] in
-
-            }
+            FavoriteService.create(object: cell) { }
         }
     }
      

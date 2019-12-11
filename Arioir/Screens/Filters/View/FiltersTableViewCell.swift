@@ -25,7 +25,6 @@ class FiltersTableViewCell: UITableViewCell {
             collectionView.viewModel?.onReloadData = {
                 self.collectionView.reloadData()
             }
-
         }
     }
     
@@ -41,8 +40,6 @@ class FiltersTableViewCell: UITableViewCell {
         collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -138,6 +138,7 @@
 		135624EA239FA69700BC3E53 /* TTNorms-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 135624DA239FA69700BC3E53 /* TTNorms-Heavy.ttf */; };
 		135624EB239FA69700BC3E53 /* TTNorms-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 135624DB239FA69700BC3E53 /* TTNorms-Italic.ttf */; };
 		135624ED239FA6C100BC3E53 /* UILabel + Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135624EC239FA6C100BC3E53 /* UILabel + Theme.swift */; };
+		135624EF239FC46D00BC3E53 /* FilterBottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135624EE239FC46D00BC3E53 /* FilterBottomControls.swift */; };
 		13588658236474E3003E13B1 /* CreateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13588657236474E3003E13B1 /* CreateTableView.swift */; };
 		1358865A236474F5003E13B1 /* CreateTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13588659236474F5003E13B1 /* CreateTableViewViewModel.swift */; };
 		1358865C23647732003E13B1 /* CreateTableTextfieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1358865B23647732003E13B1 /* CreateTableTextfieldCell.swift */; };
@@ -212,6 +213,7 @@
 		13BC16DF237C3F1100F92FA5 /* ProjectItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16DE237C3F1100F92FA5 /* ProjectItemService.swift */; };
 		13BC16E1237C782300F92FA5 /* CatalogSettingsPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16E0237C782300F92FA5 /* CatalogSettingsPreviewVC.swift */; };
 		13BC16E3237C783A00F92FA5 /* CatalogSettingsContextViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC16E2237C783A00F92FA5 /* CatalogSettingsContextViewMenu.swift */; };
+		13E7EDE523A0F257004BD93C /* CatalogCellActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E7EDE423A0F257004BD93C /* CatalogCellActionModel.swift */; };
 		4C48CA5B31BEB450323462DC /* Pods_Arioir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */; };
 /* End PBXBuildFile section */
 
@@ -349,6 +351,7 @@
 		135624DA239FA69700BC3E53 /* TTNorms-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Heavy.ttf"; sourceTree = "<group>"; };
 		135624DB239FA69700BC3E53 /* TTNorms-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Italic.ttf"; sourceTree = "<group>"; };
 		135624EC239FA6C100BC3E53 /* UILabel + Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Theme.swift"; sourceTree = "<group>"; };
+		135624EE239FC46D00BC3E53 /* FilterBottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBottomControls.swift; sourceTree = "<group>"; };
 		13588657236474E3003E13B1 /* CreateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableView.swift; sourceTree = "<group>"; };
 		13588659236474F5003E13B1 /* CreateTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableViewViewModel.swift; sourceTree = "<group>"; };
 		1358865B23647732003E13B1 /* CreateTableTextfieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableTextfieldCell.swift; sourceTree = "<group>"; };
@@ -423,6 +426,7 @@
 		13BC16DE237C3F1100F92FA5 /* ProjectItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectItemService.swift; sourceTree = "<group>"; };
 		13BC16E0237C782300F92FA5 /* CatalogSettingsPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSettingsPreviewVC.swift; sourceTree = "<group>"; };
 		13BC16E2237C783A00F92FA5 /* CatalogSettingsContextViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSettingsContextViewMenu.swift; sourceTree = "<group>"; };
+		13E7EDE423A0F257004BD93C /* CatalogCellActionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCellActionModel.swift; sourceTree = "<group>"; };
 		24F0B16CC747347B68947B2F /* Pods-Arioir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.debug.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.debug.xcconfig"; sourceTree = "<group>"; };
 		586F0CB0B5A9EDA63DB129CA /* Pods_Arioir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arioir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2BAEE0CABD58591FA739CD /* Pods-Arioir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arioir.release.xcconfig"; path = "Target Support Files/Pods-Arioir/Pods-Arioir.release.xcconfig"; sourceTree = "<group>"; };
@@ -484,6 +488,7 @@
 				13238928237ED73A00F603BF /* FiltersTableViewCell.swift */,
 				132CF8DD2381886F00AE9648 /* TagCollectionView.swift */,
 				132CF8DF2381887900AE9648 /* TagCollectionViewCell.swift */,
+				135624EE239FC46D00BC3E53 /* FilterBottomControls.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1099,6 +1104,7 @@
 			children = (
 				13974AFD23673C0B0032192A /* ProjectModel.swift */,
 				13974B0523674B270032192A /* ARFaced.swift */,
+				13E7EDE423A0F257004BD93C /* CatalogCellActionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1274,6 +1280,7 @@
 				13BC16DD237C1C1700F92FA5 /* ProjectGoodsCollectionViewCellVM.swift in Sources */,
 				1350C1E123606854005030E7 /* CardViewModel.swift in Sources */,
 				13BC16DF237C3F1100F92FA5 /* ProjectItemService.swift in Sources */,
+				13E7EDE523A0F257004BD93C /* CatalogCellActionModel.swift in Sources */,
 				1350C1E923606944005030E7 /* CardTableViewCell.swift in Sources */,
 				138C4FE72361CA1E00AB7757 /* FavoriteCollectionView.swift in Sources */,
 				13974AB82365A13B0032192A /* IconCollectionViewCell.swift in Sources */,
@@ -1359,6 +1366,7 @@
 				1350C230236094A1005030E7 /* ARPreviewViewController.swift in Sources */,
 				13375BF0235F0CBF00F6CC0D /* BasketItemModel.swift in Sources */,
 				1350C243236094A1005030E7 /* DirectingLineConfig.swift in Sources */,
+				135624EF239FC46D00BC3E53 /* FilterBottomControls.swift in Sources */,
 				1358865E23647B2B003E13B1 /* CreateModel.swift in Sources */,
 				1350C23B236094A1005030E7 /* LengthLabelsProcessor.swift in Sources */,
 				13BC16DB237C1C0D00F92FA5 /* ProjectGoodsCollectionViewVM.swift in Sources */,

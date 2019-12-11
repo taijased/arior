@@ -52,7 +52,6 @@ class ProjectGoodsCollectionViewVM: ProjectGoodsCollectionViewVMType {
     }
 
     fileprivate func fetchData() {
-
         ProjectsService.read(id: projectId) { [weak self] (project) in
             guard
                 let cells = project?.goods
@@ -82,7 +81,7 @@ class ProjectGoodsCollectionViewVM: ProjectGoodsCollectionViewVMType {
     func cellViewModel(forIndexPath indexPath: IndexPath) -> ProjectGoodsCollectionViewCellVMType? {
         guard let cells = cells else { return nil }
         let cell = cells[indexPath.row]
-        return ProjectGoodsCollectionViewCellVM(goods: cell)
+        return ProjectGoodsCollectionViewCellVM(goods: cell, projectId: projectId)
     }
     
     func viewModelForSelectedRow() -> Goods? {

@@ -57,8 +57,7 @@ class PhoneTextField: UIView {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = .clear
-        textField.font = UIFont.boldSystemFont(ofSize: 16)
-        textField.font = textField.font!.withSize(16)
+        textField.font = UIFont.getTTNormsFont(type: TTNorms.bold, size: 16)
         textField.addTarget(self, action: #selector(textFieldDidBegin(_:)), for: .editingDidBegin)
         textField.addTarget(self, action: #selector(textFieldDidEnd(_:)), for: .editingDidEnd)
         textField.returnKeyType = .done

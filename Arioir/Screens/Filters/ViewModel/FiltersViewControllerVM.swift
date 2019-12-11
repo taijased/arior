@@ -13,14 +13,16 @@ import Foundation
 
 protocol FiltersViewControllerVMType {
     var tableView: FiltersTableView { get set }
+    var controls: FilterBottomControls { get set }
 }
 
 class FiltersViewControllerVM: FiltersViewControllerVMType {
     
     var tableView: FiltersTableView
+    var controls: FilterBottomControls
     
     init() {
         tableView = FiltersTableView()
-        
+        controls = FilterBottomControls()
     }
 }

@@ -98,6 +98,8 @@ extension ProjectARViewController: ProjectCatalogViewDelegate {
     }
     
     func showProjectsScreen() {
+        
+        
         guard let viewModel = viewModel else { return }
         let viewController = ProjectsViewController()
         viewController.viewModel = ProjectsViewControllerViewModel(projectId: viewModel.getProjectId())

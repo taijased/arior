@@ -21,13 +21,9 @@ class ProjectsService: ProjectsServiceType {
     
     
     
-    
-    
-    
-    
     static func addNewProjectItem(projectId: String, projectItem: Goods, completion: @escaping () -> Void) {
-        guard let item = realm.object(ofType: Project.self, forPrimaryKey: projectId) else { return }
         
+        guard let item = realm.object(ofType: Project.self, forPrimaryKey: projectId) else { return }
         
         let exist = item.goods.contains(projectItem)
         if exist {
@@ -39,6 +35,8 @@ class ProjectsService: ProjectsServiceType {
             }
         }
     }
+    
+    
     
     static func deleteProjectItem(projectId: String, elementId: String, completion: @escaping () -> Void) {
         guard
@@ -131,4 +129,15 @@ extension ProjectsService: RealmGRUDType {
             completion()
         }
     }
+
+    static func delete(projectId: String, completion: @escaping () -> Void) {
+
+       guard let item = realm.object(ofType: Project.self, forPrimaryKey: projectId) else { return }
+       try! realm.write {
+           realm.delete(item)
+           completion()
+       }
+    }
+    
+    
 }

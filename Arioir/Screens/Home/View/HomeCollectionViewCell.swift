@@ -81,7 +81,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @objc fileprivate func buttonFavoriteTapped(_ sender: UIButton) {
         sender.flash()
         Vibration.success.vibrate()
-        
         viewModel?.updateFavoriteStatus()
         onReloadCell?()
     }

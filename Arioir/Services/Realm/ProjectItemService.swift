@@ -42,6 +42,10 @@ class ProjectItemService: ProjectItemServiceType {
             }
         }
     }
+    
+    
+    
+    
 }
 
 
@@ -54,12 +58,12 @@ extension ProjectItemService: RealmGRUDType {
     typealias Output = ProjectItem
     
     static func create(object: Goods, completion: @escaping () -> Void) {
-        let exist = realm.object(ofType: Goods.self, forPrimaryKey: object.id) != nil
+        let exist = realm.object(ofType: ProjectItem.self, forPrimaryKey: object.id) != nil
         if exist {
             completion()
         } else {
             try! realm.write {
-                realm.add(FavoriteItem(goods: object))
+                realm.add(ProjectItem(goods: object))
                 completion()
             }
         }
@@ -68,6 +72,18 @@ extension ProjectItemService: RealmGRUDType {
     static func read(id: String, completion: @escaping (ProjectItem?) -> Void) {
         guard let item = realm.object(ofType: Output.self, forPrimaryKey: id) else { return }
         completion(item)
+    }
+    
+    static func read(projectId: String, projectItemId: String, completion: @escaping (Goods?) -> Void) {
+        guard let item = realm.object(ofType: Project.self, forPrimaryKey: projectId) else { return }
+        
+        
+        for item in item.goods {
+            if (item.id == projectItemId) {
+                completion(item)
+            }
+        }
+        completion(nil)
     }
     
     static func update(object: ProjectItem, completion: @escaping () -> Void) {

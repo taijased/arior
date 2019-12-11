@@ -43,12 +43,12 @@ class ProjectsBottomControls: UIView {
         backgroundColor = .clear
         
         
-        addSubview(filterButton)
-        filterButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        filterButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        filterButton.widthAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
-        filterButton.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
-        
+//        addSubview(filterButton)
+//        filterButton.topAnchor.constraint(equalTo: topAnchor).isActive = true
+//        filterButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
+//        filterButton.widthAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+//        filterButton.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+//        
         
         
         addSubview(favoritesButton)

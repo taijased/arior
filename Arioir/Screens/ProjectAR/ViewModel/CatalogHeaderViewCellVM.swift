@@ -11,7 +11,7 @@ import Foundation
 
 
 protocol CatalogHeaderViewCellVMlType: class {
-    var collectionView: ProjectGoodsCollectionView { get }
+    var viewModel: ProjectGoodsCollectionViewVMType { get }
     var projectId: String { get set }
     var projectName: String? { get set }
 }
@@ -21,12 +21,13 @@ class CatalogHeaderViewCellVM: CatalogHeaderViewCellVMlType {
     
     var projectId: String
     var projectName: String?
-    var collectionView: ProjectGoodsCollectionView
+    var viewModel: ProjectGoodsCollectionViewVMType
     
     init(projectId: String) {
         
         self.projectId = projectId
-        collectionView = ProjectGoodsCollectionView(projectId: projectId)
-        projectName = collectionView.viewModel?.projectName
+        viewModel = ProjectGoodsCollectionViewVM(projectId: projectId)
+//        collectionView = ProjectGoodsCollectionView(projectId: projectId)
+        projectName = viewModel.projectName
     }
 }

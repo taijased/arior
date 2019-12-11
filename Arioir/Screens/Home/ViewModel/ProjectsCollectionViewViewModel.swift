@@ -77,14 +77,17 @@ class ProjectsCollectionViewViewModel: ProjectsCollectionViewViewModelType {
             let id = cells[selectedIndexPath.row].id
             else { return }
         
-        print(id)
-        
         switch type {
             
         case .delete:
-            ProjectsService.delete(id: id) { [weak self] in
-                self?.onReloadData?()
+            if id == "1" {
+                return
+            } else {
+                ProjectsService.delete(projectId: id) { [weak self] in
+                    self?.onReloadData?()
+                }
             }
+            
         }
     }
     

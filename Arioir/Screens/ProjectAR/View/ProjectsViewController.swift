@@ -24,19 +24,24 @@ class ProjectsViewController: UIViewController, StoryboardInitializable {
     
     
     fileprivate func setupUI() {
-        view.backgroundColor = .random()
+        view.backgroundColor = .white
         
         
         guard let viewModel = viewModel else { return }
+        view.addSubview(viewModel.emptyLabel)
+        viewModel.emptyLabel.fillSuperview()
+        
         view.addSubview(viewModel.collectionView)
         viewModel.collectionView.fillSuperview()
         viewModel.collectionView.collectionDelegate = self
+        
         
         view.addSubview(viewModel.homeBottomControls)
         viewModel.homeBottomControls.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         viewModel.homeBottomControls.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         viewModel.homeBottomControls.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42).isActive = true
         viewModel.homeBottomControls.heightAnchor.constraint(equalToConstant: Constants.bottomSize).isActive = true
+        
         
     }
     
@@ -81,10 +86,7 @@ extension ProjectsViewController: FavoriteViewControllerDelegate {
 //MARK: - CatalogCollectionViewDelegate
 
 extension ProjectsViewController: CatalogCollectionViewDelegate {
-//    func updateData() {
-//        self.viewModel?.updateCollection()
-//    }
-//    
+
     func selectItem() {
 
         guard let viewModel = viewModel, let goods = viewModel.collectionView.viewModel?.viewModelForSelectedRow()?.goods else { return }

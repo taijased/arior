@@ -6,12 +6,14 @@ PODS:
   - RealmSwift (3.19.0):
     - Realm (= 3.19.0)
   - SkeletonView (1.8.2)
+  - TTRangeSlider (1.0.6)
   - XMLCoder (0.8.0)
 
 DEPENDENCIES:
   - AlignedCollectionViewFlowLayout
   - RealmSwift
   - SkeletonView
+  - TTRangeSlider
   - XMLCoder
 
 SPEC REPOS:
@@ -20,6 +22,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SkeletonView
+    - TTRangeSlider
     - XMLCoder
 
 SPEC CHECKSUMS:
@@ -27,8 +30,9 @@ SPEC CHECKSUMS:
   Realm: 995d585bcf699aaff226715886c849a29dd3d07f
   RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
   SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
+  TTRangeSlider: 78188bea83f6471a06f75adbc88da5e990baeafe
   XMLCoder: fd2998fcc6195f613e570597d18d789b95a19297
 
-PODFILE CHECKSUM: 56708f9f4f3cd27b3d96f5de0a98fe8353e4322a
+PODFILE CHECKSUM: 95d7f0c92ab79265de789c83bc0afc75dcb1fd12
 
 COCOAPODS: 1.8.3

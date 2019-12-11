@@ -12,24 +12,55 @@ import UIKit
 
 
 
+
+
 class CatalogCollectionViewCell: UICollectionViewCell {
     
-    
-    var onFavoriteTapped: (() -> Void)?
+    var onReloadCell: ((Bool) -> Void)?
     
     static let reuseId = "CatalogCollectionViewCell"
     
     private var gradientLayer: CAGradientLayer?
     
-    
-    weak var viewModel: CatalogCollectionViewCellVMType? {
+    //weak ??
+    var viewModel: CatalogCollectionViewCellVMType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
             myImageView.set(imageURL: viewModel.imageURL)
             label.text = viewModel.label
+            let favoriteIcon = viewModel.isFromFavorite ? "favorites-fill" : "favorites"
+            buttonFavorite.setImage(UIImage(named: favoriteIcon), for: .normal)
             buttonFavorite.addTarget(self, action: #selector(buttonFavoriteTapped), for: .touchUpInside)
+            
+            let projectIcon = viewModel.isFromProject ? "project-done" : "project-empty"
+            buttonProject.setImage(UIImage(named: projectIcon), for: .normal)
+            buttonProject.addTarget(self, action: #selector(buttonProjectTapped), for: .touchUpInside)
+            
+            buttonDelete.addTarget(self, action: #selector(buttonDeleteTapped), for: .touchUpInside)
+            
+            
         }
     }
+    
+    @objc func buttonFavoriteTapped(_ sender: UIButton) {
+        viewModel?.controlsAction(.favorite, completion: { [weak self] status in
+            self?.onReloadCell?(status)
+        })
+    }
+    
+    @objc func buttonProjectTapped(_ sender: UIButton) {
+        viewModel?.controlsAction(.project, completion: { [weak self] status in
+            self?.onReloadCell?(status)
+        })
+    }
+    
+    
+    @objc func buttonDeleteTapped(_ sender: UIButton) {
+        viewModel?.controlsAction(.delete, completion: { [weak self] status in
+            self?.onReloadCell?(status)
+        })
+    }
+    
     
     
     
@@ -59,11 +90,7 @@ class CatalogCollectionViewCell: UICollectionViewCell {
     }()
     
     fileprivate let label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        //        label.font = UIFont(name: "TTNorms-Medium", size: 12)
-        label.font = label.font.withSize(12)
+        let label = UILabel.H4.medium
         label.text = "Кровати"
         return label
     }()
@@ -78,16 +105,23 @@ class CatalogCollectionViewCell: UICollectionViewCell {
     var buttonFavorite: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "favorites"), for: .normal)
         return button
     }()
     
-    @objc func buttonFavoriteTapped(_ sender: UIButton) {
-        sender.flash()
-        print(#function)
-        self.onFavoriteTapped?()
-//        self.viewModel?.onSelectFavorites?()
-    }
+    var buttonProject: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    var buttonDelete: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "delete-cell"), for: .normal)
+        return button
+    }()
+    
+    
     
     
     
@@ -106,7 +140,7 @@ class CatalogCollectionViewCell: UICollectionViewCell {
         cardView.addSubview(myImageView)
         myImageView.fillSuperview()
         
-
+        
         // second layer
         myImageView.addSubview(viewGradientMask)
         viewGradientMask.bottomAnchor.constraint(equalTo: myImageView.bottomAnchor).isActive = true
@@ -114,25 +148,20 @@ class CatalogCollectionViewCell: UICollectionViewCell {
         viewGradientMask.trailingAnchor.constraint(equalTo: myImageView.trailingAnchor).isActive = true
         viewGradientMask.heightAnchor.constraint(equalToConstant: 42).isActive = true
         // thrid layer
-
+        
         // add gradient
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor,
                                 UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor]
-
+        
         gradientLayer.locations = [0.0, 0.3]
         gradientLayer.frame = bounds
         viewGradientMask.layer.insertSublayer(gradientLayer, at: 0)
-
-
-
-        viewGradientMask.addSubview(buttonFavorite)
-
-        buttonFavorite.centerYAnchor.constraint(equalTo: viewGradientMask.centerYAnchor).isActive = true
-        buttonFavorite.leadingAnchor.constraint(equalTo: viewGradientMask.leadingAnchor, constant: 12).isActive = true
-        buttonFavorite.heightAnchor.constraint(equalToConstant: 22).isActive = true
-        buttonFavorite.widthAnchor.constraint(equalToConstant: 22).isActive = true
-
+        
+        
+        
+        
+        
         addSubview(label)
         label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 30).isActive = true
         label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
@@ -140,8 +169,24 @@ class CatalogCollectionViewCell: UICollectionViewCell {
         label.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         
+        addSubview(buttonFavorite)
+        buttonFavorite.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        buttonFavorite.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
+        buttonFavorite.heightAnchor.constraint(equalToConstant: 22).isActive = true
+        buttonFavorite.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        
+        addSubview(buttonProject)
+        buttonProject.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        buttonProject.leadingAnchor.constraint(equalTo: buttonFavorite.trailingAnchor, constant: 8).isActive = true
+        buttonProject.heightAnchor.constraint(equalToConstant: 22).isActive = true
+        buttonProject.widthAnchor.constraint(equalToConstant: 22).isActive = true
         
         
+        addSubview(buttonDelete)
+        buttonDelete.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        buttonDelete.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+        buttonDelete.heightAnchor.constraint(equalToConstant: 22).isActive = true
+        buttonDelete.widthAnchor.constraint(equalToConstant: 22).isActive = true
         
     }
     

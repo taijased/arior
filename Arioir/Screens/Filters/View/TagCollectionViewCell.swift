@@ -19,7 +19,6 @@ class TagCollectionViewCell: UICollectionViewCell {
             label.text = viewModel.label
         }
     }
-      
     
     let tagView: UIView = {
         let view = UIView()

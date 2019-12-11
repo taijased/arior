@@ -26,7 +26,11 @@ class CatalogHeaderViewCell: UICollectionReusableView {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
             projectLabel.text = viewModel.projectName
-            collectionView.viewModel = viewModel.collectionView.viewModel
+            collectionView.viewModel = viewModel.viewModel
+            collectionView.onReloadData = { [weak self] in
+                self?.updateData()
+            }
+            collectionView.updateBackground()
             collectionView.reloadData()
         }
     }
@@ -35,7 +39,7 @@ class CatalogHeaderViewCell: UICollectionReusableView {
     
     let lineView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.init(hexValue: "#19191B", alpha: 0.5)
+        view.backgroundColor = UIColor.Black.gray
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 1.5
         return view
@@ -48,32 +52,20 @@ class CatalogHeaderViewCell: UICollectionReusableView {
         return view
     }()
     let projectLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(red: 0.13, green: 0.13, blue: 0.16, alpha: 1)
-        label.font = label.font.withSize(26)
-        label.font = UIFont.boldSystemFont(ofSize: 26.0)
+        let label = UILabel.H1.bold
         label.text = "Название проекта"
         return label
     }()
     
     
     let catalogLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(red: 0.13, green: 0.13, blue: 0.16, alpha: 1)
-        label.font = label.font.withSize(26)
-        label.font = UIFont.boldSystemFont(ofSize: 26.0)
+        let label = UILabel.H1.bold
         label.text = "Каталог"
         return label
     }()
     
     let emptyLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(red: 0.13, green: 0.13, blue: 0.16, alpha: 1)
-        label.font = label.font.withSize(14)
-        label.font = UIFont.boldSystemFont(ofSize: 14.0)
+        let label = UILabel.H4.medium
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.textAlignment = .center

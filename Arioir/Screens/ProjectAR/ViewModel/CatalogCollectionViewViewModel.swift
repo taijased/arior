@@ -22,7 +22,10 @@ protocol CatalogCollectionViewViewModelType {
     func viewModelForSelectedRow() -> ProjectItem?
     func selectItem(atIndexPath indexPath: IndexPath)
     var onReloadData: (() -> Void)? { get set }
+    var onUpdateLabel: (() -> Void)? { get set }
     var projectId: String { get set }
+    func updateLabel()
+    func isEmpty() -> Bool
     
 }
 
@@ -31,10 +34,11 @@ protocol CatalogCollectionViewViewModelType {
 
 
 class CatalogCollectionViewViewModel: CatalogCollectionViewViewModelType {
-   
+    
     var projectId: String
     var onReloadData: (() -> Void)?
-
+    var onUpdateLabel: (() -> Void)?
+    
     private var dataFetcherService = DataFetcherService()
     private var selectedIndexPath: IndexPath?
     
@@ -47,6 +51,7 @@ class CatalogCollectionViewViewModel: CatalogCollectionViewViewModelType {
         self.projectId = projectId
         cells = realm.objects(ProjectItem.self)
         self.onReloadData?()
+        updateLabel()
     }
     
     
@@ -61,7 +66,7 @@ class CatalogCollectionViewViewModel: CatalogCollectionViewViewModelType {
         
         return CGSize(width: UIScreen.main.bounds.width, height: 250)
     }
-
+    
     
     
     func numberOfRows() -> Int {
@@ -71,7 +76,7 @@ class CatalogCollectionViewViewModel: CatalogCollectionViewViewModelType {
     func cellViewModel(forIndexPath indexPath: IndexPath) -> CatalogCollectionViewCellVMType? {
         guard let cells = cells else { return nil }
         let cell = cells[indexPath.row]
-        return CatalogCollectionViewCellVM(cell: cell)
+        return CatalogCollectionViewCellVM(cell: cell, projectId: projectId)
     }
     func cellHeaderViewModel() -> CatalogHeaderViewCellVMlType? {
         return CatalogHeaderViewCellVM(projectId: projectId)
@@ -87,6 +92,11 @@ class CatalogCollectionViewViewModel: CatalogCollectionViewViewModelType {
         self.selectedIndexPath = indexPath
     }
     
+    func updateLabel() {
+        self.onUpdateLabel?()
+    }
     
-    
+    func isEmpty() -> Bool {
+        return cells?.isEmpty ?? true
+    }
 }

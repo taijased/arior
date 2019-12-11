@@ -58,7 +58,6 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     
     
     
-    
     fileprivate func testAPI() {
         
         if realm.isEmpty {

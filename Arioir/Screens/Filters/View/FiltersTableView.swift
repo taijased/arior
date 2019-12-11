@@ -41,11 +41,8 @@ class FiltersTableView: UITableView {
         }
         
         viewModel?.onDeleteRows = { indexPaths in
-            let cell = self.cellForRow(at: indexPaths.first!) as! FiltersTableViewCell
-            cell.collectionView.viewModel?.clearData {
-                self.deleteRows(at: indexPaths, with: .fade)
-                self.reloadData()
-            }
+            self.deleteRows(at: indexPaths, with: .fade)
+            self.reloadData()
         }
         
         viewModel?.onInsertRows = { indexPaths in

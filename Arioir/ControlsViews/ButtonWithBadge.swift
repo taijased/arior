@@ -35,7 +35,7 @@ class ButtonWithBadge: UIView {
         label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
 //        label.font = UIFont(name: "TTNorms-Medium", size: 10)
         label.font = label.font.withSize(10)
-        label.text = "4"
+//        label.text = "4"
         return label
     }()
     

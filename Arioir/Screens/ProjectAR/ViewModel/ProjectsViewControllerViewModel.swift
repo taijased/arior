@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit.UILabel
 
 
 
@@ -17,7 +18,7 @@ protocol ProjectsViewControllerViewModelType {
     var projectId: String { get set }
     func updateCollection()
     func updateLabel()
-    
+    var emptyLabel: UILabel { get }
 }
 
 class ProjectsViewControllerViewModel: ProjectsViewControllerViewModelType {
@@ -29,6 +30,18 @@ class ProjectsViewControllerViewModel: ProjectsViewControllerViewModelType {
     var collectionView: CatalogCollectionView
     
     
+
+    
+    let emptyLabel: UILabel = {
+        let label = UILabel.H4.medium
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.text = "Тимур твой UX сука гавно заебался думать за тебя блять че за хуета вообще такая"
+        return label
+    }()
+    
+    
     
     
     init(projectId: String) {
@@ -36,11 +49,16 @@ class ProjectsViewControllerViewModel: ProjectsViewControllerViewModelType {
         
         collectionView = CatalogCollectionView()
         collectionView.viewModel = CatalogCollectionViewViewModel(projectId: projectId)
-            
         homeBottomControls = ProjectsBottomControls()
         homeBottomControls.delegate = self
-       
         
+        collectionView.viewModel?.onReloadData = { [weak self] in
+            self?.collectionView.reloadData()
+        }
+        
+        collectionView.viewModel?.onUpdateLabel = { [weak self] in
+            self?.updateLabel()
+        }
         updateLabel()
     }
     

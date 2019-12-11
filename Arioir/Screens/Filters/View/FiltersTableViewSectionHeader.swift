@@ -44,6 +44,7 @@ class FiltersTableViewSectionHeader: UIView {
     
     fileprivate func setupUI() {
         
+        backgroundColor = .white
         addSubview(sectionView)
         sectionView.fillSuperview()
         
@@ -63,24 +64,18 @@ class FiltersTableViewSectionHeader: UIView {
     }
     
     func updateButton(expandStatus: Bool) {
-        
-        
         if expandStatus {
             UIView.animate(withDuration: 0.3) {
                 self.expandButton.setImage(UIImage(named: "arrow-down"), for: .normal)
             }
         } else {
             UIView.animate(withDuration: 0.3) {
-                
                 self.expandButton.setImage(UIImage(named: "arrow-top"), for: .normal)
             }
         }
-        
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 

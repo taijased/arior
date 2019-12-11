@@ -10,7 +10,7 @@ target 'Arioir' do
   pod 'RealmSwift'
   pod 'SkeletonView' 
   pod 'AlignedCollectionViewFlowLayout'
-
+  pod "TTRangeSlider"
 
 
 end
