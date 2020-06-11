@@ -104,7 +104,6 @@ extension FavoriteCollectionView: UICollectionViewDelegate, UICollectionViewData
         
         return collectionViewCell
         
-        
     }
     
 //    //MARK: - cell target Selectors

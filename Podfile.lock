@@ -1,13 +1,13 @@
 PODS:
   - AlignedCollectionViewFlowLayout (1.1.2)
-  - Realm (3.19.0):
-    - Realm/Headers (= 3.19.0)
-  - Realm/Headers (3.19.0)
-  - RealmSwift (3.19.0):
-    - Realm (= 3.19.0)
+  - Realm (4.3.1):
+    - Realm/Headers (= 4.3.1)
+  - Realm/Headers (4.3.1)
+  - RealmSwift (4.3.1):
+    - Realm (= 4.3.1)
   - SkeletonView (1.8.2)
   - TTRangeSlider (1.0.6)
-  - XMLCoder (0.8.0)
+  - XMLCoder (0.9.0)
 
 DEPENDENCIES:
   - AlignedCollectionViewFlowLayout
@@ -27,11 +27,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
-  Realm: 995d585bcf699aaff226715886c849a29dd3d07f
-  RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
+  Realm: 31dc40934081ef740f60feedc46d88473cbfeb40
+  RealmSwift: b5199e9a41f67b99f51acf6874a6166f5fbe93d1
   SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
   TTRangeSlider: 78188bea83f6471a06f75adbc88da5e990baeafe
-  XMLCoder: fd2998fcc6195f613e570597d18d789b95a19297
+  XMLCoder: f812facc69ac5fb5f4af9f970a9154ad0b614014
 
 PODFILE CHECKSUM: 95d7f0c92ab79265de789c83bc0afc75dcb1fd12
 

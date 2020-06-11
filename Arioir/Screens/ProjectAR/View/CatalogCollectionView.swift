@@ -65,8 +65,8 @@ class CatalogCollectionView: UICollectionView {
     
     fileprivate func setupCollectionHeader() {
         register(CatalogHeaderViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CatalogHeaderViewCell.reuseId)
-        
     }
+    
     
     fileprivate func setupCollectionViewLayout() {
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {

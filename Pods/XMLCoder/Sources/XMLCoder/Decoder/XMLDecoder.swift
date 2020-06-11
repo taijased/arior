@@ -296,7 +296,8 @@ open class XMLDecoder {
     open var shouldProcessNamespaces: Bool = false
 
     /** A boolean value that determines whether the parser trims whitespaces
-     and newlines from the end and the beginning of string values.
+     and newlines from the end and the beginning of string values. The default
+     value is `true`.
      */
     open var trimValueWhitespaces: Bool
 
@@ -368,3 +369,11 @@ open class XMLDecoder {
         return try decoder.unbox(topLevel)
     }
 }
+
+// MARK: TopLevelDecoder
+
+#if canImport(Combine)
+import protocol Combine.TopLevelDecoder
+
+extension XMLDecoder: TopLevelDecoder {}
+#endif

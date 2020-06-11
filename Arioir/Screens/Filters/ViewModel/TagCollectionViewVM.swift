@@ -54,7 +54,6 @@ class TagCollectionViewVM: TagCollectionViewVMType {
         let countCn = ((sum + CGFloat((n-1)*12))/w).rounded(.up)
         
         
-        
         return  countCn * 36 + CGFloat((countCn)*12)
         
     }

@@ -41,8 +41,9 @@ let returnData = try? XMLEncoder().encode(note, withRootKey: "note")
 
 ## Advanced features
 
-These features are available in [0.4.0
-release](https://github.com/MaxDesiatov/XMLCoder/releases/tag/0.4.0) or later:
+The following features are available in [0.4.0
+release](https://github.com/MaxDesiatov/XMLCoder/releases/tag/0.4.0) or later
+(unless stated otherwise):
 
 ### Stripping namespace prefix
 
@@ -139,8 +140,7 @@ struct Book: Codable, Equatable, DynamicNodeEncoding {
         case categories = "category"
     }
 
-    static func nodeEncoding(forKey key: CodingKey) 
-    -> XMLEncoder.NodeEncoding {
+    static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
         switch key {
         case Book.CodingKeys.id: return .both
         default: return .element
@@ -268,6 +268,26 @@ extension IntOrString: Codable {
 This is described in more details in PR [\#119](https://github.com/MaxDesiatov/XMLCoder/pull/119) 
 by [@jsbean](https://github.com/jsbean) and [@bwetherfield](https://github.com/bwetherfield).
 
+### Integrating with [Combine](https://developer.apple.com/documentation/combine)
+
+Starting with XMLCoder [version 0.9](https://github.com/MaxDesiatov/XMLCoder/releases/tag/0.9.0), 
+when Apple's Combine framework is available, `XMLDecoder` conforms to the
+`TopLevelDecoder` protocol, which allows it to be used with the
+`decode(type:decoder:)` operator:
+
+```swift
+import Combine
+import Foundation
+import XMLCoder
+
+func fetchBook(from url: URL) -> AnyPublisher<Book, Error> {
+    return URLSession.shared.dataTaskPublisher(for: url)
+        .map(\.data)
+        .decode(type: Book.self, decoder: XMLDecoder())
+        .eraseToAnyPublisher()
+}
+```
+
 ## Installation
 
 ### Requirements
@@ -278,7 +298,7 @@ by [@jsbean](https://github.com/jsbean) and [@bwetherfield](https://github.com/b
 - iOS 9.0 / watchOS 2.0 / tvOS 9.0 / macOS 10.10 or later deployment targets
 
 **Linux**
-- Ubuntu 14.04 or Later
+- Ubuntu 14.04 or later
 - Swift 5.0.1 or later
 
 ### Swift Package Manager
@@ -293,7 +313,7 @@ easy as adding it to the `dependencies` value of your `Package.swift`.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/MaxDesiatov/XMLCoder.git", from: "0.8.0")
+    .package(url: "https://github.com/MaxDesiatov/XMLCoder.git", from: "0.9.0")
 ]
 ```
 
@@ -318,11 +338,12 @@ Inside of your `Podfile`, specify the `XMLCoder` pod:
 # platform :ios, '9.0'
 
 target 'YourApp' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  # Comment the next line if you're not using Swift or don't want 
+  # to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Test
-  pod 'XMLCoder', '~> 0.8.0'
+  # Pods for YourApp
+  pod 'XMLCoder', '~> 0.9.0'
 end
 ```
 
@@ -350,7 +371,7 @@ $ brew install carthage
 Inside of your `Cartfile`, add GitHub path to `XMLCoder`:
 
 ```ogdl
-github "MaxDesiatov/XMLCoder" ~> 0.8.0
+github "MaxDesiatov/XMLCoder" ~> 0.9.0
 ```
 
 Then, run the following command to build the framework:
